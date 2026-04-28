@@ -24,7 +24,7 @@ Run LIHC package workflow in one command:
 - Python environment with required packages (pandas, numpy, scipy, RDKit)
 - Local package root structure preserved (`Liver cancer` folder)
 - Input Top30 CSV exists:
-  - Recommended: `results/20260428_liver_step4_cv5_gc_sc/lihc_top30_directive_ensemble_with_names.csv`
+  - Recommended(v1): `results/lihc_top30_hcc_anchor3_v1.csv`
   - Or pass absolute path via `--top30-csv`
 - ADMET resources available under:
   - `curated_data/admet/tdc_admet_group/admet_group/`
@@ -35,7 +35,7 @@ Run LIHC package workflow in one command:
 ```bash
 cd "Liver cancer"
 bash "scripts/run_liver_oneclick.sh" \
-  --top30-csv "/absolute/path/lihc_top30_directive_ensemble_with_names.csv" \
+  --top30-csv "/absolute/path/lihc_top30_hcc_anchor3_v1.csv" \
   --result-tag "20260428_liver_step4_cv5_gc_sc"
 ```
 
@@ -49,12 +49,13 @@ Optional flags:
 - Step7 ADMET summary:
   - `results/stad_admet_summary.json`
 - Final Top15:
-  - `results/lihc_final_top15.csv`
+  - `results/lihc_final_top15_v1.csv`
 - Tier1/2/3/4:
-  - `results/lihc_step7_final_top15_tier4.csv`
-  - `results/lihc_step7_final_top15_tier4_summary.json`
+  - `results/lihc_step7_final_top15_tier4_v1.csv`
+  - `results/lihc_step7_final_top15_tier4_summary_v1.json`
 
 ## Notes
 - This script is for reproducible package execution in the handoff folder.
 - CPTAC remains excluded by policy in Step6 outputs.
 - Step7 recommendation criterion is HCC approval basis (LIHC), not gastric labels.
+- v1 policy uses anchor-mix Top30 input with 3 HCC approved drugs injected for operational reporting.

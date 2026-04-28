@@ -67,7 +67,7 @@ ensure_runtime_script() {
 mkdir -p "${ROOT_DIR}/results" "${ROOT_DIR}/external_validation/${RESULT_TAG}" "${ROOT_DIR}/logs"
 
 if [[ -z "$TOP30_CSV" ]]; then
-  TOP30_CSV="${ROOT_DIR}/results/${RESULT_TAG}/lihc_top30_directive_ensemble_with_names.csv"
+  TOP30_CSV="${ROOT_DIR}/results/lihc_top30_hcc_anchor3_v1.csv"
 fi
 require_file "$TOP30_CSV"
 
@@ -180,5 +180,5 @@ PY
 log "Done. Key outputs:"
 log "  - ${ROOT_DIR}/external_validation/${RESULT_TAG}/external_validation_lihc_cptac_excluded_summary.json"
 log "  - ${ROOT_DIR}/results/stad_admet_summary.json"
-log "  - ${ROOT_DIR}/results/stad_final_top15.csv"
-log "  - ${ROOT_DIR}/results/lihc_step7_final_top15_tier4.csv"
+log "  - ${ROOT_DIR}/results/lihc_final_top15_v1.csv"
+log "  - ${ROOT_DIR}/results/lihc_step7_final_top15_tier4_v1.csv"

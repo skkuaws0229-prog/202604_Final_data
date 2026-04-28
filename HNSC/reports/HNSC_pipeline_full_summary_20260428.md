@@ -1,130 +1,133 @@
-# HNSC 파이프라인 종합 결과 보고서 (2026-04-28)
+# HNSC Pipeline Full Summary (2026-04-28)
 
-기준 태그: `20260427_hnsc_step4_v1`
-
-## 1) FE 기반 모델학습 및 대표 앙상블
-
-학습 기반: Step0~3 채택 + FE 이후 Step4 실행 체인
-
-모델학습 결과표(전체):
-
-
-| 구분         | 기준/파일                                                               | 결과                      |
-| ---------- | ------------------------------------------------------------------- | ----------------------- |
-| 실행 체인      | Step4 (ML/DL/Graph)                                                 | 완료(대표 앙상블 Top30 산출로 확인) |
-| 결과 태그      | `results/20260427_hnsc_step4_v1/`                                   | 사용                      |
-| 모델 게이트 상세표 | `results/20260427_hnsc_step4_v1/step5_gate_eval_spearman_table.csv` | 현 브랜치 미보유 (N/A)         |
-| 대표 앙상블 입력군 | ML + DL + Graph                                                     | 사용                      |
-
-
-대표 앙상블 결과표:
-
-
-| 항목       | 값                               |
-| -------- | ------------------------------- |
-| 대표 산출물   | `top30_tier1234_fixed_hnsc.csv` |
-| Top30 행수 | 30                              |
-| Tier1    | 3                               |
-| Tier2    | 12                              |
-| Tier3    | 10                              |
-| Tier4    | 5                               |
-
-
-## 2) 대표 앙상블 기반 Top30 리스트
-
-파일: `results/20260427_hnsc_step4_v1/top30_tier1234_fixed_hnsc.csv`
-
-
-| rank | drug_name        | tier  | definition_basis  |
-| ---- | ---------------- | ----- | ----------------- |
-| 1    | Dactinomycin     | Tier2 | 타암종 승인/적응증확장 연구축  |
-| 2    | Docetaxel        | Tier1 | 두경부암 승인/표준치료 축    |
-| 3    | Vinorelbine      | Tier2 | 타암종 승인/적응증확장 연구축  |
-| 4    | Paclitaxel       | Tier1 | 두경부암 승인/표준치료 축    |
-| 5    | Temsirolimus     | Tier2 | 타암종 승인/적응증확장 연구축  |
-| 6    | Topotecan        | Tier2 | 타암종 승인/적응증확장 연구축  |
-| 7    | Vinblastine      | Tier2 | 타암종 승인/적응증확장 연구축  |
-| 8    | SN-38            | Tier2 | 타암종 승인/적응증확장 연구축  |
-| 9    | Lestaurtinib     | Tier3 | 두경부암 미사용 치료제/신규탐색 |
-| 10   | SL0101           | Tier3 | 두경부암 미사용 치료제/신규탐색 |
-| 11   | Teniposide       | Tier2 | 타암종 승인/적응증확장 연구축  |
-| 12   | Irinotecan       | Tier2 | 타암종 승인/적응증확장 연구축  |
-| 13   | Camptothecin     | Tier4 | 화합물/검증추가필요        |
-| 14   | Pyridostatin     | Tier4 | 화합물/검증추가필요        |
-| 15   | Schweinfurthin A | Tier4 | 화합물/검증추가필요        |
-| 16   | GSK1904529A      | Tier3 | 두경부암 미사용 치료제/신규탐색 |
-| 17   | Staurosporine    | Tier4 | 화합물/검증추가필요        |
-| 18   | Epirubicin       | Tier2 | 타암종 승인/적응증확장 연구축  |
-| 19   | Tozasertib       | Tier3 | 두경부암 미사용 치료제/신규탐색 |
-| 20   | Mitoxantrone     | Tier2 | 타암종 승인/적응증확장 연구축  |
-| 21   | MG-132           | Tier4 | 화합물/검증추가필요        |
-| 22   | Sabutoclax       | Tier3 | 두경부암 미사용 치료제/신규탐색 |
-| 23   | AZD5582          | Tier3 | 두경부암 미사용 치료제/신규탐색 |
-| 24   | Rapamycin        | Tier2 | 타암종 승인/적응증확장 연구축  |
-| 25   | AZD2014          | Tier3 | 두경부암 미사용 치료제/신규탐색 |
-| 26   | Refametinib      | Tier3 | 두경부암 미사용 치료제/신규탐색 |
-| 27   | LMP744           | Tier3 | 두경부암 미사용 치료제/신규탐색 |
-| 28   | ZM447439         | Tier3 | 두경부암 미사용 치료제/신규탐색 |
-| 29   | Tanespimycin     | Tier2 | 타암종 승인/적응증확장 연구축  |
-| 30   | Bleomycin        | Tier1 | 두경부암 승인/표준치료 축    |
-
-
-## 3) Step6 외부검증 (방법 + 결과 리스트)
-
-방법:
-
-- 스크립트: `scripts/run_step6_hnsc.sh`
-- 어댑터: `scripts/step6_ext_comprehensive_hnsc_independent.py`
-- 입력: Top30
-- 소스: PRISM / ClinicalTrials / Patient context(TCGA/CPTAC) / OpenTargets / COSMIC / GEO
-
-결과 요약 (파일: `external_validation/20260427_hnsc_step4_v1/external_validation_independent_summary.json`):
-
-- Top30 처리: 30
-- 1개 이상 매칭: 28/30
-- 미매칭: `Pyridostatin`, `Schweinfurthin A`
-- PRISM(any): 21
-- ClinicalTrials: 17
-- Patient context: 14
-- OpenTargets: 14
-- COSMIC: 3
-- GEO(drug-level): 0 (`DATASET_ONLY`)
-
-## 4) Step7 ADMET/후보정제 (방법 + 최종 15 리스트)
-
-방법:
-
-- 스크립트: `scripts/run_step7_hnsc.sh`, `scripts/step7_finalize_hnsc.py`
-- 정책: 외부근거 + Tier1/2/3/4 + REVIEW 분리
-
-최종 파일:
-
+## Files
+- `results/20260427_hnsc_step4_v1/top30_tier1234_fixed_hnsc.csv`
+- `external_validation/20260427_hnsc_step4_v1/top30_external_validation_independent.csv`
 - `results/20260427_hnsc_step4_v1/step7_top15_hnsc_provisional_with_fixed_tier.csv`
+- `results/20260427_hnsc_step4_v1/step7_top30_hnsc_extended.csv`
+- `results/20260427_hnsc_step4_v1/step7_top15_hnsc_extended.csv`
 
-요약:
+## Top30 Fixed Tier1/2/3/4
+|   rank | drug_name        | tier   | definition_basis                |
+|-------:|:-----------------|:-------|:--------------------------------|
+|      1 | Dactinomycin     | Tier2  | 타암종 승인/적응증확장 연구축   |
+|      2 | Docetaxel        | Tier1  | 두경부암 승인/표준치료 축       |
+|      3 | Vinorelbine      | Tier2  | 타암종 승인/적응증확장 연구축   |
+|      4 | Paclitaxel       | Tier1  | 두경부암 승인/표준치료 축       |
+|      5 | Temsirolimus     | Tier2  | 타암종 승인/적응증확장 연구축   |
+|      6 | Topotecan        | Tier2  | 타암종 승인/적응증확장 연구축   |
+|      7 | Vinblastine      | Tier2  | 타암종 승인/적응증확장 연구축   |
+|      8 | SN-38            | Tier2  | 타암종 승인/적응증확장 연구축   |
+|      9 | Lestaurtinib     | Tier3  | 두경부암 미사용 치료제/신규탐색 |
+|     10 | SL0101           | Tier3  | 두경부암 미사용 치료제/신규탐색 |
+|     11 | Teniposide       | Tier2  | 타암종 승인/적응증확장 연구축   |
+|     12 | Irinotecan       | Tier2  | 타암종 승인/적응증확장 연구축   |
+|     13 | Camptothecin     | Tier4  | 화합물/검증추가필요             |
+|     14 | Pyridostatin     | Tier4  | 화합물/검증추가필요             |
+|     15 | Schweinfurthin A | Tier4  | 화합물/검증추가필요             |
+|     16 | GSK1904529A      | Tier3  | 두경부암 미사용 치료제/신규탐색 |
+|     17 | Staurosporine    | Tier4  | 화합물/검증추가필요             |
+|     18 | Epirubicin       | Tier2  | 타암종 승인/적응증확장 연구축   |
+|     19 | Tozasertib       | Tier3  | 두경부암 미사용 치료제/신규탐색 |
+|     20 | Mitoxantrone     | Tier2  | 타암종 승인/적응증확장 연구축   |
+|     21 | MG-132           | Tier4  | 화합물/검증추가필요             |
+|     22 | Sabutoclax       | Tier3  | 두경부암 미사용 치료제/신규탐색 |
+|     23 | AZD5582          | Tier3  | 두경부암 미사용 치료제/신규탐색 |
+|     24 | Rapamycin        | Tier2  | 타암종 승인/적응증확장 연구축   |
+|     25 | AZD2014          | Tier3  | 두경부암 미사용 치료제/신규탐색 |
+|     26 | Refametinib      | Tier3  | 두경부암 미사용 치료제/신규탐색 |
+|     27 | LMP744           | Tier3  | 두경부암 미사용 치료제/신규탐색 |
+|     28 | ZM447439         | Tier3  | 두경부암 미사용 치료제/신규탐색 |
+|     29 | Tanespimycin     | Tier2  | 타암종 승인/적응증확장 연구축   |
+|     30 | Bleomycin        | Tier1  | 두경부암 승인/표준치료 축       |
 
-- Top15: 15개
-- KEEP_TOP15: 12
-- REVIEW: 3
-- REVIEW 항목: `Camptothecin`, `Pyridostatin`, `Schweinfurthin A`
+## Step6 External Validation Snapshot
+|   rank | DRUG_NAME        | prism_status   | clinical_trial_has_evidence   | patient_context_has_evidence   | opentargets_has_evidence   | cosmic_has_evidence   |
+|-------:|:-----------------|:---------------|:------------------------------|:-------------------------------|:---------------------------|:----------------------|
+|      1 | Dactinomycin     | LIBRARY_ONLY   | True                          | False                          | False                      | False                 |
+|      2 | Docetaxel        | NO_MATCH       | True                          | False                          | False                      | True                  |
+|      3 | Vinorelbine      | OK             | True                          | False                          | False                      | False                 |
+|      4 | Paclitaxel       | OK             | True                          | False                          | False                      | True                  |
+|      5 | Temsirolimus     | OK             | True                          | True                           | True                       | False                 |
+|      6 | Topotecan        | OK             | True                          | True                           | True                       | False                 |
+|      7 | Vinblastine      | OK             | False                         | False                          | False                      | False                 |
+|      8 | SN-38            | OK             | False                         | True                           | True                       | False                 |
+|      9 | Lestaurtinib     | OK             | False                         | True                           | True                       | False                 |
+|     10 | SL0101           | NO_MATCH       | False                         | True                           | True                       | False                 |
+|     11 | Teniposide       | OK             | False                         | False                          | False                      | False                 |
+|     12 | Irinotecan       | OK             | True                          | True                           | True                       | False                 |
+|     13 | Camptothecin     | OK             | True                          | True                           | True                       | False                 |
+|     14 | Pyridostatin     | NO_MATCH       | False                         | False                          | False                      | False                 |
+|     15 | Schweinfurthin A | NO_MATCH       | False                         | False                          | False                      | False                 |
 
-Top15 리스트:
+## Step7 Top15 Provisional + Fixed Tier
+|   rank | drug_name        | step6_external_match   | validation_evidence_tier   | step7_decision   |   notes | fixed_tier   |
+|-------:|:-----------------|:-----------------------|:---------------------------|:-----------------|--------:|:-------------|
+|      1 | Dactinomycin     | matched                | VT3                        | KEEP_TOP15       |     nan | Tier2        |
+|      2 | Docetaxel        | matched                | VT3                        | KEEP_TOP15       |     nan | Tier1        |
+|      3 | Vinorelbine      | matched                | VT3                        | KEEP_TOP15       |     nan | Tier2        |
+|      4 | Paclitaxel       | matched                | VT3                        | KEEP_TOP15       |     nan | Tier1        |
+|      5 | Temsirolimus     | matched                | VT3                        | KEEP_TOP15       |     nan | Tier2        |
+|      6 | Topotecan        | matched                | VT3                        | KEEP_TOP15       |     nan | Tier2        |
+|      7 | Vinblastine      | unmatched              | VT3                        | REVIEW           |     nan | Tier2        |
+|      8 | SN-38            | matched                | VT3                        | KEEP_TOP15       |     nan | Tier2        |
+|      9 | Lestaurtinib     | matched                | VT3                        | KEEP_TOP15       |     nan | Tier3        |
+|     10 | SL0101           | matched                | VT3                        | KEEP_TOP15       |     nan | Tier3        |
+|     11 | Teniposide       | unmatched              | VT3                        | REVIEW           |     nan | Tier2        |
+|     12 | Irinotecan       | matched                | VT3                        | KEEP_TOP15       |     nan | Tier2        |
+|     13 | Camptothecin     | matched                | VT3                        | KEEP_TOP15       |     nan | Tier4        |
+|     14 | Pyridostatin     | unmatched              | VT3                        | REVIEW           |     nan | Tier4        |
+|     15 | Schweinfurthin A | unmatched              | VT3                        | REVIEW           |     nan | Tier4        |
 
+## Step7 Extended Top30 (All Rows)
+|   rank | drug_name        | tier   | definition_basis                | prism_status   |   clinical_trial_has_evidence |   patient_context_has_evidence |   opentargets_has_evidence |   cosmic_has_evidence | external_any_support   | external_data_status   | step7_extended_decision   |
+|-------:|:-----------------|:-------|:--------------------------------|:---------------|------------------------------:|-------------------------------:|---------------------------:|----------------------:|:-----------------------|:-----------------------|:--------------------------|
+|      1 | Dactinomycin     | Tier2  | 타암종 승인/적응증확장 연구축   | LIBRARY_ONLY   |                             1 |                              0 |                          0 |                     0 | True                   | HAS_SOURCE_ROWS        | PRIORITY_2                |
+|      2 | Docetaxel        | Tier1  | 두경부암 승인/표준치료 축       | NO_MATCH       |                             1 |                              0 |                          0 |                     1 | True                   | HAS_SOURCE_ROWS        | PRIORITY_1                |
+|      3 | Vinorelbine      | Tier2  | 타암종 승인/적응증확장 연구축   | OK             |                             1 |                              0 |                          0 |                     0 | True                   | HAS_SOURCE_ROWS        | PRIORITY_2                |
+|      4 | Paclitaxel       | Tier1  | 두경부암 승인/표준치료 축       | OK             |                             1 |                              0 |                          0 |                     1 | True                   | HAS_SOURCE_ROWS        | PRIORITY_1                |
+|      5 | Temsirolimus     | Tier2  | 타암종 승인/적응증확장 연구축   | OK             |                             1 |                              1 |                          1 |                     0 | True                   | HAS_SOURCE_ROWS        | PRIORITY_2                |
+|      6 | Topotecan        | Tier2  | 타암종 승인/적응증확장 연구축   | OK             |                             1 |                              1 |                          1 |                     0 | True                   | HAS_SOURCE_ROWS        | PRIORITY_2                |
+|      7 | Vinblastine      | Tier2  | 타암종 승인/적응증확장 연구축   | OK             |                             0 |                              0 |                          0 |                     0 | False                  | HAS_SOURCE_ROWS        | REVIEW                    |
+|      8 | SN-38            | Tier2  | 타암종 승인/적응증확장 연구축   | OK             |                             0 |                              1 |                          1 |                     0 | True                   | HAS_SOURCE_ROWS        | PRIORITY_2                |
+|      9 | Lestaurtinib     | Tier3  | 두경부암 미사용 치료제/신규탐색 | OK             |                             0 |                              1 |                          1 |                     0 | True                   | HAS_SOURCE_ROWS        | EXPLORE                   |
+|     10 | SL0101           | Tier3  | 두경부암 미사용 치료제/신규탐색 | NO_MATCH       |                             0 |                              1 |                          1 |                     0 | True                   | HAS_SOURCE_ROWS        | EXPLORE                   |
+|     11 | Teniposide       | Tier2  | 타암종 승인/적응증확장 연구축   | OK             |                             0 |                              0 |                          0 |                     0 | False                  | HAS_SOURCE_ROWS        | REVIEW                    |
+|     12 | Irinotecan       | Tier2  | 타암종 승인/적응증확장 연구축   | OK             |                             1 |                              1 |                          1 |                     0 | True                   | HAS_SOURCE_ROWS        | PRIORITY_2                |
+|     13 | Camptothecin     | Tier4  | 화합물/검증추가필요             | OK             |                             1 |                              1 |                          1 |                     0 | True                   | HAS_SOURCE_ROWS        | REVIEW                    |
+|     14 | Pyridostatin     | Tier4  | 화합물/검증추가필요             | NO_MATCH       |                             0 |                              0 |                          0 |                     0 | False                  | HAS_SOURCE_ROWS        | REVIEW                    |
+|     15 | Schweinfurthin A | Tier4  | 화합물/검증추가필요             | NO_MATCH       |                             0 |                              0 |                          0 |                     0 | False                  | HAS_SOURCE_ROWS        | REVIEW                    |
+|     16 | GSK1904529A      | Tier3  | 두경부암 미사용 치료제/신규탐색 | nan            |                           nan |                            nan |                        nan |                   nan | False                  | PARTIAL_OR_UNKNOWN     | REVIEW                    |
+|     17 | Staurosporine    | Tier4  | 화합물/검증추가필요             | nan            |                           nan |                            nan |                        nan |                   nan | False                  | PARTIAL_OR_UNKNOWN     | REVIEW                    |
+|     18 | Epirubicin       | Tier2  | 타암종 승인/적응증확장 연구축   | nan            |                           nan |                            nan |                        nan |                   nan | False                  | PARTIAL_OR_UNKNOWN     | REVIEW                    |
+|     19 | Tozasertib       | Tier3  | 두경부암 미사용 치료제/신규탐색 | nan            |                           nan |                            nan |                        nan |                   nan | False                  | PARTIAL_OR_UNKNOWN     | REVIEW                    |
+|     20 | Mitoxantrone     | Tier2  | 타암종 승인/적응증확장 연구축   | nan            |                           nan |                            nan |                        nan |                   nan | False                  | PARTIAL_OR_UNKNOWN     | REVIEW                    |
+|     21 | MG-132           | Tier4  | 화합물/검증추가필요             | nan            |                           nan |                            nan |                        nan |                   nan | False                  | PARTIAL_OR_UNKNOWN     | REVIEW                    |
+|     22 | Sabutoclax       | Tier3  | 두경부암 미사용 치료제/신규탐색 | nan            |                           nan |                            nan |                        nan |                   nan | False                  | PARTIAL_OR_UNKNOWN     | REVIEW                    |
+|     23 | AZD5582          | Tier3  | 두경부암 미사용 치료제/신규탐색 | nan            |                           nan |                            nan |                        nan |                   nan | False                  | PARTIAL_OR_UNKNOWN     | REVIEW                    |
+|     24 | Rapamycin        | Tier2  | 타암종 승인/적응증확장 연구축   | nan            |                           nan |                            nan |                        nan |                   nan | False                  | PARTIAL_OR_UNKNOWN     | REVIEW                    |
+|     25 | AZD2014          | Tier3  | 두경부암 미사용 치료제/신규탐색 | nan            |                           nan |                            nan |                        nan |                   nan | False                  | PARTIAL_OR_UNKNOWN     | REVIEW                    |
+|     26 | Refametinib      | Tier3  | 두경부암 미사용 치료제/신규탐색 | nan            |                           nan |                            nan |                        nan |                   nan | False                  | PARTIAL_OR_UNKNOWN     | REVIEW                    |
+|     27 | LMP744           | Tier3  | 두경부암 미사용 치료제/신규탐색 | nan            |                           nan |                            nan |                        nan |                   nan | False                  | PARTIAL_OR_UNKNOWN     | REVIEW                    |
+|     28 | ZM447439         | Tier3  | 두경부암 미사용 치료제/신규탐색 | nan            |                           nan |                            nan |                        nan |                   nan | False                  | PARTIAL_OR_UNKNOWN     | REVIEW                    |
+|     29 | Tanespimycin     | Tier2  | 타암종 승인/적응증확장 연구축   | nan            |                           nan |                            nan |                        nan |                   nan | False                  | PARTIAL_OR_UNKNOWN     | REVIEW                    |
+|     30 | Bleomycin        | Tier1  | 두경부암 승인/표준치료 축       | nan            |                           nan |                            nan |                        nan |                   nan | False                  | PARTIAL_OR_UNKNOWN     | REVIEW                    |
 
-| rank | drug_name        | step6_external_match | validation_evidence_tier | step7_decision | fixed_tier |
-| ---- | ---------------- | -------------------- | ------------------------ | -------------- | ---------- |
-| 1    | Dactinomycin     | matched              | VT2                      | KEEP_TOP15     | Tier2      |
-| 2    | Docetaxel        | matched              | VT1                      | KEEP_TOP15     | Tier1      |
-| 3    | Vinorelbine      | matched              | VT2                      | KEEP_TOP15     | Tier2      |
-| 4    | Paclitaxel       | matched              | VT1                      | KEEP_TOP15     | Tier1      |
-| 5    | Temsirolimus     | matched              | VT2                      | KEEP_TOP15     | Tier2      |
-| 6    | Topotecan        | matched              | VT2                      | KEEP_TOP15     | Tier2      |
-| 7    | Vinblastine      | matched              | VT2                      | KEEP_TOP15     | Tier2      |
-| 8    | SN-38            | matched              | VT2                      | KEEP_TOP15     | Tier2      |
-| 9    | Lestaurtinib     | matched              | VT3                      | KEEP_TOP15     | Tier3      |
-| 10   | SL0101           | matched              | VT3                      | KEEP_TOP15     | Tier3      |
-| 11   | Teniposide       | matched              | VT2                      | KEEP_TOP15     | Tier2      |
-| 12   | Irinotecan       | matched              | VT2                      | KEEP_TOP15     | Tier2      |
-| 13   | Camptothecin     | matched              | VT4                      | REVIEW         | Tier4      |
-| 14   | Pyridostatin     | unmatched            | VT4                      | REVIEW         | Tier4      |
-| 15   | Schweinfurthin A | unmatched            | VT4                      | REVIEW         | Tier4      |
+## Step7 Extended Top15
+|   rank | drug_name        | tier   | definition_basis                | prism_status   | clinical_trial_has_evidence   | patient_context_has_evidence   | opentargets_has_evidence   | cosmic_has_evidence   | external_any_support   | external_data_status   | step7_extended_decision   |
+|-------:|:-----------------|:-------|:--------------------------------|:---------------|:------------------------------|:-------------------------------|:---------------------------|:----------------------|:-----------------------|:-----------------------|:--------------------------|
+|      1 | Dactinomycin     | Tier2  | 타암종 승인/적응증확장 연구축   | LIBRARY_ONLY   | True                          | False                          | False                      | False                 | True                   | HAS_SOURCE_ROWS        | PRIORITY_2                |
+|      2 | Docetaxel        | Tier1  | 두경부암 승인/표준치료 축       | NO_MATCH       | True                          | False                          | False                      | True                  | True                   | HAS_SOURCE_ROWS        | PRIORITY_1                |
+|      3 | Vinorelbine      | Tier2  | 타암종 승인/적응증확장 연구축   | OK             | True                          | False                          | False                      | False                 | True                   | HAS_SOURCE_ROWS        | PRIORITY_2                |
+|      4 | Paclitaxel       | Tier1  | 두경부암 승인/표준치료 축       | OK             | True                          | False                          | False                      | True                  | True                   | HAS_SOURCE_ROWS        | PRIORITY_1                |
+|      5 | Temsirolimus     | Tier2  | 타암종 승인/적응증확장 연구축   | OK             | True                          | True                           | True                       | False                 | True                   | HAS_SOURCE_ROWS        | PRIORITY_2                |
+|      6 | Topotecan        | Tier2  | 타암종 승인/적응증확장 연구축   | OK             | True                          | True                           | True                       | False                 | True                   | HAS_SOURCE_ROWS        | PRIORITY_2                |
+|      7 | Vinblastine      | Tier2  | 타암종 승인/적응증확장 연구축   | OK             | False                         | False                          | False                      | False                 | False                  | HAS_SOURCE_ROWS        | REVIEW                    |
+|      8 | SN-38            | Tier2  | 타암종 승인/적응증확장 연구축   | OK             | False                         | True                           | True                       | False                 | True                   | HAS_SOURCE_ROWS        | PRIORITY_2                |
+|      9 | Lestaurtinib     | Tier3  | 두경부암 미사용 치료제/신규탐색 | OK             | False                         | True                           | True                       | False                 | True                   | HAS_SOURCE_ROWS        | EXPLORE                   |
+|     10 | SL0101           | Tier3  | 두경부암 미사용 치료제/신규탐색 | NO_MATCH       | False                         | True                           | True                       | False                 | True                   | HAS_SOURCE_ROWS        | EXPLORE                   |
+|     11 | Teniposide       | Tier2  | 타암종 승인/적응증확장 연구축   | OK             | False                         | False                          | False                      | False                 | False                  | HAS_SOURCE_ROWS        | REVIEW                    |
+|     12 | Irinotecan       | Tier2  | 타암종 승인/적응증확장 연구축   | OK             | True                          | True                           | True                       | False                 | True                   | HAS_SOURCE_ROWS        | PRIORITY_2                |
+|     13 | Camptothecin     | Tier4  | 화합물/검증추가필요             | OK             | True                          | True                           | True                       | False                 | True                   | HAS_SOURCE_ROWS        | REVIEW                    |
+|     14 | Pyridostatin     | Tier4  | 화합물/검증추가필요             | NO_MATCH       | False                         | False                          | False                      | False                 | False                  | HAS_SOURCE_ROWS        | REVIEW                    |
+|     15 | Schweinfurthin A | Tier4  | 화합물/검증추가필요             | NO_MATCH       | False                         | False                          | False                      | False                 | False                  | HAS_SOURCE_ROWS        | REVIEW                    |

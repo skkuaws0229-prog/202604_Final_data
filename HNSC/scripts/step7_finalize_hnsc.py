@@ -6,6 +6,12 @@ from pathlib import Path
 import pandas as pd
 
 
+def bool_series(df: pd.DataFrame, col: str) -> pd.Series:
+    if col in df.columns:
+        return df[col].fillna(False).astype(bool)
+    return pd.Series([False] * len(df), index=df.index)
+
+
 def main() -> int:
     root = Path(__file__).resolve().parents[1]
     result_tag = "20260427_hnsc_step4_v1"
@@ -26,11 +32,11 @@ def main() -> int:
 
     top15 = df.sort_values("rank", ascending=True).head(15).copy()
     top15["step6_external_match"] = (
-        top15.get("prism_any_match", False).fillna(False).astype(bool)
-        | top15.get("clinical_trial_has_evidence", False).fillna(False).astype(bool)
-        | top15.get("patient_context_has_evidence", False).fillna(False).astype(bool)
-        | top15.get("opentargets_has_evidence", False).fillna(False).astype(bool)
-        | top15.get("cosmic_has_evidence", False).fillna(False).astype(bool)
+        bool_series(top15, "prism_any_match")
+        | bool_series(top15, "clinical_trial_has_evidence")
+        | bool_series(top15, "patient_context_has_evidence")
+        | bool_series(top15, "opentargets_has_evidence")
+        | bool_series(top15, "cosmic_has_evidence")
     )
     top15["step6_external_match"] = top15["step6_external_match"].map({True: "matched", False: "unmatched"})
     vt = top15.get("validation_evidence_tier", pd.Series(["VT3"] * len(top15), index=top15.index)).astype(str)

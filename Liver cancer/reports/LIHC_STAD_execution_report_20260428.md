@@ -43,17 +43,16 @@
   - Total input drugs: `30`
   - Assays loaded: `22`
   - Verdict counts: `PASS=5`, `WARNING=22`, `FAIL=3`
-- Step7-2 outputs:
-  - `results/stad_final_top15.csv`
-  - `results/stad_final_top15_summary.json`
-  - `results/stad_step7_three_stage_summary.json`
+- Step7-2 outputs (LIHC/HCC criteria):
+  - `results/lihc_final_top15.csv`
+  - `results/lihc_final_top15_summary.json`
 
 ## 5) Tier 1/2/3/4 for Top15
 - File: `results/lihc_step7_final_top15_tier4.csv`
 - Summary: `results/lihc_step7_final_top15_tier4_summary.json`
 - Tier counts:
-  - `tier1=3`
-  - `tier2=2`
+  - `tier1=0` (HCC approved + PASS)
+  - `tier2=5` (PASS, not HCC approved)
   - `tier3=8`
   - `tier4=2`
 
@@ -65,5 +64,5 @@
   - `external_validation/20260428_liver_step4_cv5_gc_sc/top30_external_validation_lihc_cptac_excluded.csv`
 - Step7 ranking tables:
   - `results/stad_drugs_with_admet.csv`
-  - `results/stad_final_top15.csv`
+  - `results/lihc_final_top15.csv`
   - `results/lihc_step7_final_top15_tier4.csv`

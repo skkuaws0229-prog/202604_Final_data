@@ -84,13 +84,13 @@ fi
 
 log "Ensure Step7 runtime scripts"
 ensure_runtime_script "step7_1_admet_filtering_stad.py"
-ensure_runtime_script "step7_2_select_top15_stad.py"
+ensure_runtime_script "step7_2_select_top15_lihc.py"
 
 log "Step7-1 start (ADMET 22 assays)"
 STAD_TOP30_CSV="$TOP30_CSV" python3 "${ROOT_DIR}/scripts/step7_1_admet_filtering_stad.py"
 
 log "Step7-2 start (Top15)"
-python3 "${ROOT_DIR}/scripts/step7_2_select_top15_stad.py"
+python3 "${ROOT_DIR}/scripts/step7_2_select_top15_lihc.py"
 
 log "Build tier1/2/3/4 table from Step7 + Step6 outputs"
 ROOT_DIR="$ROOT_DIR" python3 - <<'PY'
@@ -131,15 +131,15 @@ df["external_support_count"] = df[merge_cols[1:]].sum(axis=1)
 
 def assign(row):
     verdict = str(row.get("verdict", "")).upper()
-    usage = str(row.get("usage_category", ""))
     support = int(row.get("external_support_count", 0))
-    if verdict == "PASS" and (usage == "FDA_APPROVED_GASTRIC" or support >= 3):
-        return ("tier1", "High confidence: ADMET pass + strong clinical/external support")
+    approved = bool(row.get("hcc_approved", False))
+    if verdict == "PASS" and approved:
+        return ("tier1", "HCC-approved and ADMET PASS")
     if verdict == "PASS":
-        return ("tier2", "Promising: ADMET pass with moderate support")
+        return ("tier2", "ADMET PASS but not HCC-approved")
     if verdict == "WARNING" and support >= 2:
-        return ("tier3", "Conditional: ADMET warning but multi-source support")
-    return ("tier4", "Exploratory: ADMET warning and limited external support")
+        return ("tier3", "ADMET WARNING with multi-source support")
+    return ("tier4", "ADMET WARNING with limited support")
 
 assigned = df.apply(assign, axis=1)
 df["tier"] = assigned.map(lambda x: x[0])
@@ -157,6 +157,7 @@ keep = [
     "safety_score",
     "pred_ic50_mean",
     "usage_category",
+    "hcc_approved",
     "n_clinical_trials",
     "external_support_count",
     "tier",

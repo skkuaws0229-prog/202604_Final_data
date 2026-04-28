@@ -29,16 +29,16 @@ const step6SourceRows = [
 ];
 
 const top15TierRows = [
-  ["tier1", "3", "High confidence (PASS + strong support)"],
-  ["tier2", "2", "Promising (PASS + moderate support)"],
-  ["tier3", "8", "Conditional (WARNING + multi-source support)"],
-  ["tier4", "2", "Exploratory (WARNING + limited support)"],
+  ["tier1", "0", "HCC-approved and ADMET PASS"],
+  ["tier2", "5", "ADMET PASS but not HCC-approved"],
+  ["tier3", "8", "ADMET WARNING with multi-source support"],
+  ["tier4", "2", "ADMET WARNING with limited support"],
 ];
 
 const top15DetailRows = [
-  ["1", "Topotecan", "tier1", "7.50", "5", "1", "1", "1", "1", "1"],
-  ["2", "Irinotecan", "tier1", "6.40", "5", "1", "1", "1", "1", "1"],
-  ["3", "Camptothecin", "tier1", "6.25", "5", "1", "1", "1", "1", "1"],
+  ["1", "Topotecan", "tier2", "7.50", "5", "1", "1", "1", "1", "1"],
+  ["2", "Irinotecan", "tier2", "6.40", "5", "1", "1", "1", "1", "1"],
+  ["3", "Camptothecin", "tier2", "6.25", "5", "1", "1", "1", "1", "1"],
   ["4", "Vinorelbine", "tier2", "7.25", "2", "1", "1", "0", "0", "0"],
   ["5", "Vinblastine", "tier2", "7.00", "2", "1", "1", "0", "0", "0"],
   ["6", "Temsirolimus", "tier3", "5.50", "4", "1", "1", "0", "1", "1"],
@@ -65,7 +65,7 @@ const keyPathRows = [
   ["Step6 External Summary", "external_validation/20260428_liver_step4_cv5_gc_sc/external_validation_lihc_cptac_excluded_summary.json"],
   ["Step6 External Table", "external_validation/20260428_liver_step4_cv5_gc_sc/top30_external_validation_lihc_cptac_excluded.csv"],
   ["Step7 ADMET Summary", "results/stad_admet_summary.json"],
-  ["Step7 Final Top15 (Base)", "results/stad_final_top15.csv"],
+  ["Step7 Final Top15 (Base)", "results/lihc_final_top15.csv"],
   ["Step7 Final Top15 (Tier1-4)", "results/lihc_step7_final_top15_tier4.csv"],
   ["Execution Report", "reports/LIHC_STAD_execution_report_20260428.md"],
   ["Operational Protocol", "reports/LIHC_STAD_operational_protocol_20260428.md"],
@@ -116,6 +116,7 @@ function OverviewSection() {
             <Text>Protocol code axis: STAD</Text>
             <Text>Training/validation data axis: LIHC (liver)</Text>
             <Text>External validation mode: CPTAC excluded by request</Text>
+            <Text>Step7 recommendation rule: HCC approval criteria (not gastric)</Text>
             <Text>S3 handoff root: s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/Liver/</Text>
           </Stack>
         </CardBody>
@@ -188,7 +189,7 @@ function Step7Section({
         <Stat label="ADMET Assays" value="22" />
         <Stat label="PASS / WARNING / FAIL" value="5 / 22 / 3" />
         <Stat label="ADMET Gate Pass+Warn" value="27 / 30" />
-        <Stat label="Final Selection" value="Top15" />
+        <Stat label="HCC Approved in Top15" value="0" />
       </Grid>
       <Table headers={["Tier", "Count", "Rule Note"]} rows={top15TierRows} />
       <Row gap={8} wrap>
@@ -218,7 +219,7 @@ function Step7Section({
         rows={filteredRows}
       />
       <Text size="small" tone="secondary">
-        CSV download paths: `results/lihc_step7_final_top15_tier4.csv`, `results/stad_final_top15.csv`, `results/stad_drugs_with_admet.csv`
+        CSV download paths: `results/lihc_step7_final_top15_tier4.csv`, `results/lihc_final_top15.csv`, `results/stad_drugs_with_admet.csv`
       </Text>
     </Stack>
   );

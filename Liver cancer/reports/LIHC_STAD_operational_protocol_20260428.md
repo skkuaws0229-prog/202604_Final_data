@@ -43,8 +43,8 @@ Expected summary file:
    - `results/20260428_liver_step4_cv5_gc_sc/lihc_top30_directive_ensemble_with_names.csv`
 2. ADMET 22 assay:
    - `python3 scripts/step7_1_admet_filtering_stad.py` with `STAD_TOP30_CSV` set to LIHC Top30 file
-3. Top15 selection:
-   - `python3 scripts/step7_2_select_top15_stad.py`
+3. Top15 selection (LIHC/HCC rule):
+   - `python3 scripts/step7_2_select_top15_lihc.py`
 4. Tier1/2/3/4 output (operational layer for sharing):
    - `results/lihc_step7_final_top15_tier4.csv`
 
@@ -54,7 +54,7 @@ Expected summary file:
 - ADMET scored table:
   - `results/stad_drugs_with_admet.csv`
 - Final top15 (base):
-  - `results/stad_final_top15.csv`
+  - `results/lihc_final_top15.csv`
 - Final top15 (tier 1/2/3/4):
   - `results/lihc_step7_final_top15_tier4.csv`
 

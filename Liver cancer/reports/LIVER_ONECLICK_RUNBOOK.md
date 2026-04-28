@@ -49,7 +49,7 @@ Optional flags:
 - Step7 ADMET summary:
   - `results/stad_admet_summary.json`
 - Final Top15:
-  - `results/stad_final_top15.csv`
+  - `results/lihc_final_top15.csv`
 - Tier1/2/3/4:
   - `results/lihc_step7_final_top15_tier4.csv`
   - `results/lihc_step7_final_top15_tier4_summary.json`
@@ -57,3 +57,4 @@ Optional flags:
 ## Notes
 - This script is for reproducible package execution in the handoff folder.
 - CPTAC remains excluded by policy in Step6 outputs.
+- Step7 recommendation criterion is HCC approval basis (LIHC), not gastric labels.

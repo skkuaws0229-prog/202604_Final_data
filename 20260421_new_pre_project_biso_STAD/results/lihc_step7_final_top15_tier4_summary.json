@@ -1,0 +1,12 @@
+{
+  "result_tag": "20260428_liver_step4_cv5_gc_sc",
+  "input_top15": "results/stad_final_top15.csv",
+  "external_validation_csv": "external_validation/20260428_liver_step4_cv5_gc_sc/top30_external_validation_lihc_cptac_excluded.csv",
+  "output_tier4_csv": "results/lihc_step7_final_top15_tier4.csv",
+  "tier_counts": {
+    "tier3": 8,
+    "tier1": 3,
+    "tier2": 2,
+    "tier4": 2
+  }
+}

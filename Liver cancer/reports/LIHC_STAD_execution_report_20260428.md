@@ -5,8 +5,12 @@
 - Data cohort: LIHC (Liver) features and staged external validation bundle
 - Result tag: `20260428_liver_step4_cv5_gc_sc`
 - Exclusion policy: CPTAC excluded in external validation (`EXCLUDED_BY_REQUEST`)
+- S3 delivery root:
+  - `s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/Liver/`
 
 ## 2) Step4/Step5 Highlights
+- Ensemble directive (source of truth):
+  - `s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/Liver/protocol_used_files/docs/LIHC_ensemble_directive.md`
 - Ensemble name: `LIHC_directive_weighted_v1`
 - OOF eval mode: `groupcv_oof`
 - OOF Spearman vs y_train: `0.5753716199682973`

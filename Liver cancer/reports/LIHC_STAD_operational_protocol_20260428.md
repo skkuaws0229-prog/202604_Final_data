@@ -3,6 +3,13 @@
 ## A. Runtime Context
 - Project root:
   - `/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD`
+- S3 DB-handoff root:
+  - `s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/Liver/`
+- S3 subfolders:
+  - `raw_source/`
+  - `fe_data/`
+  - `generated/`
+  - `protocol_used_files/`
 - Result tag:
   - `20260428_liver_step4_cv5_gc_sc`
 - Data policy:
@@ -12,6 +19,8 @@
 ## B. Step4/5 Execution Rule
 - Step4 scripts are STAD-named but configured to read LIHC feature bundle.
 - Step5 ensemble uses LIHC directive weights and produces deduplicated Top30.
+- Directive document (must match run config):
+  - `s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/Liver/protocol_used_files/docs/LIHC_ensemble_directive.md`
 
 Required outputs:
 - `results/20260428_liver_step4_cv5_gc_sc/lihc_top30_directive_ensemble.csv`

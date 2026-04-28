@@ -1,0 +1,16 @@
+rank,drug_name,step6_external_match,validation_evidence_tier,step7_decision,notes
+1,Dactinomycin,matched,VT2,KEEP_TOP15,PRISM library/ClinicalTrials raw mention detected
+2,Docetaxel,matched,VT1,KEEP_TOP15,Core evidence
+3,Vinorelbine,matched,VT2,KEEP_TOP15,PRISM supported
+4,Paclitaxel,matched,VT1,KEEP_TOP15,Core evidence
+5,Temsirolimus,matched,VT2,KEEP_TOP15,OpenTargets/Context support
+6,Topotecan,matched,VT2,KEEP_TOP15,OpenTargets/Context support
+7,Vinblastine,matched,VT2,KEEP_TOP15,PRISM supported
+8,SN-38,matched,VT2,KEEP_TOP15,PRISM + OpenTargets
+9,Lestaurtinib,matched,VT3,KEEP_TOP15,OpenTargets support
+10,SL0101,matched,VT3,KEEP_TOP15,Context/OpenTargets support
+11,Teniposide,matched,VT2,KEEP_TOP15,PRISM supported
+12,Irinotecan,matched,VT2,KEEP_TOP15,PRISM + CT support
+13,Camptothecin,matched,VT4,REVIEW,VT4 control-like compound
+14,Pyridostatin,unmatched,VT4,REVIEW,No external match after recheck
+15,Schweinfurthin A,unmatched,VT4,REVIEW,No external match after recheck

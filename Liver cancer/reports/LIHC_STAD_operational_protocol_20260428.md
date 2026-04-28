@@ -12,6 +12,8 @@
   - `protocol_used_files/`
 - Result tag:
   - `20260428_liver_step4_cv5_gc_sc`
+- Operational release:
+  - `v1` (anchor-mix with HCC approved min=3)
 - Data policy:
   - Protocol logic = STAD
   - Input cohort = LIHC (liver)
@@ -23,9 +25,8 @@
   - `s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/Liver/protocol_used_files/docs/LIHC_ensemble_directive.md`
 
 Required outputs:
-- `results/20260428_liver_step4_cv5_gc_sc/lihc_top30_directive_ensemble.csv`
-- `results/20260428_liver_step4_cv5_gc_sc/lihc_top30_directive_ensemble_with_names.csv`
-- `results/20260428_liver_step4_cv5_gc_sc/lihc_directive_ensemble_summary.json`
+- `results/lihc_top30_hcc_anchor3_v1.csv`
+- `results/lihc_v1_manifest.json`
 
 ## C. Step6 External Validation Rule (Current Mode)
 - Execution mode: `CPTAC_EXCLUDED`
@@ -40,27 +41,27 @@ Expected summary file:
 
 ## D. Step7 Rule (Top30 -> ADMET22 -> Top15)
 1. Input Top30:
-   - `results/20260428_liver_step4_cv5_gc_sc/lihc_top30_directive_ensemble_with_names.csv`
+   - `results/lihc_top30_hcc_anchor3_v1.csv`
 2. ADMET 22 assay:
    - `python3 scripts/step7_1_admet_filtering_stad.py` with `STAD_TOP30_CSV` set to LIHC Top30 file
-3. Top15 selection:
-   - `python3 scripts/step7_2_select_top15_stad.py`
+3. Top15 selection (LIHC/HCC rule):
+   - `python3 scripts/step7_2_select_top15_lihc.py`
 4. Tier1/2/3/4 output (operational layer for sharing):
-   - `results/lihc_step7_final_top15_tier4.csv`
+   - `results/lihc_step7_final_top15_tier4_v1.csv`
 
 ## E. Canonical Deliverables
 - External validation table:
-  - `external_validation/20260428_liver_step4_cv5_gc_sc/top30_external_validation_lihc_cptac_excluded.csv`
+  - `external_validation/20260428_liver_step4_cv5_gc_sc/top30_external_validation_lihc_cptac_excluded_v1.csv`
 - ADMET scored table:
   - `results/stad_drugs_with_admet.csv`
 - Final top15 (base):
-  - `results/stad_final_top15.csv`
+  - `results/lihc_final_top15_v1.csv`
 - Final top15 (tier 1/2/3/4):
-  - `results/lihc_step7_final_top15_tier4.csv`
+  - `results/lihc_step7_final_top15_tier4_v1.csv`
 
 ## F. QC Checklist
 - [ ] Step6 summary shows `mode=CPTAC_EXCLUDED`
 - [ ] Step6 source status is `OK` for PRISM/ClinicalTrials/GEO/OpenTargets/COSMIC
 - [ ] Step7 summary shows `total_drugs=30`, `assays_loaded=22`
-- [ ] Top15 exists in both base and tier4 files
-- [ ] Tier summary file exists: `results/lihc_step7_final_top15_tier4_summary.json`
+- [ ] Top15 exists in both base and tier4 files (v1)
+- [ ] Tier summary file exists: `results/lihc_step7_final_top15_tier4_summary_v1.json`

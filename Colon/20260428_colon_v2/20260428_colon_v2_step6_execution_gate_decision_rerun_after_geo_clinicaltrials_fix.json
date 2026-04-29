@@ -1,0 +1,20 @@
+{
+  "step6_run": "20260428_colon_v2_step6_run",
+  "fixes_applied": [
+    "Generated GPL570_probe_to_gene.json from GPL570.annot.gz",
+    "Re-fetched ClinicalTrials CRC-only pages via API query.term=(colorectal OR colon OR rectal cancer)"
+  ],
+  "source_hit_rates_pct": {
+    "prism": 73.3,
+    "clinicaltrials": 53.3,
+    "cosmic": 33.3,
+    "cptac": 46.7,
+    "geo": 46.7
+  },
+  "comprehensive_avg_validation_count": 2.53,
+  "very_high_count": 4,
+  "high_or_above_count": 8,
+  "issues": [],
+  "ready_for_step7": true,
+  "recommendation": "Proceed to Step7"
+}

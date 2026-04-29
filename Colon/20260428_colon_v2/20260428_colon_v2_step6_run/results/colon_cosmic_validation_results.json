@@ -1,0 +1,184 @@
+{
+  "validation_source": "COSMIC",
+  "disease": "colorectal cancer",
+  "top_n_drugs": 30,
+  "target_genes_extracted": 37,
+  "cgc_total_genes": 763,
+  "cgc_crc_genes": 73,
+  "actionability_total": 15601,
+  "actionability_crc": 438,
+  "matched_genes_all": 9,
+  "matched_genes_crc": 1,
+  "drugs_with_cosmic_target_all": 27,
+  "drugs_with_cosmic_target_crc": 7,
+  "hit_rate_all": 0.9,
+  "hit_rate_crc": 0.2333,
+  "hit_rate_all_pct": 90.0,
+  "hit_rate_crc_pct": 23.3,
+  "matched_genes_detail_all": [
+    {
+      "gene": "MTOR",
+      "drugs": [
+        "Temsirolimus"
+      ],
+      "in_cgc": true,
+      "in_actionability": false
+    },
+    {
+      "gene": "FLT3",
+      "drugs": [
+        "Lestaurtinib"
+      ],
+      "in_cgc": true,
+      "in_actionability": false
+    },
+    {
+      "gene": "JAK2",
+      "drugs": [
+        "Lestaurtinib"
+      ],
+      "in_cgc": true,
+      "in_actionability": false
+    },
+    {
+      "gene": "NTRK1",
+      "drugs": [
+        "Lestaurtinib"
+      ],
+      "in_cgc": true,
+      "in_actionability": false
+    },
+    {
+      "gene": "NTRK2",
+      "drugs": [
+        "Lestaurtinib"
+      ],
+      "in_cgc": true,
+      "in_actionability": false
+    },
+    {
+      "gene": "NTRK3",
+      "drugs": [
+        "Lestaurtinib"
+      ],
+      "in_cgc": true,
+      "in_actionability": false
+    },
+    {
+      "gene": "TOP1",
+      "drugs": [
+        "Camptothecin",
+        "LMP744",
+        "Irinotecan",
+        "Topotecan"
+      ],
+      "in_cgc": true,
+      "in_actionability": false
+    },
+    {
+      "gene": "PIM1",
+      "drugs": [
+        "SL0101"
+      ],
+      "in_cgc": true,
+      "in_actionability": false
+    },
+    {
+      "gene": "BCL2",
+      "drugs": [
+        "Sabutoclax",
+        "TW 37",
+        "Navitoclax"
+      ],
+      "in_cgc": true,
+      "in_actionability": false
+    }
+  ],
+  "matched_genes_detail_crc": [
+    {
+      "gene": "NTRK2",
+      "drugs": [
+        "Lestaurtinib"
+      ],
+      "in_cgc": true,
+      "in_actionability": false
+    }
+  ],
+  "actionability_combo_rows_scanned_any": 15599,
+  "actionability_combo_rows_scanned_crc": 438,
+  "drugs_matched_via_actionability_combo_any": [
+    "AZD2014",
+    "Bortezomib",
+    "Dactinomycin",
+    "Docetaxel",
+    "Entinostat",
+    "Epirubicin",
+    "Irinotecan",
+    "Lestaurtinib",
+    "MK-1775",
+    "Navitoclax",
+    "Paclitaxel",
+    "Rapamycin",
+    "Refametinib",
+    "Staurosporine",
+    "Tanespimycin",
+    "Temsirolimus",
+    "Teniposide",
+    "Topotecan",
+    "Trametinib",
+    "Vinblastine",
+    "Vinorelbine",
+    "Wee1 Inhibitor"
+  ],
+  "drugs_matched_via_actionability_combo_crc": [
+    "Irinotecan",
+    "MK-1775",
+    "Paclitaxel",
+    "Trametinib",
+    "Vinorelbine",
+    "Wee1 Inhibitor"
+  ],
+  "drugs_matched_all": [
+    "AZD2014",
+    "Bortezomib",
+    "Camptothecin",
+    "Dactinomycin",
+    "Docetaxel",
+    "Entinostat",
+    "Epirubicin",
+    "Irinotecan",
+    "LMP744",
+    "Lestaurtinib",
+    "MK-1775",
+    "Navitoclax",
+    "Paclitaxel",
+    "Rapamycin",
+    "Refametinib",
+    "SL0101",
+    "Sabutoclax",
+    "Staurosporine",
+    "TW 37",
+    "Tanespimycin",
+    "Temsirolimus",
+    "Teniposide",
+    "Topotecan",
+    "Trametinib",
+    "Vinblastine",
+    "Vinorelbine",
+    "Wee1 Inhibitor"
+  ],
+  "drugs_matched_crc": [
+    "Irinotecan",
+    "Lestaurtinib",
+    "MK-1775",
+    "Paclitaxel",
+    "Trametinib",
+    "Vinorelbine",
+    "Wee1 Inhibitor"
+  ],
+  "drugs_unmatched": [
+    "AZD6482",
+    "BX795",
+    "PD0325901"
+  ]
+}

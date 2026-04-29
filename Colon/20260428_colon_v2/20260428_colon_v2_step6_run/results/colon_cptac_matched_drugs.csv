@@ -1,0 +1,15 @@
+gene,drugs,mean_expression,median_expression,std_expression,pct_patients_expressed,n_patients,is_expressed
+MTOR,Temsirolimus,10.0884,10.0815,0.5362,100.0,106,True
+JAK2,Lestaurtinib,9.3849,9.2479,0.6942,100.0,106,True
+TOP1,"Camptothecin, LMP744, Irinotecan, Topotecan",11.7304,11.7006,0.4031,100.0,106,True
+HDAC1,Entinostat,11.9056,11.9636,0.3663,100.0,106,True
+HDAC3,Entinostat,10.165,10.1886,0.2961,100.0,106,True
+AURKB,"SL0101, BX795",8.344,8.3465,0.6633,100.0,106,True
+PIM1,SL0101,9.5587,9.6804,0.5781,100.0,106,True
+PIM3,SL0101,10.412,10.3765,0.5269,100.0,106,True
+BCL2,"Sabutoclax, TW 37, Navitoclax",7.9743,8.0252,0.7919,100.0,106,True
+MCL1,"Sabutoclax, TW 37",13.2049,13.1846,0.4588,100.0,106,True
+TBK1,BX795,10.3252,10.2715,0.4441,100.0,106,True
+WEE1,"MK-1775, Wee1 Inhibitor",9.7016,9.6777,0.58,100.0,106,True
+PLK1,MK-1775,8.9772,8.9784,0.7768,100.0,106,True
+CHEK1,Wee1 Inhibitor,9.7491,9.8194,0.5571,100.0,106,True

@@ -1,0 +1,54 @@
+================================================================================
+Step 6-5: CPTAC-CRC External Validation
+================================================================================
+
+[1] Top drugs 로드
+  Top drugs: 30
+
+[2] 타겟 유전자 추출
+  Extracted 37 unique target genes from 30 drugs
+
+[3] CPTAC mRNA 발현 데이터 로드
+  Loading: data_mrna_seq_v2_rsem.txt
+  mRNA matrix: 13484 genes × 106 patients
+  Columns (first 5): ['Hugo_Symbol', 'Entrez_Gene_Id', '01CO001', '01CO005', '01CO006']
+
+[4] CPTAC clinical 데이터 로드
+  Loading clinical: data_clinical_patient.txt
+  Clinical: 110 patients, columns: ['PATIENT_ID', 'AGE', 'SEX', 'OS_STATUS', 'OS_MONTHS', 'DFS_STATUS', 'DFS_MONTHS', 'HISTOLOGY', 'TUMOR_SITE', 'PATHOLOGY_T_STAGE']
+
+[5] 타겟 유전자 발현 분석
+  Available genes in CPTAC: 13481
+  Target genes in CPTAC: 14/37
+  Expressed (median > 0): 14/14
+
+[6] Drug-level 결과
+  Drugs with target in CPTAC: 14/30
+  Drugs with EXPRESSED target: 14/30
+
+[7] 저장
+  ✅ /Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_run/results/colon_cptac_validation_results.json
+  ✅ /Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_run/results/colon_cptac_matched_drugs.csv
+
+================================================================================
+CPTAC Validation Summary
+================================================================================
+  Dataset: coad_cptac_2019
+  Patients: 106
+  Target genes: 37 extracted → 14 in CPTAC
+  Expressed targets: 14
+  Drugs with expressed target: 14/30 (46.7%)
+
+  Expression details:
+    ✅ MCL1            median=     13.18 pct_expr=100.0% drugs=Sabutoclax, TW 37
+    ✅ HDAC1           median=     11.96 pct_expr=100.0% drugs=Entinostat
+    ✅ TOP1            median=     11.70 pct_expr=100.0% drugs=Camptothecin, LMP744, Irinotecan
+    ✅ PIM3            median=     10.38 pct_expr=100.0% drugs=SL0101
+    ✅ TBK1            median=     10.27 pct_expr=100.0% drugs=BX795
+    ✅ HDAC3           median=     10.19 pct_expr=100.0% drugs=Entinostat
+    ✅ MTOR            median=     10.08 pct_expr=100.0% drugs=Temsirolimus
+    ✅ CHEK1           median=      9.82 pct_expr=100.0% drugs=Wee1 Inhibitor
+    ✅ PIM1            median=      9.68 pct_expr=100.0% drugs=SL0101
+    ✅ WEE1            median=      9.68 pct_expr=100.0% drugs=MK-1775, Wee1 Inhibitor
+
+✅ Step 6-5 완료!

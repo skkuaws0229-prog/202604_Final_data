@@ -1,0 +1,555 @@
+{
+  "validation_source": "GEO",
+  "dataset": "GSE39582",
+  "publication": "Marisa et al. 2013 PLoS Med",
+  "disease": "colorectal cancer",
+  "n_patients": 585,
+  "n_probes": 54675,
+  "platform": "Affymetrix HG-U133 Plus 2.0",
+  "top_n_drugs": 30,
+  "target_genes_extracted": 37,
+  "genes_matched_in_expression": 19,
+  "drugs_with_expressed_target": 14,
+  "hit_rate": 0.4667,
+  "hit_rate_pct": 46.7,
+  "clinical_summary": {
+    "organism": {
+      "Homo sapiens": 585
+    },
+    "dataset": {
+      "discovery": 443,
+      "validation": 123,
+      "Non Tumoral": 19
+    },
+    "Sex": {
+      "Male": 322,
+      "Female": 263
+    },
+    "age.at.diagnosis (year)": {
+      "69": 22,
+      "70": 21,
+      "73": 20,
+      "71": 20,
+      "68": 20
+    },
+    "tnm.stage": {
+      "2": 271,
+      "3": 210,
+      "4": 60,
+      "1": 38,
+      "0": 4
+    },
+    "tnm.t": {
+      "T3": 379,
+      "T4": 119,
+      "T2": 49,
+      "N/A": 22,
+      "T1": 12
+    },
+    "tnm.n": {
+      "N0": 314,
+      "N1": 137,
+      "N2": 100,
+      "N/A": 22,
+      "N3": 6
+    },
+    "tnm.m": {
+      "M0": 499,
+      "M1": 61,
+      "N/A": 22,
+      "MX": 3
+    },
+    "tumor.location": {
+      "distal": 351,
+      "proximal": 232,
+      "N/A": 2
+    },
+    "chemotherapy.adjuvant": {
+      "N": 326,
+      "Y": 240,
+      "N/A": 19
+    },
+    "chemotherapy.adjuvant.type": {
+      "N/A": 411,
+      "5FU": 82,
+      "FUFOL": 54,
+      "FOLFOX": 23,
+      "FOLFIRI": 12
+    },
+    "rfs.event": {
+      "0": 395,
+      "1": 179,
+      "N/A": 11
+    },
+    "rfs.delay": {
+      "0": 38,
+      "14": 12,
+      "9": 12,
+      "19": 11,
+      "5": 11
+    },
+    "os.event": {
+      "0": 385,
+      "1": 194,
+      "N/A": 6
+    },
+    "os.delay (months)": {
+      "14": 12,
+      "86": 11,
+      "46": 11,
+      "32": 10,
+      "53": 10
+    },
+    "mmr.status": {
+      "pMMR": 459,
+      "dMMR": 77,
+      "N/A": 49
+    },
+    "cimp.status": {
+      "-": 420,
+      "+": 93,
+      "N/A": 72
+    },
+    "cin.status": {
+      "+": 369,
+      "-": 112,
+      "N/A": 104
+    },
+    "tp53.mutation": {
+      "N/A": 234,
+      "M": 190,
+      "WT": 161
+    },
+    "tp53.mutation.dna": {
+      "N/A": 517,
+      "c.524G>A": 6,
+      "c.844C>T": 5,
+      "c.587C>T": 4,
+      "FS": 4
+    },
+    "tp53.mutation.exon.number": {
+      "N/A": 517,
+      "c.524G>A": 6,
+      "c.844C>T": 5,
+      "c.587C>T": 4,
+      "FS": 4
+    },
+    "tp53.mutation.protein": {
+      "N/A": 519,
+      "p.R175H": 6,
+      "p.R282W": 5,
+      "p.R196X": 4,
+      "FS": 4
+    },
+    "kras.mutation": {
+      "WT": 328,
+      "M": 217,
+      "N/A": 40
+    },
+    "kras.mutation.dna": {
+      "N/A": 371,
+      "c.35G>A": 52,
+      "EX2.codon12": 47,
+      "c.38G>A": 27,
+      "c.35G>T": 22
+    },
+    "kras.mutation.exon.number": {
+      "N/A": 371,
+      "c.35G>A": 52,
+      "EX2.codon12": 47,
+      "c.38G>A": 27,
+      "c.35G>T": 22
+    },
+    "kras.mutation.protein": {
+      "N/A": 472,
+      "p.G12D": 43,
+      "p.G13D": 23,
+      "p.G12V": 22,
+      "p.G12S": 6
+    },
+    "braf.mutation": {
+      "WT": 461,
+      "N/A": 73,
+      "M": 51
+    },
+    "braf.mutation.dna": {
+      "N/A": 560,
+      "c.1799T>A": 25
+    },
+    "braf.mutation.exon.number": {
+      "N/A": 560,
+      "c.1799T>A": 25
+    },
+    "braf.mutation.protein": {
+      "N/A": 560,
+      "p.V600E": 25
+    },
+    "cit.molecularsubtype": {
+      "C5": 152,
+      "C1": 116,
+      "C2": 104,
+      "C3": 75,
+      "C6": 60
+    },
+    "dependancy sample": {
+      "N/A": 568,
+      "CIT546": 1,
+      "CIT533": 1,
+      "CIT525": 1,
+      "CIT415": 1
+    },
+    "rna.extraction.method": {
+      "Manual-Rneasy Mini (Qiagen)": 156,
+      "Manual-Trizol": 147,
+      "TriReagent & Manual-Rneasy Mini (Qiagen)": 134,
+      "Manual-Rneasy Micro (Qiagen)": 96,
+      "RNA NOW": 19
+    }
+  },
+  "expression_details": [
+    {
+      "gene": "MTOR",
+      "drugs": [
+        "Temsirolimus"
+      ],
+      "probe_ids": [
+        "202288_at",
+        "215381_at"
+      ],
+      "mean_expression": 4.9996,
+      "median_expression": 4.9288,
+      "pct_expressed": 50.0,
+      "n_patients": 585,
+      "is_expressed": "True",
+      "match_method": "annotation"
+    },
+    {
+      "gene": "FLT3",
+      "drugs": [
+        "Lestaurtinib"
+      ],
+      "probe_ids": [
+        "206674_at"
+      ],
+      "mean_expression": 4.2976,
+      "median_expression": 4.262,
+      "pct_expressed": 49.9,
+      "n_patients": 585,
+      "is_expressed": "True",
+      "match_method": "annotation"
+    },
+    {
+      "gene": "JAK2",
+      "drugs": [
+        "Lestaurtinib"
+      ],
+      "probe_ids": [
+        "1562031_at",
+        "205841_at",
+        "205842_s_at"
+      ],
+      "mean_expression": 4.6542,
+      "median_expression": 4.5956,
+      "pct_expressed": 50.0,
+      "n_patients": 585,
+      "is_expressed": "True",
+      "match_method": "annotation"
+    },
+    {
+      "gene": "NTRK1",
+      "drugs": [
+        "Lestaurtinib"
+      ],
+      "probe_ids": [
+        "208605_s_at"
+      ],
+      "mean_expression": 3.1782,
+      "median_expression": 3.1498,
+      "pct_expressed": 49.9,
+      "n_patients": 585,
+      "is_expressed": "False",
+      "match_method": "annotation"
+    },
+    {
+      "gene": "NTRK2",
+      "drugs": [
+        "Lestaurtinib"
+      ],
+      "probe_ids": [
+        "207152_at",
+        "214680_at",
+        "221795_at"
+      ],
+      "mean_expression": 3.7413,
+      "median_expression": 3.6291,
+      "pct_expressed": 50.0,
+      "n_patients": 585,
+      "is_expressed": "True",
+      "match_method": "annotation"
+    },
+    {
+      "gene": "NTRK3",
+      "drugs": [
+        "Lestaurtinib"
+      ],
+      "probe_ids": [
+        "1557795_s_at",
+        "206462_s_at",
+        "213960_at"
+      ],
+      "mean_expression": 4.2888,
+      "median_expression": 4.7389,
+      "pct_expressed": 50.0,
+      "n_patients": 585,
+      "is_expressed": "True",
+      "match_method": "annotation"
+    },
+    {
+      "gene": "TOP1",
+      "drugs": [
+        "Camptothecin",
+        "LMP744",
+        "Irinotecan",
+        "Topotecan"
+      ],
+      "probe_ids": [
+        "208900_s_at",
+        "208901_s_at"
+      ],
+      "mean_expression": 8.2597,
+      "median_expression": 8.8067,
+      "pct_expressed": 50.0,
+      "n_patients": 585,
+      "is_expressed": "True",
+      "match_method": "annotation"
+    },
+    {
+      "gene": "HDAC1",
+      "drugs": [
+        "Entinostat"
+      ],
+      "probe_ids": [
+        "201209_at"
+      ],
+      "mean_expression": 10.5065,
+      "median_expression": 10.5724,
+      "pct_expressed": 49.9,
+      "n_patients": 585,
+      "is_expressed": "True",
+      "match_method": "annotation"
+    },
+    {
+      "gene": "HDAC3",
+      "drugs": [
+        "Entinostat"
+      ],
+      "probe_ids": [
+        "216326_s_at"
+      ],
+      "mean_expression": 7.5776,
+      "median_expression": 7.5675,
+      "pct_expressed": 49.9,
+      "n_patients": 585,
+      "is_expressed": "True",
+      "match_method": "annotation"
+    },
+    {
+      "gene": "AURKB",
+      "drugs": [
+        "SL0101",
+        "BX795"
+      ],
+      "probe_ids": [
+        "209464_at",
+        "239219_at"
+      ],
+      "mean_expression": 5.3771,
+      "median_expression": 4.8757,
+      "pct_expressed": 50.0,
+      "n_patients": 585,
+      "is_expressed": "True",
+      "match_method": "annotation"
+    },
+    {
+      "gene": "PIM1",
+      "drugs": [
+        "SL0101"
+      ],
+      "probe_ids": [
+        "209193_at"
+      ],
+      "mean_expression": 7.0849,
+      "median_expression": 7.0544,
+      "pct_expressed": 49.9,
+      "n_patients": 585,
+      "is_expressed": "True",
+      "match_method": "annotation"
+    },
+    {
+      "gene": "PIM3",
+      "drugs": [
+        "SL0101"
+      ],
+      "probe_ids": [
+        "224739_at"
+      ],
+      "mean_expression": 8.9773,
+      "median_expression": 8.9439,
+      "pct_expressed": 49.9,
+      "n_patients": 585,
+      "is_expressed": "True",
+      "match_method": "annotation"
+    },
+    {
+      "gene": "BCL2",
+      "drugs": [
+        "Sabutoclax",
+        "TW 37",
+        "Navitoclax"
+      ],
+      "probe_ids": [
+        "203684_s_at",
+        "203685_at",
+        "207004_at"
+      ],
+      "mean_expression": 4.9434,
+      "median_expression": 4.7917,
+      "pct_expressed": 50.0,
+      "n_patients": 585,
+      "is_expressed": "True",
+      "match_method": "annotation"
+    },
+    {
+      "gene": "MCL1",
+      "drugs": [
+        "Sabutoclax",
+        "TW 37"
+      ],
+      "probe_ids": [
+        "200796_s_at",
+        "200797_s_at",
+        "200798_x_at"
+      ],
+      "mean_expression": 7.2054,
+      "median_expression": 6.5102,
+      "pct_expressed": 50.0,
+      "n_patients": 585,
+      "is_expressed": "True",
+      "match_method": "annotation"
+    },
+    {
+      "gene": "TBK1",
+      "drugs": [
+        "BX795"
+      ],
+      "probe_ids": [
+        "218520_at"
+      ],
+      "mean_expression": 8.0246,
+      "median_expression": 8.073,
+      "pct_expressed": 49.9,
+      "n_patients": 585,
+      "is_expressed": "True",
+      "match_method": "annotation"
+    },
+    {
+      "gene": "AURKC",
+      "drugs": [
+        "BX795"
+      ],
+      "probe_ids": [
+        "211107_s_at"
+      ],
+      "mean_expression": 4.99,
+      "median_expression": 4.973,
+      "pct_expressed": 49.9,
+      "n_patients": 585,
+      "is_expressed": "True",
+      "match_method": "annotation"
+    },
+    {
+      "gene": "WEE1",
+      "drugs": [
+        "MK-1775",
+        "Wee1 Inhibitor"
+      ],
+      "probe_ids": [
+        "212533_at",
+        "215711_s_at"
+      ],
+      "mean_expression": 7.8397,
+      "median_expression": 7.869,
+      "pct_expressed": 50.0,
+      "n_patients": 585,
+      "is_expressed": "True",
+      "match_method": "annotation"
+    },
+    {
+      "gene": "PLK1",
+      "drugs": [
+        "MK-1775"
+      ],
+      "probe_ids": [
+        "202240_at"
+      ],
+      "mean_expression": 7.1679,
+      "median_expression": 7.1693,
+      "pct_expressed": 49.9,
+      "n_patients": 585,
+      "is_expressed": "True",
+      "match_method": "annotation"
+    },
+    {
+      "gene": "CHEK1",
+      "drugs": [
+        "Wee1 Inhibitor"
+      ],
+      "probe_ids": [
+        "205393_s_at",
+        "205394_at",
+        "229423_at"
+      ],
+      "mean_expression": 5.8477,
+      "median_expression": 5.7838,
+      "pct_expressed": 50.0,
+      "n_patients": 585,
+      "is_expressed": "True",
+      "match_method": "annotation"
+    }
+  ],
+  "drugs_matched": [
+    "BX795",
+    "Camptothecin",
+    "Entinostat",
+    "Irinotecan",
+    "LMP744",
+    "Lestaurtinib",
+    "MK-1775",
+    "Navitoclax",
+    "SL0101",
+    "Sabutoclax",
+    "TW 37",
+    "Temsirolimus",
+    "Topotecan",
+    "Wee1 Inhibitor"
+  ],
+  "drugs_unmatched": [
+    "AZD2014",
+    "AZD6482",
+    "Bortezomib",
+    "Dactinomycin",
+    "Docetaxel",
+    "Epirubicin",
+    "PD0325901",
+    "Paclitaxel",
+    "Rapamycin",
+    "Refametinib",
+    "Staurosporine",
+    "Tanespimycin",
+    "Teniposide",
+    "Trametinib",
+    "Vinblastine",
+    "Vinorelbine"
+  ],
+  "note": "Probe-to-gene annotation required for full matching. Without GPL570 annotation, matching is limited to probe ID substring search."
+}

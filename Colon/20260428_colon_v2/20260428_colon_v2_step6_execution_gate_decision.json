@@ -1,0 +1,16 @@
+{
+  "step6_run": "20260428_colon_v2_step6_run",
+  "source_hit_rates": {
+    "prism": 73.3,
+    "clinicaltrials": 46.7,
+    "cosmic": 3.3,
+    "cptac": 46.7,
+    "geo": 0.0
+  },
+  "comprehensive_avg_validation_count": 2.0,
+  "issues": [
+    "GEO hit rate is 0%; likely due missing GPL570_probe_to_gene.json mapping file."
+  ],
+  "ready_for_step7": false,
+  "recommendation": "Hold and fix Step6 data issues before Step7"
+}

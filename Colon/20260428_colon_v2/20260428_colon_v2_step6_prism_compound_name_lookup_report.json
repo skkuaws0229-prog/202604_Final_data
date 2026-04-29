@@ -1,0 +1,39 @@
+{
+  "purpose": "PRISM 20q2에서 Top30 중 미매칭 약물의 표기·포함 여부 조사 (로컬 curated_data/validation/prism CSV 전부 문자열 검색)",
+  "data_sources_checked": [
+    "prism-repurposing-20q2-secondary-screen-replicate-collapsed-treatment-info.csv",
+    "prism-repurposing-20q2-primary-screen-replicate-collapsed-treatment-info.csv"
+  ],
+  "findings": [
+    {
+      "our_name": "Dactinomycin",
+      "in_secondary_screen_list": false,
+      "in_primary_screen_list": true,
+      "prism_example_name": "dactinomycin",
+      "broad_id_example": "BRD-K70578146-001-06-7",
+      "remediation": "매칭 사전에 primary-screen treatment-info를 병합(이미 Step6-2에 반영). 별칭 actinomycin D 동등."
+    },
+    {
+      "our_name": "Staurosporine",
+      "in_prism_parent_name": false,
+      "prism_surrogate_listed_as": "7-hydroxystaurosporine",
+      "broad_id_example": "BRD-K45293975-001-02-0",
+      "note": "부모 Staurosporine 명칭 없음; 유도체·관련물만 스크린. 외부검증은 유도체 명으로 매칭하거나 별도 언급 필요.",
+      "remediation": "별칭 Staurosporine → 7-hydroxystaurosporine (colon_validation_drug_aliases.json)"
+    },
+    {
+      "our_names": ["LMP744", "SL0101", "Sabutoclax", "BX795"],
+      "in_prism_20q2_treatment_tables": false,
+      "note": "두 CSV의 name/moa/target/indication 전체 부분문자 검색 시 해당 문자열 없음. 이 컴파운드들은 PRISM repurposing 20q2 라이브러리에 포함되지 않았을 가능성이 높음.",
+      "remediation_options": [
+        "다른 배치/버전 PRISM 또는 DepMap/GDSC 공개 compound ID로 교차조회",
+        "동일 MOA/표적 대리약물(예: BCL2 계열의 obatoclax은 PRISM에 존재, sabutoclax은 없음)으로 해석적 매칭은 별도 프로토콜 필요"
+      ]
+    }
+  ],
+  "related_hits_for_context": {
+    "obatoclax_in_secondary_prism": true,
+    "navitoclax_in_secondary_prism": true,
+    "sirolimus_rows": "Rapamycin 별칭 Sirolimus와 연계 가능"
+  }
+}

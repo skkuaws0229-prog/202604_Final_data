@@ -1,0 +1,27 @@
+{
+  "external_validation_readiness_20260428_colon_v2": {
+    "protocol_required_sources": [
+      "PRISM",
+      "ClinicalTrials",
+      "COSMIC",
+      "CPTAC",
+      "GEO(GSE39582)"
+    ],
+    "existing_copied_results": "available in 20260428_colon_v2_step6_external_validation_existing_results/",
+    "newly_fetched": [
+      "20260428_colon_v2_step6_external_validation_clinicaltrials_api_snapshot.json"
+    ],
+    "missing_raw_or_rebuild_inputs": {
+      "PRISM_raw_dataset": "missing (need DepMap PRISM files)",
+      "COSMIC_raw_dataset": "missing (license/login required tar files)",
+      "CPTAC_raw_expression_files": "not present in current local colon_v2 workspace snapshot",
+      "GEO_GSE39582_matrix_and_probe_map": "not present in current local colon_v2 workspace snapshot"
+    },
+    "action_needed": [
+      "Copy/download PRISM raw files to curated_data/validation/prism",
+      "Copy/download COSMIC tar files to curated_data/validation/cosmic",
+      "Copy COAD CPTAC expression files to curated_data/cbioportal or curated_data/cptac",
+      "Copy GSE39582 matrix + GPL570 mapping files to curated_data/geo/GSE39582"
+    ]
+  }
+}

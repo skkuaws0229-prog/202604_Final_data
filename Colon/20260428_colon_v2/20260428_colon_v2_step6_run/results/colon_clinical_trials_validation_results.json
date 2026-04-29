@@ -1,0 +1,386 @@
+{
+  "validation_source": "ClinicalTrials.gov",
+  "disease": "colorectal cancer",
+  "query": "colorectal cancer OR colon cancer OR rectal cancer",
+  "total_studies": 10684,
+  "interventional_drugs": 3970,
+  "top_n_drugs": 30,
+  "matched_drugs": 19,
+  "hit_rate": 0.6333,
+  "hit_rate_pct": 63.3,
+  "phase2_plus_count": 15,
+  "phase2_plus_pct": 78.9,
+  "phase_distribution": {
+    "PHASE1": 14,
+    "PHASE2": 13,
+    "PHASE3": 5,
+    "PHASE4": 2,
+    "EARLY_PHASE1": 1,
+    "NA": 1
+  },
+  "matched_details": [
+    {
+      "rank": 2,
+      "drug_name": "Paclitaxel",
+      "ct_name": "Paclitaxel",
+      "match_type": "exact_or_alias",
+      "phases": [
+        "PHASE1",
+        "PHASE2",
+        "PHASE3"
+      ],
+      "max_phase": "PHASE3",
+      "n_trials": 30,
+      "sample_nct_ids": [
+        "NCT07007559",
+        "NCT01120184",
+        "NCT06328738",
+        "NCT04008797",
+        "NCT02033551"
+      ]
+    },
+    {
+      "rank": 4,
+      "drug_name": "Vinorelbine",
+      "ct_name": "Vinorelbine Tartrate",
+      "match_type": "exact_or_alias",
+      "phases": [
+        "PHASE2"
+      ],
+      "max_phase": "PHASE2",
+      "n_trials": 1,
+      "sample_nct_ids": [
+        "NCT03482362"
+      ]
+    },
+    {
+      "rank": 5,
+      "drug_name": "Docetaxel",
+      "ct_name": "Docetaxel",
+      "match_type": "exact_or_alias",
+      "phases": [
+        "PHASE1",
+        "PHASE2",
+        "PHASE3"
+      ],
+      "max_phase": "PHASE3",
+      "n_trials": 24,
+      "sample_nct_ids": [
+        "NCT02039336",
+        "NCT01120184",
+        "NCT00309556",
+        "NCT05714553",
+        "NCT01639131"
+      ]
+    },
+    {
+      "rank": 7,
+      "drug_name": "Temsirolimus",
+      "ct_name": "Temsirolimus",
+      "match_type": "exact_or_alias",
+      "phases": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "max_phase": "PHASE2",
+      "n_trials": 7,
+      "sample_nct_ids": [
+        "NCT00827684",
+        "NCT02423954",
+        "NCT01183663",
+        "NCT03203525",
+        "NCT00600496"
+      ]
+    },
+    {
+      "rank": 8,
+      "drug_name": "Rapamycin",
+      "ct_name": "Rapamycin",
+      "match_type": "exact_or_alias",
+      "phases": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "max_phase": "PHASE2",
+      "n_trials": 1,
+      "sample_nct_ids": [
+        "NCT00409994"
+      ]
+    },
+    {
+      "rank": 10,
+      "drug_name": "Refametinib",
+      "ct_name": "Refametinib (BAY86-9766)",
+      "match_type": "partial",
+      "phases": [
+        "PHASE1"
+      ],
+      "max_phase": "PHASE1",
+      "n_trials": 1,
+      "sample_nct_ids": [
+        "NCT02168777"
+      ]
+    },
+    {
+      "rank": 11,
+      "drug_name": "Camptothecin",
+      "ct_name": "aminocamptothecin colloidal dispersion",
+      "match_type": "partial",
+      "phases": [
+        "PHASE1"
+      ],
+      "max_phase": "PHASE1",
+      "n_trials": 1,
+      "sample_nct_ids": [
+        "NCT00003548"
+      ]
+    },
+    {
+      "rank": 13,
+      "drug_name": "Tanespimycin",
+      "ct_name": "tanespimycin",
+      "match_type": "exact_or_alias",
+      "phases": [
+        "PHASE1"
+      ],
+      "max_phase": "PHASE1",
+      "n_trials": 1,
+      "sample_nct_ids": [
+        "NCT00004065"
+      ]
+    },
+    {
+      "rank": 14,
+      "drug_name": "Staurosporine",
+      "ct_name": "7-hydroxystaurosporine",
+      "match_type": "partial",
+      "phases": [
+        "PHASE1"
+      ],
+      "max_phase": "PHASE1",
+      "n_trials": 1,
+      "sample_nct_ids": [
+        "NCT00031681"
+      ]
+    },
+    {
+      "rank": 15,
+      "drug_name": "Entinostat",
+      "ct_name": "entinostat",
+      "match_type": "exact_or_alias",
+      "phases": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "max_phase": "PHASE2",
+      "n_trials": 5,
+      "sample_nct_ids": [
+        "NCT00020579",
+        "NCT02437136",
+        "NCT01105377",
+        "NCT04708470",
+        "NCT03215264"
+      ]
+    },
+    {
+      "rank": 16,
+      "drug_name": "Trametinib",
+      "ct_name": "Trametinib",
+      "match_type": "exact_or_alias",
+      "phases": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "max_phase": "PHASE2",
+      "n_trials": 20,
+      "sample_nct_ids": [
+        "NCT05907304",
+        "NCT02230553",
+        "NCT03714958",
+        "NCT03428126",
+        "NCT04303403"
+      ]
+    },
+    {
+      "rank": 20,
+      "drug_name": "Sabutoclax",
+      "ct_name": "sodium phosphate",
+      "match_type": "partial",
+      "phases": [
+        "PHASE3",
+        "PHASE4"
+      ],
+      "max_phase": "PHASE4",
+      "n_trials": 2,
+      "sample_nct_ids": [
+        "NCT00410215",
+        "NCT05726097"
+      ]
+    },
+    {
+      "rank": 22,
+      "drug_name": "PD0325901",
+      "ct_name": "PD-0325901",
+      "match_type": "exact_or_alias",
+      "phases": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "max_phase": "PHASE2",
+      "n_trials": 3,
+      "sample_nct_ids": [
+        "NCT02039336",
+        "NCT02510001",
+        "NCT00147550"
+      ]
+    },
+    {
+      "rank": 23,
+      "drug_name": "MK-1775",
+      "ct_name": "Adavosertib",
+      "match_type": "exact_or_alias",
+      "phases": [
+        "PHASE2"
+      ],
+      "max_phase": "PHASE2",
+      "n_trials": 1,
+      "sample_nct_ids": [
+        "NCT02465060"
+      ]
+    },
+    {
+      "rank": 24,
+      "drug_name": "Irinotecan",
+      "ct_name": "irinotecan hydrochloride",
+      "match_type": "exact_or_alias",
+      "phases": [
+        "EARLY_PHASE1",
+        "NA",
+        "PHASE1",
+        "PHASE2",
+        "PHASE3",
+        "PHASE4"
+      ],
+      "max_phase": "PHASE4",
+      "n_trials": 396,
+      "sample_nct_ids": [
+        "NCT00023868",
+        "NCT01131078",
+        "NCT00827684",
+        "NCT03454620",
+        "NCT03184870"
+      ]
+    },
+    {
+      "rank": 25,
+      "drug_name": "Epirubicin",
+      "ct_name": "Epirubicin",
+      "match_type": "exact_or_alias",
+      "phases": [
+        "PHASE3"
+      ],
+      "max_phase": "PHASE3",
+      "n_trials": 2,
+      "sample_nct_ids": [
+        "NCT00309556",
+        "NCT00309569"
+      ]
+    },
+    {
+      "rank": 26,
+      "drug_name": "Bortezomib",
+      "ct_name": "bortezomib",
+      "match_type": "exact_or_alias",
+      "phases": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "max_phase": "PHASE2",
+      "n_trials": 7,
+      "sample_nct_ids": [
+        "NCT00098982",
+        "NCT00622674",
+        "NCT00052507",
+        "NCT03607643",
+        "NCT00667641"
+      ]
+    },
+    {
+      "rank": 27,
+      "drug_name": "Topotecan",
+      "ct_name": "Topotecan",
+      "match_type": "exact_or_alias",
+      "phases": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "max_phase": "PHASE2",
+      "n_trials": 3,
+      "sample_nct_ids": [
+        "NCT00193167",
+        "NCT00158886",
+        "NCT00215956"
+      ]
+    },
+    {
+      "rank": 28,
+      "drug_name": "Wee1 Inhibitor",
+      "ct_name": "Adavosertib",
+      "match_type": "exact_or_alias",
+      "phases": [
+        "PHASE2"
+      ],
+      "max_phase": "PHASE2",
+      "n_trials": 1,
+      "sample_nct_ids": [
+        "NCT02465060"
+      ]
+    }
+  ],
+  "unmatched_drugs": [
+    {
+      "rank": 1,
+      "drug_name": "Dactinomycin"
+    },
+    {
+      "rank": 3,
+      "drug_name": "Vinblastine"
+    },
+    {
+      "rank": 6,
+      "drug_name": "Teniposide"
+    },
+    {
+      "rank": 9,
+      "drug_name": "Lestaurtinib"
+    },
+    {
+      "rank": 12,
+      "drug_name": "LMP744"
+    },
+    {
+      "rank": 17,
+      "drug_name": "SL0101"
+    },
+    {
+      "rank": 18,
+      "drug_name": "AZD2014"
+    },
+    {
+      "rank": 19,
+      "drug_name": "AZD6482"
+    },
+    {
+      "rank": 21,
+      "drug_name": "BX795"
+    },
+    {
+      "rank": 29,
+      "drug_name": "TW 37"
+    },
+    {
+      "rank": 30,
+      "drug_name": "Navitoclax"
+    }
+  ]
+}

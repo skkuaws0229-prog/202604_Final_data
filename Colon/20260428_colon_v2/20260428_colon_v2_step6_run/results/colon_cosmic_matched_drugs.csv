@@ -1,0 +1,15 @@
+drug_name,target_gene,in_cgc,in_actionability
+Temsirolimus,MTOR,True,False
+Lestaurtinib,FLT3,True,False
+Lestaurtinib,JAK2,True,False
+Lestaurtinib,NTRK1,True,False
+Lestaurtinib,NTRK2,True,False
+Lestaurtinib,NTRK3,True,False
+Camptothecin,TOP1,True,False
+LMP744,TOP1,True,False
+Irinotecan,TOP1,True,False
+Topotecan,TOP1,True,False
+SL0101,PIM1,True,False
+Sabutoclax,BCL2,True,False
+TW 37,BCL2,True,False
+Navitoclax,BCL2,True,False

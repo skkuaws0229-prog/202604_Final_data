@@ -1,0 +1,20 @@
+rank,drug_name,ct_name,match_type,phases,max_phase,n_trials,sample_nct_ids
+2,Paclitaxel,Paclitaxel,exact_or_alias,"['PHASE1', 'PHASE2', 'PHASE3']",PHASE3,30,"['NCT07007559', 'NCT01120184', 'NCT06328738', 'NCT04008797', 'NCT02033551']"
+4,Vinorelbine,Vinorelbine Tartrate,exact_or_alias,['PHASE2'],PHASE2,1,['NCT03482362']
+5,Docetaxel,Docetaxel,exact_or_alias,"['PHASE1', 'PHASE2', 'PHASE3']",PHASE3,24,"['NCT02039336', 'NCT01120184', 'NCT00309556', 'NCT05714553', 'NCT01639131']"
+7,Temsirolimus,Temsirolimus,exact_or_alias,"['PHASE1', 'PHASE2']",PHASE2,7,"['NCT00827684', 'NCT02423954', 'NCT01183663', 'NCT03203525', 'NCT00600496']"
+8,Rapamycin,Rapamycin,exact_or_alias,"['PHASE1', 'PHASE2']",PHASE2,1,['NCT00409994']
+10,Refametinib,Refametinib (BAY86-9766),partial,['PHASE1'],PHASE1,1,['NCT02168777']
+11,Camptothecin,aminocamptothecin colloidal dispersion,partial,['PHASE1'],PHASE1,1,['NCT00003548']
+13,Tanespimycin,tanespimycin,exact_or_alias,['PHASE1'],PHASE1,1,['NCT00004065']
+14,Staurosporine,7-hydroxystaurosporine,partial,['PHASE1'],PHASE1,1,['NCT00031681']
+15,Entinostat,entinostat,exact_or_alias,"['PHASE1', 'PHASE2']",PHASE2,5,"['NCT00020579', 'NCT02437136', 'NCT01105377', 'NCT04708470', 'NCT03215264']"
+16,Trametinib,Trametinib,exact_or_alias,"['PHASE1', 'PHASE2']",PHASE2,20,"['NCT05907304', 'NCT02230553', 'NCT03714958', 'NCT03428126', 'NCT04303403']"
+20,Sabutoclax,sodium phosphate,partial,"['PHASE3', 'PHASE4']",PHASE4,2,"['NCT00410215', 'NCT05726097']"
+22,PD0325901,PD-0325901,exact_or_alias,"['PHASE1', 'PHASE2']",PHASE2,3,"['NCT02039336', 'NCT02510001', 'NCT00147550']"
+23,MK-1775,Adavosertib,exact_or_alias,['PHASE2'],PHASE2,1,['NCT02465060']
+24,Irinotecan,irinotecan hydrochloride,exact_or_alias,"['EARLY_PHASE1', 'NA', 'PHASE1', 'PHASE2', 'PHASE3', 'PHASE4']",PHASE4,396,"['NCT00023868', 'NCT01131078', 'NCT00827684', 'NCT03454620', 'NCT03184870']"
+25,Epirubicin,Epirubicin,exact_or_alias,['PHASE3'],PHASE3,2,"['NCT00309556', 'NCT00309569']"
+26,Bortezomib,bortezomib,exact_or_alias,"['PHASE1', 'PHASE2']",PHASE2,7,"['NCT00098982', 'NCT00622674', 'NCT00052507', 'NCT03607643', 'NCT00667641']"
+27,Topotecan,Topotecan,exact_or_alias,"['PHASE1', 'PHASE2']",PHASE2,3,"['NCT00193167', 'NCT00158886', 'NCT00215956']"
+28,Wee1 Inhibitor,Adavosertib,exact_or_alias,['PHASE2'],PHASE2,1,['NCT02465060']

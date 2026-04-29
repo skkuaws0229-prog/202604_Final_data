@@ -1,0 +1,27 @@
+our_drug,prism_drug,normalized,match_type
+Dactinomycin,actinomycin-d,actinomycind,exact_alias_or_salt
+Paclitaxel,paclitaxel,paclitaxel,exact_alias_or_salt
+Vinblastine,vinblastine,vinblastine,exact_alias_or_salt
+Vinorelbine,vinorelbine,vinorelbine,exact_alias_or_salt
+Docetaxel,docetaxel,docetaxel,exact_alias_or_salt
+Teniposide,teniposide,teniposide,exact_alias_or_salt
+Temsirolimus,temsirolimus,temsirolimus,exact_alias_or_salt
+Rapamycin,sirolimus,sirolimus,exact_alias_or_salt
+Lestaurtinib,lestaurtinib,lestaurtinib,exact_alias_or_salt
+Refametinib,refametinib,refametinib,exact_alias_or_salt
+Camptothecin,camptothecin,camptothecin,exact_alias_or_salt
+Tanespimycin,tanespimycin,tanespimycin,exact_alias_or_salt
+Staurosporine,7-hydroxystaurosporine,7hydroxystaurosporine,exact_alias_or_salt
+Entinostat,entinostat,entinostat,exact_alias_or_salt
+Trametinib,trametinib,trametinib,exact_alias_or_salt
+AZD2014,AZD2014,azd2014,exact_alias_or_salt
+AZD6482,AZD6482,azd6482,exact_alias_or_salt
+PD0325901,PD-0325901,pd0325901,exact_alias_or_salt
+MK-1775,MK-1775,mk1775,exact_alias_or_salt
+Irinotecan,irinotecan,irinotecan,exact_alias_or_salt
+Epirubicin,epirubicin,epirubicin,exact_alias_or_salt
+Bortezomib,bortezomib,bortezomib,exact_alias_or_salt
+Topotecan,topotecan,topotecan,exact_alias_or_salt
+Wee1 Inhibitor,MK-1775,mk1775,exact_alias_or_salt
+TW 37,TW-37,tw37,exact_alias_or_salt
+Navitoclax,navitoclax,navitoclax,exact_alias_or_salt

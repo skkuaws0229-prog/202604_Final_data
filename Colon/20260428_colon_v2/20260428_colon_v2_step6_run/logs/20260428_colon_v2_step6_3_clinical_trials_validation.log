@@ -1,0 +1,68 @@
+================================================================================
+Step 6-3: ClinicalTrials External Validation
+================================================================================
+
+[1] Top drugs 로드
+  Top drugs: 30
+
+[2] ClinicalTrials 데이터 로드
+  Total studies: 5661
+
+[3] Drug interventions 추출 (INTERVENTIONAL only)
+  Unique drug interventions: 2254
+
+[4] Drug matching
+  Matched: 14/30 (46.7%)
+  Unmatched: 16
+
+[5] Phase 분석
+  Phase 분포: {'PHASE1': 11, 'PHASE2': 10, 'PHASE3': 3, 'NA': 2, 'PHASE4': 1}
+  Phase II 이상: 10/14 (71.4%)
+
+[6] 저장
+  ✅ /Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_run/results/colon_clinical_trials_validation_results.json
+  ✅ /Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_run/results/colon_clinical_trials_matched_drugs.csv
+
+================================================================================
+ClinicalTrials Validation Summary
+================================================================================
+  Total CRC studies: 5661
+  Unique drug interventions: 2254
+  Top 30 matched: 14 (46.7%)
+  Phase II+: 10
+
+  Matched drugs:
+    # 2 Paclitaxel                → PHASE1,PHASE2                  (8 trials) [exact]
+    # 4 Vinorelbine               → PHASE1,PHASE2                  (1 trials) [partial]
+    # 5 Docetaxel                 → PHASE1,PHASE2                  (6 trials) [exact]
+    # 7 Temsirolimus              → PHASE1,PHASE2,PHASE3           (8 trials) [exact]
+    # 8 Rapamycin                 → PHASE1                         (2 trials) [exact]
+    #10 Refametinib               → PHASE2                         (2 trials) [partial]
+    #11 Camptothecin              → PHASE1                         (1 trials) [partial]
+    #14 Staurosporine             → PHASE1                         (1 trials) [partial]
+    #15 Entinostat                → PHASE1                         (1 trials) [exact]
+    #16 Trametinib                → PHASE1,PHASE2                  (4 trials) [exact]
+    #24 Irinotecan                → NA,PHASE1,PHASE2,PHASE3        (33 trials) [exact]
+    #25 Epirubicin                → NA,PHASE2,PHASE3,PHASE4        (7 trials) [exact]
+    #26 Bortezomib                → PHASE1,PHASE2                  (5 trials) [exact]
+    #27 Topotecan                 → PHASE2                         (1 trials) [partial]
+
+  Unmatched drugs:
+    # 1 Dactinomycin
+    # 3 Vinblastine
+    # 6 Teniposide
+    # 9 Lestaurtinib
+    #12 LMP744
+    #13 Tanespimycin
+    #17 SL0101
+    #18 AZD2014
+    #19 AZD6482
+    #20 Sabutoclax
+    #21 BX795
+    #22 PD0325901
+    #23 MK-1775
+    #28 Wee1 Inhibitor
+    #29 TW 37
+    #30 Navitoclax
+
+✅ Step 6-3 완료!

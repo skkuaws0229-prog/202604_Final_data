@@ -1,0 +1,30 @@
+{
+  "step": "20260428_colon_v2 Step7",
+  "experiment_id": "colon_v2_step7_no_admet_crc_tier_sort_only",
+  "experiment_label_ko": "ADMET 미적용: CRC 임상 Tier1–4 + ensemble rank만으로 Top15",
+  "inputs": {
+    "top30_csv": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_top30_drug_recommendations_tier1_tier2_tier3_tier4.csv",
+    "seed_json": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/config/20260428_colon_v2_step7_crc_clinical_tier_seed.json",
+    "admet_csv": null
+  },
+  "outputs": {
+    "top15_csv": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step7_top15_crc_tier1234_no_admet_tier_sort_only.csv",
+    "summary_json": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step7_summary_no_admet_tier_sort_only.json"
+  },
+  "selection_mode": "crc_tier_then_ensemble_rank",
+  "admet_merge": "no_admet_file",
+  "top15_row_count": 15,
+  "crc_tier_counts_top15": {
+    "1": 1,
+    "2": 8,
+    "3": 5,
+    "4": 1
+  },
+  "tier_semantics_ko": {
+    "1": "대장암(CRC) 승인 약물",
+    "2": "대장암 외 암종 승인, 대장암 적응증 확장·연구 중인 약물",
+    "3": "대장암에 전형적으로 쓰이지 않는(또는 미사용) 약물",
+    "4": "화합물·근거 부족·추가 확인이 필요한 약물"
+  },
+  "tier_policy": "ensemble_tier_20260428_colon_v2 우선, 없을 때만 seed INN 목록"
+}

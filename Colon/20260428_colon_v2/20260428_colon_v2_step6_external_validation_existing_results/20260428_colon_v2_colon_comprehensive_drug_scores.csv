@@ -1,0 +1,31 @@
+rank,drug_name,pred_ic50_mean,target,target_pathway,prism,clinical_trials,ct_max_phase,cosmic,cptac,geo,validation_count,confidence
+1,Dactinomycin,-3.878,RNA polymerase,Other,0,0,,0,0,0,0,Unvalidated
+2,Paclitaxel,-1.9728,Microtubule stabiliser,Mitosis,1,1,PHASE3,0,0,0,2,Low
+3,Vinblastine,-1.8813,Microtubule destabiliser,Mitosis,1,0,,0,0,0,1,Very Low
+4,Vinorelbine,-1.6595,Microtubule destabiliser,Mitosis,1,1,PHASE2,0,0,0,2,Low
+5,Docetaxel,-1.327,Microtubule stabiliser,Mitosis,1,1,PHASE2,0,0,0,2,Low
+6,Teniposide,-1.1011,,DNA replication,1,0,,0,0,0,1,Very Low
+7,Temsirolimus,-0.9398,MTOR,PI3K/MTOR signaling,1,1,PHASE2,1,1,1,5,Very High
+8,Rapamycin,-0.7915,MTORC1,PI3K/MTOR signaling,0,1,PHASE2,0,0,0,1,Very Low
+9,Lestaurtinib,-0.7815,"FLT3, JAK2, NTRK1, NTRK2, NTRK3","Other, kinases",1,0,,1,1,1,4,High
+10,Refametinib,-0.4661,"MEK1, MEK2",ERK MAPK signaling,1,0,,0,0,0,1,Very Low
+11,Camptothecin,-0.2178,TOP1,DNA replication,1,1,PHASE2,1,1,1,5,Very High
+12,LMP744,-0.1552,TOP1,DNA replication,0,0,,1,1,1,3,Medium
+13,Tanespimycin,-0.0524,HSP90,Protein stability and degradation,1,1,PHASE1,0,0,0,2,Low
+14,Staurosporine,0.0725,Broad spectrum kinase inhibitor,RTK signaling,0,1,PHASE1,0,0,0,1,Very Low
+15,Entinostat,0.1305,"HDAC1, HDAC3",Chromatin histone acetylation,1,1,PHASE2,0,1,1,4,High
+16,Trametinib,0.6698,"MEK1, MEK2",ERK MAPK signaling,1,1,PHASE2,0,0,0,2,Low
+17,SL0101,0.7479,"RSK, AURKB, PIM1, PIM3","Other, kinases",0,0,,1,1,1,3,Medium
+18,AZD2014,0.7689,"mTORC1, mTORC2",PI3K/MTOR signaling,1,0,,0,0,0,1,Very Low
+19,AZD6482,0.8164,PI3Kbeta,PI3K/MTOR signaling,1,0,,0,0,0,1,Very Low
+20,Sabutoclax,0.8355,"BCL2,  BCL-XL,  BFL1, MCL1",Apoptosis regulation,0,0,,1,1,1,3,Medium
+21,BX795,0.8559,"TBK1, PDK1 (PDPK1), IKK, AURKB, AURKC","Other, kinases",0,0,,0,1,1,2,Low
+22,PD0325901,0.8571,"MEK1, MEK2",ERK MAPK signaling,1,1,PHASE2,0,0,0,2,Low
+23,MK-1775,0.8597,"WEE1, PLK1",Cell cycle,1,0,,0,1,1,3,Medium
+24,Irinotecan,1.0711,TOP1,DNA replication,1,1,PHASE4,1,1,1,5,Very High
+25,Epirubicin,1.0864,Anthracycline,DNA replication,1,0,,0,0,0,1,Very Low
+26,Bortezomib,1.1377,Proteasome,Protein stability and degradation,1,1,PHASE2,0,0,0,2,Low
+27,Topotecan,1.1393,TOP1,DNA replication,1,1,PHASE2,1,1,1,5,Very High
+28,Wee1 Inhibitor,1.1434,"WEE1, CHEK1",Cell cycle,0,0,,0,1,1,2,Low
+29,TW 37,1.1855,"BCL2, BCL-XL, MCL1",Apoptosis regulation,1,0,,1,1,1,4,High
+30,Navitoclax,1.2055,"BCL2, BCL-XL, BCL-W",Apoptosis regulation,1,0,,1,1,1,4,High

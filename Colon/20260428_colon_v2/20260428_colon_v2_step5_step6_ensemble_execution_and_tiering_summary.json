@@ -1,0 +1,32 @@
+{
+  "directive_source": "/Users/skku_aws2_14/Downloads/CRC_ensemble_directive.md",
+  "ensemble_name": "20260428_colon_v2_weighted_5model",
+  "model_weights": {
+    "CatBoost_2B": 0.25,
+    "LightGBM_DART_2A": 0.24,
+    "FTTransformer_2A": 0.2,
+    "ResidualMLP_2A": 0.19,
+    "LightGBM_2A": 0.12
+  },
+  "oof_eval": {
+    "n_samples": 6366,
+    "spearman": 0.571672
+  },
+  "phase_policy": "2A \uc911\uc2ec, CatBoost\ub9cc 2B, 2C \uc81c\uc678",
+  "top30_file": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_top30_drug_recommendations_tier1234.csv",
+  "all_ranking_file": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_all_drugs_ranking.csv",
+  "tier_counts": {
+    "Tier4": 16,
+    "Tier2": 8,
+    "Tier3": 5,
+    "Tier1": 1
+  },
+  "note": "Drug-level ranking source uses existing colon_all_drugs_ranking_ensemble.csv from repository.",
+  "tier_definition": {
+    "Tier1": "CRC approved drugs",
+    "Tier2": "Approved in non-CRC and being studied for CRC (incl. indication expansion)",
+    "Tier3": "Drugs not used/established for CRC",
+    "Tier4": "Compounds or drugs needing additional review"
+  },
+  "tier_source_note": "Tier reassigned by indication-based rule per user instruction (not uncertainty-based)."
+}

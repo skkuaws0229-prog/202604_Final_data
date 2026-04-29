@@ -1,0 +1,230 @@
+{
+  "validation_source": "CPTAC",
+  "disease": "colorectal cancer (COAD)",
+  "dataset": "coad_cptac_2019",
+  "top_n_drugs": 30,
+  "target_genes_extracted": 37,
+  "mrna_genes": 13484,
+  "mrna_patients": 106,
+  "coad_read_distribution": {},
+  "targets_in_cptac": 14,
+  "targets_expressed": 14,
+  "drugs_with_target": 14,
+  "drugs_with_expressed_target": 14,
+  "hit_rate_target": 0.4667,
+  "hit_rate_expressed": 0.4667,
+  "hit_rate_target_pct": 46.7,
+  "hit_rate_expressed_pct": 46.7,
+  "expression_details": [
+    {
+      "gene": "MTOR",
+      "drugs": [
+        "Temsirolimus"
+      ],
+      "mean_expression": 10.0884,
+      "median_expression": 10.0815,
+      "std_expression": 0.5362,
+      "pct_patients_expressed": 100.0,
+      "n_patients": 106,
+      "is_expressed": true
+    },
+    {
+      "gene": "JAK2",
+      "drugs": [
+        "Lestaurtinib"
+      ],
+      "mean_expression": 9.3849,
+      "median_expression": 9.2479,
+      "std_expression": 0.6942,
+      "pct_patients_expressed": 100.0,
+      "n_patients": 106,
+      "is_expressed": true
+    },
+    {
+      "gene": "TOP1",
+      "drugs": [
+        "Camptothecin",
+        "LMP744",
+        "Irinotecan",
+        "Topotecan"
+      ],
+      "mean_expression": 11.7304,
+      "median_expression": 11.7006,
+      "std_expression": 0.4031,
+      "pct_patients_expressed": 100.0,
+      "n_patients": 106,
+      "is_expressed": true
+    },
+    {
+      "gene": "HDAC1",
+      "drugs": [
+        "Entinostat"
+      ],
+      "mean_expression": 11.9056,
+      "median_expression": 11.9636,
+      "std_expression": 0.3663,
+      "pct_patients_expressed": 100.0,
+      "n_patients": 106,
+      "is_expressed": true
+    },
+    {
+      "gene": "HDAC3",
+      "drugs": [
+        "Entinostat"
+      ],
+      "mean_expression": 10.165,
+      "median_expression": 10.1886,
+      "std_expression": 0.2961,
+      "pct_patients_expressed": 100.0,
+      "n_patients": 106,
+      "is_expressed": true
+    },
+    {
+      "gene": "AURKB",
+      "drugs": [
+        "SL0101",
+        "BX795"
+      ],
+      "mean_expression": 8.344,
+      "median_expression": 8.3465,
+      "std_expression": 0.6633,
+      "pct_patients_expressed": 100.0,
+      "n_patients": 106,
+      "is_expressed": true
+    },
+    {
+      "gene": "PIM1",
+      "drugs": [
+        "SL0101"
+      ],
+      "mean_expression": 9.5587,
+      "median_expression": 9.6804,
+      "std_expression": 0.5781,
+      "pct_patients_expressed": 100.0,
+      "n_patients": 106,
+      "is_expressed": true
+    },
+    {
+      "gene": "PIM3",
+      "drugs": [
+        "SL0101"
+      ],
+      "mean_expression": 10.412,
+      "median_expression": 10.3765,
+      "std_expression": 0.5269,
+      "pct_patients_expressed": 100.0,
+      "n_patients": 106,
+      "is_expressed": true
+    },
+    {
+      "gene": "BCL2",
+      "drugs": [
+        "Sabutoclax",
+        "TW 37",
+        "Navitoclax"
+      ],
+      "mean_expression": 7.9743,
+      "median_expression": 8.0252,
+      "std_expression": 0.7919,
+      "pct_patients_expressed": 100.0,
+      "n_patients": 106,
+      "is_expressed": true
+    },
+    {
+      "gene": "MCL1",
+      "drugs": [
+        "Sabutoclax",
+        "TW 37"
+      ],
+      "mean_expression": 13.2049,
+      "median_expression": 13.1846,
+      "std_expression": 0.4588,
+      "pct_patients_expressed": 100.0,
+      "n_patients": 106,
+      "is_expressed": true
+    },
+    {
+      "gene": "TBK1",
+      "drugs": [
+        "BX795"
+      ],
+      "mean_expression": 10.3252,
+      "median_expression": 10.2715,
+      "std_expression": 0.4441,
+      "pct_patients_expressed": 100.0,
+      "n_patients": 106,
+      "is_expressed": true
+    },
+    {
+      "gene": "WEE1",
+      "drugs": [
+        "MK-1775",
+        "Wee1 Inhibitor"
+      ],
+      "mean_expression": 9.7016,
+      "median_expression": 9.6777,
+      "std_expression": 0.58,
+      "pct_patients_expressed": 100.0,
+      "n_patients": 106,
+      "is_expressed": true
+    },
+    {
+      "gene": "PLK1",
+      "drugs": [
+        "MK-1775"
+      ],
+      "mean_expression": 8.9772,
+      "median_expression": 8.9784,
+      "std_expression": 0.7768,
+      "pct_patients_expressed": 100.0,
+      "n_patients": 106,
+      "is_expressed": true
+    },
+    {
+      "gene": "CHEK1",
+      "drugs": [
+        "Wee1 Inhibitor"
+      ],
+      "mean_expression": 9.7491,
+      "median_expression": 9.8194,
+      "std_expression": 0.5571,
+      "pct_patients_expressed": 100.0,
+      "n_patients": 106,
+      "is_expressed": true
+    }
+  ],
+  "drugs_matched": [
+    "BX795",
+    "Camptothecin",
+    "Entinostat",
+    "Irinotecan",
+    "LMP744",
+    "Lestaurtinib",
+    "MK-1775",
+    "Navitoclax",
+    "SL0101",
+    "Sabutoclax",
+    "TW 37",
+    "Temsirolimus",
+    "Topotecan",
+    "Wee1 Inhibitor"
+  ],
+  "drugs_unmatched": [
+    "AZD2014",
+    "AZD6482",
+    "Bortezomib",
+    "Dactinomycin",
+    "Docetaxel",
+    "Epirubicin",
+    "PD0325901",
+    "Paclitaxel",
+    "Rapamycin",
+    "Refametinib",
+    "Staurosporine",
+    "Tanespimycin",
+    "Teniposide",
+    "Trametinib",
+    "Vinblastine",
+    "Vinorelbine"
+  ]
+}

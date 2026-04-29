@@ -1,0 +1,56 @@
+================================================================================
+Step 6-4: COSMIC External Validation
+================================================================================
+
+[1] Top drugs 로드
+  Top drugs: 30
+
+[2] COSMIC tar 해제
+  Extracting: Actionability_AllData_Tsv_v19_GRCh37.tar
+  Extracting: Cosmic_CancerGeneCensus_Tsv_v103_GRCh38.tar
+  Extracting: Cosmic_Classification_Tsv_v103_GRCh38.tar
+  Extracting: Cosmic_MutantCensus_Tsv_v103_GRCh38.tar
+  Extracted 8 files to /Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_run/curated_data/validation/cosmic/extracted
+
+[3] Cancer Gene Census 로드
+  Loading CGC: Cosmic_CancerGeneCensus_v103_GRCh38.tsv.gz
+  CGC rows: 763, columns: ['GENE_SYMBOL', 'NAME', 'COSMIC_GENE_ID', 'CHROMOSOME', 'GENOME_START', 'GENOME_STOP', 'CHR_BAND', 'SOMATIC', 'GERMLINE', 'TUMOUR_TYPES_SOMATIC']
+
+[4] Actionability 로드
+  Loading Actionability: Actionability_AllData_v19_GRCh37.tsv
+  Actionability rows: 15601, columns: ['MUTATION_REMARK', 'MUTATION_SELECTIVITY', 'GENOMIC_MUTATION_ID', 'FUSION_ID', 'MUTATION_AA_SYNTAX', 'DISEASE', 'ACTIONABILITY_RANK', 'ACTIONABILITY_RANK_DESCRIPTION', 'DEVELOPMENT_STATUS', 'DRUG_COMBINATION']
+
+[5] CRC 필터링
+  CRC filter: 73/763 rows (columns: ['TUMOUR_TYPES_SOMATIC', 'TUMOUR_TYPES_GERMLINE', 'CANCER_SYNDROME'])
+  CRC filter: 438/15601 rows (columns: ['DISEASE'])
+
+[6] 타겟 유전자 추출
+  Extracted 37 unique target genes from 30 drugs
+
+[7] COSMIC 매칭 (전체)
+  CGC genes: 763
+  Actionability genes: 0, drugs: 0
+  Matched target genes: 9/37
+
+[8] COSMIC 매칭 (CRC 전용)
+  CGC genes: 73
+  Actionability genes: 0, drugs: 0
+  Matched target genes: 1/37
+
+[9] Drug-level 결과
+  Drugs with COSMIC target (all): 10/30
+  Drugs with COSMIC target (CRC): 1/30
+
+[10] 저장
+  ✅ /Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_run/results/colon_cosmic_validation_results.json
+  ✅ /Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_run/results/colon_cosmic_matched_drugs.csv
+
+================================================================================
+COSMIC Validation Summary
+================================================================================
+  Target genes from Top 30: 37
+  COSMIC matched (all cancer): 10/30 (33.3%)
+  COSMIC matched (CRC only): 1/30 (3.3%)
+  Matched drugs (all): ['Camptothecin', 'Irinotecan', 'LMP744', 'Lestaurtinib', 'Navitoclax', 'SL0101', 'Sabutoclax', 'TW 37', 'Temsirolimus', 'Topotecan']
+
+✅ Step 6-4 완료!

@@ -1,0 +1,89 @@
+================================================================================
+Step 6-6: Comprehensive Validation Scoring (5 Sources)
+================================================================================
+
+[1] Top drugs 로드
+  Top drugs: 30
+
+[2] 검증 결과 로드
+
+[3] 소스별 매칭 약물
+  PRISM: 22
+  ClinicalTrials: 14
+  COSMIC: 10
+  CPTAC: 14
+  GEO: 0
+
+[4] 약물별 스코어 계산
+
+[5] 통계
+  Confidence 분포: {'Low': 11, 'Very Low': 10, 'High': 4, 'Medium': 4, 'Unvalidated': 1}
+  평균 통과 수: 2.00/5
+  소스별 통과율: {'PRISM': 73.3, 'ClinicalTrials': 46.7, 'COSMIC': 33.3, 'CPTAC': 46.7, 'GEO': 0.0}
+  5/5 통과 (Very High): 0
+  4/5+ 통과 (High+): 4
+    #7 Temsirolimus (4/5)
+    #11 Camptothecin (4/5)
+    #24 Irinotecan (4/5)
+    #27 Topotecan (4/5)
+
+[6] 저장
+  ✅ /Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_run/results/colon_comprehensive_drug_scores.csv
+  ✅ /Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_run/results/colon_comprehensive_validation_results.json
+
+================================================================================
+Comprehensive Validation Summary (5 Sources)
+================================================================================
+  Disease: Colorectal Cancer (COAD+READ)
+  Top 30 drugs evaluated
+
+  Source Hit Rates:
+    PRISM               : 73.3%
+    ClinicalTrials      : 46.7%
+    COSMIC              : 33.3%
+    CPTAC               : 46.7%
+    GEO                 : 0.0%
+
+  Confidence Distribution:
+    High           : 4 drugs
+    Medium         : 4 drugs
+    Low            : 11 drugs
+    Very Low       : 10 drugs
+    Unvalidated    : 1 drugs
+
+  Average validation: 2.00/5
+
+Rank Drug                      PRISM    CT COSMIC CPTAC   GEO Total   Confidence
+-------------------------------------------------------------------------------------
+#  1 Dactinomycin                  ❌     ❌      ❌     ❌     ❌     0/5  Unvalidated
+#  2 Paclitaxel                    ✅     ✅      ❌     ❌     ❌     2/5          Low
+#  3 Vinblastine                   ✅     ❌      ❌     ❌     ❌     1/5     Very Low
+#  4 Vinorelbine                   ✅     ✅      ❌     ❌     ❌     2/5          Low
+#  5 Docetaxel                     ✅     ✅      ❌     ❌     ❌     2/5          Low
+#  6 Teniposide                    ✅     ❌      ❌     ❌     ❌     1/5     Very Low
+#  7 Temsirolimus                  ✅     ✅      ✅     ✅     ❌     4/5         High
+#  8 Rapamycin                     ❌     ✅      ❌     ❌     ❌     1/5     Very Low
+#  9 Lestaurtinib                  ✅     ❌      ✅     ✅     ❌     3/5       Medium
+# 10 Refametinib                   ✅     ✅      ❌     ❌     ❌     2/5          Low
+# 11 Camptothecin                  ✅     ✅      ✅     ✅     ❌     4/5         High
+# 12 LMP744                        ❌     ❌      ✅     ✅     ❌     2/5          Low
+# 13 Tanespimycin                  ✅     ❌      ❌     ❌     ❌     1/5     Very Low
+# 14 Staurosporine                 ❌     ✅      ❌     ❌     ❌     1/5     Very Low
+# 15 Entinostat                    ✅     ✅      ❌     ✅     ❌     3/5       Medium
+# 16 Trametinib                    ✅     ✅      ❌     ❌     ❌     2/5          Low
+# 17 SL0101                        ❌     ❌      ✅     ✅     ❌     2/5          Low
+# 18 AZD2014                       ✅     ❌      ❌     ❌     ❌     1/5     Very Low
+# 19 AZD6482                       ✅     ❌      ❌     ❌     ❌     1/5     Very Low
+# 20 Sabutoclax                    ❌     ❌      ✅     ✅     ❌     2/5          Low
+# 21 BX795                         ❌     ❌      ❌     ✅     ❌     1/5     Very Low
+# 22 PD0325901                     ✅     ❌      ❌     ❌     ❌     1/5     Very Low
+# 23 MK-1775                       ✅     ❌      ❌     ✅     ❌     2/5          Low
+# 24 Irinotecan                    ✅     ✅      ✅     ✅     ❌     4/5         High
+# 25 Epirubicin                    ✅     ✅      ❌     ❌     ❌     2/5          Low
+# 26 Bortezomib                    ✅     ✅      ❌     ❌     ❌     2/5          Low
+# 27 Topotecan                     ✅     ✅      ✅     ✅     ❌     4/5         High
+# 28 Wee1 Inhibitor                ❌     ❌      ❌     ✅     ❌     1/5     Very Low
+# 29 TW 37                         ✅     ❌      ✅     ✅     ❌     3/5       Medium
+# 30 Navitoclax                    ✅     ❌      ✅     ✅     ❌     3/5       Medium
+
+✅ Step 6-6 완료!

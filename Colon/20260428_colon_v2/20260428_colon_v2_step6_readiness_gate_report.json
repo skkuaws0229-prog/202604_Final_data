@@ -1,0 +1,49 @@
+{
+  "title": "20260428_colon_v2 Step6 readiness gate",
+  "sync_policy": "copy-only (no delete/modify on source)",
+  "synced_root": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_synced_inputs/curated_data",
+  "required_checks": {
+    "prism_primary_cell_line_info": {
+      "exists": true,
+      "size_bytes": 46849,
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_synced_inputs/curated_data/validation/prism/prism-repurposing-20q2-primary-screen-cell-line-info.csv"
+    },
+    "prism_primary_replicate_collapsed_treatment_info": {
+      "exists": true,
+      "size_bytes": 1312286,
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_synced_inputs/curated_data/validation/prism/prism-repurposing-20q2-primary-screen-replicate-collapsed-treatment-info.csv"
+    },
+    "clinicaltrials_pages_present": {
+      "exists": true,
+      "size_bytes": 17221049,
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_synced_inputs/curated_data/validation/clinicaltrials/clinicaltrials_liver_cancer_page_001.json"
+    },
+    "cosmic_cgc_tar": {
+      "exists": true,
+      "size_bytes": 71680,
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_synced_inputs/curated_data/validation/cosmic/Cosmic_CancerGeneCensus_Tsv_v103_GRCh38.tar"
+    },
+    "cptac_mrna": {
+      "exists": true,
+      "size_bytes": 10463333,
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_synced_inputs/curated_data/cbioportal/coad_cptac_2019/data_mrna_seq_v2_rsem.txt"
+    },
+    "cptac_clinical_patient": {
+      "exists": true,
+      "size_bytes": 14621,
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_synced_inputs/curated_data/cbioportal/coad_cptac_2019/data_clinical_patient.txt"
+    },
+    "geo_gse39582_matrix": {
+      "exists": true,
+      "size_bytes": 172157430,
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_synced_inputs/curated_data/geo/GSE39582/matrix/GSE39582_series_matrix.txt.gz"
+    },
+    "geo_gse39582_soft": {
+      "exists": true,
+      "size_bytes": 287763812,
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_synced_inputs/curated_data/geo/GSE39582/metadata/GSE39582_family.soft.gz"
+    }
+  },
+  "ready_to_enter_step6": true,
+  "recommended_next": "Proceed Step6 dry-run/check if ready_to_enter_step6=true; otherwise resync missing inputs."
+}

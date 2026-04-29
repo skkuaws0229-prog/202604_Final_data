@@ -1,0 +1,20 @@
+gene,drugs,mean_expression,median_expression,match_method
+MTOR,Temsirolimus,4.9996,4.9288,annotation
+FLT3,Lestaurtinib,4.2976,4.262,annotation
+JAK2,Lestaurtinib,4.6542,4.5956,annotation
+NTRK1,Lestaurtinib,3.1782,3.1498,annotation
+NTRK2,Lestaurtinib,3.7413,3.6291,annotation
+NTRK3,Lestaurtinib,4.2888,4.7389,annotation
+TOP1,"Camptothecin, LMP744, Irinotecan, Topotecan",8.2597,8.8067,annotation
+HDAC1,Entinostat,10.5065,10.5724,annotation
+HDAC3,Entinostat,7.5776,7.5675,annotation
+AURKB,"SL0101, BX795",5.3771,4.8757,annotation
+PIM1,SL0101,7.0849,7.0544,annotation
+PIM3,SL0101,8.9773,8.9439,annotation
+BCL2,"Sabutoclax, TW 37, Navitoclax",4.9434,4.7917,annotation
+MCL1,"Sabutoclax, TW 37",7.2054,6.5102,annotation
+TBK1,BX795,8.0246,8.073,annotation
+AURKC,BX795,4.99,4.973,annotation
+WEE1,"MK-1775, Wee1 Inhibitor",7.8397,7.869,annotation
+PLK1,MK-1775,7.1679,7.1693,annotation
+CHEK1,Wee1 Inhibitor,5.8477,5.7838,annotation

@@ -1,0 +1,63 @@
+{
+  "schema_version": "20260428",
+  "tier_semantics_ko": {
+    "1": "대장암(CRC) 승인 약물",
+    "2": "대장암 외 암종 승인, 대장암 적응증 확장·연구 중인 약물",
+    "3": "대장암에 전형적으로 쓰이지 않는(또는 미사용) 약물",
+    "4": "화합물·근거 부족·추가 확인이 필요한 약물"
+  },
+  "tier1_crc_approved_inn": [
+    "irinotecan",
+    "oxaliplatin",
+    "fluorouracil",
+    "5fluorouracil",
+    "capecitabine",
+    "trifluridine",
+    "cetuximab",
+    "panitumumab",
+    "bevacizumab",
+    "regorafenib",
+    "encorafenib",
+    "pembrolizumab",
+    "nivolumab",
+    "ipilimumab",
+    "ramucirumab",
+    "zivafilbercept"
+  ],
+  "tier2_other_cancer_crc_expansion_inn": [
+    "paclitaxel",
+    "docetaxel",
+    "vinorelbine",
+    "vinblastine",
+    "temsirolimus",
+    "rapamycin",
+    "sirolimus",
+    "trametinib",
+    "bortezomib",
+    "topotecan",
+    "epirubicin"
+  ],
+  "tier4_research_tool_or_uncertain_inn": [
+    "camptothecin",
+    "staurosporine",
+    "sl0101",
+    "lmp744",
+    "azd2014",
+    "azd6482",
+    "sabutoclax",
+    "bx795",
+    "lestaurtinib",
+    "refametinib",
+    "tanespimycin",
+    "mk1775",
+    "mk-1775",
+    "entinostat",
+    "tw37",
+    "tw 37",
+    "navitoclax",
+    "pd0325901",
+    "wee1inhibitor",
+    "wee1 inhibitor"
+  ],
+  "notes_ko": "시드는 유지보수용이다. FDA/EMA 라벨 변경 시 tier 목록과 근거 링크를 함께 갱신한다. Step6 ensemble의 tier_20260428_colon_v2와 불일치하면 summary JSON에 기록된다."
+}

@@ -1,0 +1,76 @@
+================================================================================
+Step 6-GEO: GEO GSE39582 External Validation
+================================================================================
+
+[1] Top drugs 로드
+  Top drugs: 30
+
+[2] 타겟 유전자 추출
+  Extracted 37 unique target genes
+
+[3] GEO series matrix 파싱
+  Parsing: GSE39582_series_matrix.txt.gz
+  Metadata lines: 129
+  Data lines: 54675
+  Samples: 585
+  Clinical features: ['organism', 'dataset', 'Sex', 'age.at.diagnosis (year)', 'tnm.stage', 'tnm.t', 'tnm.n', 'tnm.m', 'tumor.location', 'chemotherapy.adjuvant']
+  Expression matrix: 54675 probes × 585 samples
+
+[4] Probe-Gene annotation
+  Loaded probe-to-gene mapping: 45118 probes → 21753 genes
+
+[5] 타겟 유전자 발현 분석
+  Matched genes: 19/37
+
+[6] Drug-level 결과
+  Drugs with expressed target in GEO: 14/30
+
+[7] Clinical metadata 요약
+  organism: {'Homo sapiens': 585}
+  dataset: {'discovery': 443, 'validation': 123, 'Non Tumoral': 19}
+  Sex: {'Male': 322, 'Female': 263}
+  age.at.diagnosis (year): {'69': 22, '70': 21, '73': 20, '71': 20, '68': 20}
+  tnm.stage: {'2': 271, '3': 210, '4': 60, '1': 38, '0': 4}
+  tnm.t: {'T3': 379, 'T4': 119, 'T2': 49, 'N/A': 22, 'T1': 12}
+  tnm.n: {'N0': 314, 'N1': 137, 'N2': 100, 'N/A': 22, 'N3': 6}
+  tnm.m: {'M0': 499, 'M1': 61, 'N/A': 22, 'MX': 3}
+  tumor.location: {'distal': 351, 'proximal': 232, 'N/A': 2}
+  chemotherapy.adjuvant: {'N': 326, 'Y': 240, 'N/A': 19}
+  chemotherapy.adjuvant.type: {'N/A': 411, '5FU': 82, 'FUFOL': 54, 'FOLFOX': 23, 'FOLFIRI': 12}
+  rfs.event: {'0': 395, '1': 179, 'N/A': 11}
+  rfs.delay: {'0': 38, '14': 12, '9': 12, '19': 11, '5': 11}
+  os.event: {'0': 385, '1': 194, 'N/A': 6}
+  os.delay (months): {'14': 12, '86': 11, '46': 11, '32': 10, '53': 10}
+  mmr.status: {'pMMR': 459, 'dMMR': 77, 'N/A': 49}
+  cimp.status: {'-': 420, '+': 93, 'N/A': 72}
+  cin.status: {'+': 369, '-': 112, 'N/A': 104}
+  tp53.mutation: {'N/A': 234, 'M': 190, 'WT': 161}
+  tp53.mutation.dna: {'N/A': 517, 'c.524G>A': 6, 'c.844C>T': 5, 'c.587C>T': 4, 'FS': 4}
+  tp53.mutation.exon.number: {'N/A': 517, 'c.524G>A': 6, 'c.844C>T': 5, 'c.587C>T': 4, 'FS': 4}
+  tp53.mutation.protein: {'N/A': 519, 'p.R175H': 6, 'p.R282W': 5, 'p.R196X': 4, 'FS': 4}
+  kras.mutation: {'WT': 328, 'M': 217, 'N/A': 40}
+  kras.mutation.dna: {'N/A': 371, 'c.35G>A': 52, 'EX2.codon12': 47, 'c.38G>A': 27, 'c.35G>T': 22}
+  kras.mutation.exon.number: {'N/A': 371, 'c.35G>A': 52, 'EX2.codon12': 47, 'c.38G>A': 27, 'c.35G>T': 22}
+  kras.mutation.protein: {'N/A': 472, 'p.G12D': 43, 'p.G13D': 23, 'p.G12V': 22, 'p.G12S': 6}
+  braf.mutation: {'WT': 461, 'N/A': 73, 'M': 51}
+  braf.mutation.dna: {'N/A': 560, 'c.1799T>A': 25}
+  braf.mutation.exon.number: {'N/A': 560, 'c.1799T>A': 25}
+  braf.mutation.protein: {'N/A': 560, 'p.V600E': 25}
+  cit.molecularsubtype: {'C5': 152, 'C1': 116, 'C2': 104, 'C3': 75, 'C6': 60}
+  dependancy sample: {'N/A': 568, 'CIT546': 1, 'CIT533': 1, 'CIT525': 1, 'CIT415': 1}
+  rna.extraction.method: {'Manual-Rneasy Mini (Qiagen)': 156, 'Manual-Trizol': 147, 'TriReagent & Manual-Rneasy Mini (Qiagen)': 134, 'Manual-Rneasy Micro (Qiagen)': 96, 'RNA NOW': 19}
+
+[8] 저장
+  ✅ /Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_run/results/colon_geo_validation_results.json
+  ✅ /Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_run/results/colon_geo_matched_drugs.csv
+
+================================================================================
+GEO GSE39582 Validation Summary
+================================================================================
+  Dataset: GSE39582 (Marisa et al. 2013)
+  Patients: 585
+  Probes: 54675
+  Target genes: 37 → matched: 19
+  Drugs with expressed target: 14/30 (46.7%)
+
+✅ Step 6-GEO 완료!

@@ -1,0 +1,32 @@
+{
+  "title": "20260428_colon_v2 external validation asset check",
+  "copied_existing_result_files": [
+    "20260428_colon_v2_colon_clinical_trials_validation_results.json",
+    "20260428_colon_v2_colon_comprehensive_drug_scores.csv",
+    "20260428_colon_v2_colon_comprehensive_validation_results.json",
+    "20260428_colon_v2_colon_cosmic_validation_results.json",
+    "20260428_colon_v2_colon_cptac_validation_results.json",
+    "20260428_colon_v2_colon_geo_validation_results.json",
+    "20260428_colon_v2_colon_prism_validation_results.json",
+    "20260428_colon_v2_colon_top30_drugs_ensemble.csv",
+    "20260428_colon_v2_colon_top50_drugs_ensemble.csv"
+  ],
+  "required_by_protocol": [
+    "PRISM",
+    "ClinicalTrials",
+    "COSMIC",
+    "CPTAC",
+    "GEO",
+    "Comprehensive scoring"
+  ],
+  "status": {
+    "PRISM_result_json": true,
+    "ClinicalTrials_result_json": true,
+    "COSMIC_result_json": true,
+    "CPTAC_result_json": true,
+    "GEO_result_json": true,
+    "Comprehensive_result_json": true,
+    "Comprehensive_score_csv": true
+  },
+  "note": "Copied from existing repository tracked outputs without modifying originals."
+}

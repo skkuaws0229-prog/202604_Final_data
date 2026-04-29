@@ -1,0 +1,30 @@
+{
+  "step": "20260428_colon_v2 Step7",
+  "experiment_id": "colon_v2_step7_admet22assay_choi_protocol",
+  "experiment_label_ko": "초이 프로토콜 22 assay ADMET(Tanimoto) 병합 후 PASS/WARNING 기준 Top15",
+  "inputs": {
+    "top30_csv": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step6_top30_drug_recommendations_tier1_tier2_tier3_tier4.csv",
+    "seed_json": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/config/20260428_colon_v2_step7_crc_clinical_tier_seed.json",
+    "admet_csv": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/admet/20260428_colon_v2_step7/20260428_colon_v2_step7_admet_22assay_choi_protocol_tanimoto_top30_scored.csv"
+  },
+  "outputs": {
+    "top15_csv": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step7_top15_crc_tier1234_admet22assay_choi_protocol.csv",
+    "summary_json": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260428_colon_v2/20260428_colon_v2_step7_summary_admet22assay_choi_protocol.json"
+  },
+  "selection_mode": "admet_protocol_pass_warning",
+  "admet_merge": "merged_on_canonical_drug_id",
+  "top15_row_count": 15,
+  "crc_tier_counts_top15": {
+    "1": 1,
+    "2": 5,
+    "3": 1,
+    "4": 8
+  },
+  "tier_semantics_ko": {
+    "1": "대장암(CRC) 승인 약물",
+    "2": "대장암 외 암종 승인, 대장암 적응증 확장·연구 중인 약물",
+    "3": "대장암에 전형적으로 쓰이지 않는(또는 미사용) 약물",
+    "4": "화합물·근거 부족·추가 확인이 필요한 약물"
+  },
+  "tier_policy": "ensemble_tier_20260428_colon_v2 우선, 없을 때만 seed INN 목록"
+}

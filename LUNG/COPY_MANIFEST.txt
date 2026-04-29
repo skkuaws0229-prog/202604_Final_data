@@ -1,0 +1,40 @@
+LUNG reproducibility bundle — GitHub safe snapshot
+
+Created: 2026-04-29
+
+Canonical S3 destination:
+  s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/LUNG/
+
+Included in this GitHub folder:
+  1) workspace_git_snapshot/
+     - public reproduction docs
+     - lightweight reports/results (csv/json/html/md)
+     - bootstrap/sync scripts
+     - S3 inventory manifests
+  2) raw_source_snapshot/README.md
+     - Step0 raw data mirror guidance only
+  3) pipeline_s3_work/README.md
+     - S3 project structure guidance only
+
+Excluded from GitHub by design:
+  - raw_source_snapshot/Lung_raw actual binaries
+  - project_root/curated_data actual datasets
+  - project_root/data numpy arrays
+  - project_root/fe_qc parquet intermediates
+  - logs containing local secret-store paths
+  - large single-file detailed prediction csv preserved on S3 only
+
+Current S3 object counts:
+  - total LUNG prefix objects: 3299
+  - raw_source_snapshot/Lung_raw objects: 2495
+
+Restore from S3:
+  - Step0 raw bootstrap:
+    workspace_git_snapshot/scripts/bootstrap_lung_step0_raw_from_s3.sh
+  - Step5~Step7 package bootstrap:
+    workspace_git_snapshot/scripts/bootstrap_lung_repro_from_s3.sh
+
+Source policy:
+  - source buckets were read only
+  - original raw data was not modified or deleted
+  - current LUNG S3 workspace received copy-only mirrors

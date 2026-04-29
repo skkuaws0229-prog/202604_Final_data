@@ -1,0 +1,6 @@
+# Keep the GitHub LUNG bundle lightweight and safe.
+raw_source_snapshot/Lung_raw/
+pipeline_s3_work/project_root/
+workspace_git_snapshot/**/*.npy
+workspace_git_snapshot/**/*.parquet
+workspace_git_snapshot/**/*.log

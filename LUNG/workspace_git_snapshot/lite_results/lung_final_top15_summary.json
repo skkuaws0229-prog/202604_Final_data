@@ -1,0 +1,53 @@
+{
+  "total_candidates": 30,
+  "admet_pass": 28,
+  "top_15_selected": 15,
+  "category_distribution": {
+    "REPURPOSING_CANDIDATE": 6,
+    "CLINICAL_TRIAL": 4,
+    "FDA_APPROVED_LUNG": 3,
+    "RESEARCH_PHASE": 2
+  },
+  "top_5_recommendations": [
+    {
+      "recommendation_rank": 1,
+      "drug_name": "Docetaxel",
+      "usage_category": "FDA_APPROVED_LUNG",
+      "multi_objective_score": 0.625,
+      "confidence": 75,
+      "n_clinical_trials": 423
+    },
+    {
+      "recommendation_rank": 2,
+      "drug_name": "Paclitaxel",
+      "usage_category": "FDA_APPROVED_LUNG",
+      "multi_objective_score": 0.5583333333333333,
+      "confidence": 75,
+      "n_clinical_trials": 489
+    },
+    {
+      "recommendation_rank": 3,
+      "drug_name": "Savolitinib",
+      "usage_category": "FDA_APPROVED_LUNG",
+      "multi_objective_score": 0.2697973204950822,
+      "confidence": 75,
+      "n_clinical_trials": 12
+    },
+    {
+      "recommendation_rank": 4,
+      "drug_name": "Entinostat",
+      "usage_category": "RESEARCH_PHASE",
+      "multi_objective_score": 0.3650122025985619,
+      "confidence": 100,
+      "n_clinical_trials": 13
+    },
+    {
+      "recommendation_rank": 5,
+      "drug_name": "Tanespimycin",
+      "usage_category": "RESEARCH_PHASE",
+      "multi_objective_score": 0.3269999999999999,
+      "confidence": 75,
+      "n_clinical_trials": 1
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {"id": "disease_nsclc", "label": "Non-Small Cell Lung Cancer", "type": "disease"},
+    {"id": "drug_osimertinib", "label": "Osimertinib", "type": "drug", "category": "FDA_APPROVED"},
+    {"id": "drug_erlotinib", "label": "Erlotinib", "type": "drug", "category": "FDA_APPROVED"},
+    {"id": "drug_gefitinib", "label": "Gefitinib", "type": "drug", "category": "FDA_APPROVED"},
+    {"id": "drug_pembrolizumab", "label": "Pembrolizumab", "type": "drug", "category": "FDA_APPROVED"},
+    {"id": "drug_cisplatin", "label": "Cisplatin", "type": "drug", "category": "FDA_APPROVED"},
+    {"id": "drug_pemetrexed", "label": "Pemetrexed", "type": "drug", "category": "FDA_APPROVED"},
+    {"id": "drug_crizotinib", "label": "Crizotinib", "type": "drug", "category": "REPURPOSING_CANDIDATE"},
+    {"id": "target_egfr", "label": "EGFR", "type": "target"},
+    {"id": "target_alk", "label": "ALK", "type": "target"},
+    {"id": "target_pdcd1", "label": "PDCD1", "type": "target"},
+    {"id": "target_met", "label": "MET", "type": "target"}
+  ],
+  "edges": [
+    {"source": "drug_osimertinib", "target": "disease_nsclc", "type": "predicted_for"},
+    {"source": "drug_erlotinib", "target": "disease_nsclc", "type": "predicted_for"},
+    {"source": "drug_gefitinib", "target": "disease_nsclc", "type": "predicted_for"},
+    {"source": "drug_pembrolizumab", "target": "disease_nsclc", "type": "predicted_for"},
+    {"source": "drug_cisplatin", "target": "disease_nsclc", "type": "predicted_for"},
+    {"source": "drug_pemetrexed", "target": "disease_nsclc", "type": "predicted_for"},
+    {"source": "drug_crizotinib", "target": "disease_nsclc", "type": "predicted_for"},
+    {"source": "drug_osimertinib", "target": "target_egfr", "type": "targets"},
+    {"source": "drug_erlotinib", "target": "target_egfr", "type": "targets"},
+    {"source": "drug_gefitinib", "target": "target_egfr", "type": "targets"},
+    {"source": "drug_crizotinib", "target": "target_alk", "type": "targets"},
+    {"source": "drug_pembrolizumab", "target": "target_pdcd1", "type": "targets"},
+    {"source": "drug_crizotinib", "target": "target_met", "type": "targets"}
+  ]
+}

@@ -1,0 +1,15 @@
+.
+./GDSC
+./LInc1000
+./additional_sources
+./admet
+./cbioportal
+./chembl
+./cptac_stad
+./depmap
+./drugbank
+./geo
+./gtex
+./msigdb
+./opentargets
+./string

@@ -1,0 +1,157 @@
+{
+  "timestamp": "2026-04-21T19:49:36.416194",
+  "project_root": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD",
+  "files": {
+    "labels": {
+      "exists": true,
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/data/labels.parquet",
+      "size_bytes": 65170
+    },
+    "drug_features": {
+      "exists": true,
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/data/drug_features.parquet",
+      "size_bytes": 26852
+    },
+    "drug_target_mapping": {
+      "exists": true,
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/data/drug_target_mapping.parquet",
+      "size_bytes": 5902
+    },
+    "lincs_stad": {
+      "exists": true,
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/data/lincs_stad.parquet",
+      "size_bytes": 29256910
+    },
+    "lincs_stad_drug_level": {
+      "exists": true,
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/data/lincs_stad_drug_level.parquet",
+      "size_bytes": 8413371
+    },
+    "lincs_stad_drug_level_prefixed": {
+      "exists": true,
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/data/lincs_stad_drug_level_with_crispr_prefix.parquet",
+      "size_bytes": 9033941
+    },
+    "depmap_crispr_long_pre_refilter": {
+      "exists": true,
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/curated_data/processed/depmap/depmap_crispr_long_stad.parquet",
+      "size_bytes": 179267550
+    },
+    "depmap_crispr_long_post_refilter": {
+      "exists": true,
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/data/depmap/depmap_crispr_long_stad.parquet",
+      "size_bytes": 3290223
+    },
+    "stad_subtype_metadata": {
+      "exists": false,
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/data/stad_subtype_metadata.parquet"
+    },
+    "gdsc_for_fe": {
+      "exists": true,
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/data/GDSC2-dataset.parquet",
+      "size_bytes": 68305
+    }
+  },
+  "schemas": {
+    "labels": {
+      "shape": [
+        6060,
+        4
+      ]
+    },
+    "drug_features": {
+      "shape": [
+        295,
+        5
+      ]
+    },
+    "drug_target_mapping": {
+      "shape": [
+        485,
+        2
+      ]
+    },
+    "lincs_stad": {
+      "shape": [
+        362,
+        12336
+      ]
+    },
+    "lincs_stad_drug_level_prefixed": {
+      "shape": [
+        37,
+        12023
+      ]
+    },
+    "depmap_crispr_long_pre_refilter": {
+      "shape": [
+        20443404,
+        3
+      ]
+    },
+    "depmap_crispr_long_post_refilter": {
+      "shape": [
+        355284,
+        3
+      ]
+    }
+  },
+  "consistency": {
+    "labels_vs_features": {
+      "labels_only": 0,
+      "match": true
+    },
+    "depmap_validation": {
+      "depmap_crispr_long_pre_refilter": {
+        "depmap_path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/curated_data/processed/depmap/depmap_crispr_long_stad.parquet",
+        "labels_cells_in_depmap": 5,
+        "labels_not_in_depmap": 19,
+        "missing_sample_ids": [
+          "2313287",
+          "HGC27",
+          "HS746T",
+          "HSC39",
+          "KATOIII",
+          "MKN45",
+          "MKN7",
+          "NCIN87",
+          "NUGC3",
+          "NUGC4",
+          "OCUM1",
+          "RERFGC1B",
+          "RF48",
+          "SKGT2",
+          "SNU1",
+          "SNU16",
+          "SNU5",
+          "TGBC11TKB",
+          "TMK1"
+        ]
+      },
+      "depmap_crispr_long_post_refilter": {
+        "depmap_path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/data/depmap/depmap_crispr_long_stad.parquet",
+        "labels_cells_in_depmap": 20,
+        "labels_not_in_depmap": 4,
+        "missing_sample_ids": [
+          "MKN7",
+          "NUGC4",
+          "RF48",
+          "TGBC11TKB"
+        ]
+      }
+    },
+    "depmap_effective_for_fe": {
+      "key": "depmap_crispr_long_post_refilter",
+      "path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/data/depmap/depmap_crispr_long_stad.parquet",
+      "exists": true
+    },
+    "labels_cells_in_depmap": 20,
+    "labels_not_in_depmap": 4
+  },
+  "issues": [],
+  "warnings": [],
+  "info": [
+    "Post-refilter: 4 labels without CRISPR data (expected drop: ['MKN7', 'NUGC4', 'RF48', 'TGBC11TKB'])."
+  ],
+  "passed": true
+}

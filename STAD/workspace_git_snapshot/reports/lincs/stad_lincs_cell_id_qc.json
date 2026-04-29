@@ -1,0 +1,168 @@
+{
+  "gse": "GSE92742",
+  "cell_info_path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/curated_data/lincs/GSE92742/GSE92742_Broad_LINCS_cell_info.txt.gz",
+  "sig_info_path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/curated_data/lincs/GSE92742/GSE92742_Broad_LINCS_sig_info.txt.gz",
+  "expected_candidates": 12,
+  "matched_in_cell_info": 1,
+  "matched_in_sig_info_trt_cp": 1,
+  "final_usable_cells": 1,
+  "final_usable_cell_ids": [
+    "AGS"
+  ],
+  "cells_with_signature_counts": {
+    "AGS": 362
+  },
+  "stomach_primary_site_cell_ids_in_cell_info": [
+    "AGS"
+  ],
+  "summary_groups": {
+    "자동 매칭 성공": [
+      {
+        "input": "AGS",
+        "matched_cell_id": "AGS",
+        "trt_cp_signature_count": 362,
+        "match_type": "exact"
+      }
+    ],
+    "리뷰 필요": [
+      {
+        "input": "HS746T",
+        "match_type": "unmatched",
+        "matched_cell_id": "",
+        "alias_suggestions": "HS578T",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "KATOIII",
+        "match_type": "unmatched",
+        "matched_cell_id": "",
+        "alias_suggestions": "",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "MKN45",
+        "match_type": "unmatched",
+        "matched_cell_id": "",
+        "alias_suggestions": "",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "MKN7",
+        "match_type": "unmatched",
+        "matched_cell_id": "",
+        "alias_suggestions": "",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "MKN74",
+        "match_type": "unmatched",
+        "matched_cell_id": "",
+        "alias_suggestions": "",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "NCI_N87",
+        "match_type": "unmatched",
+        "matched_cell_id": "",
+        "alias_suggestions": "",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "NUGC3",
+        "match_type": "unmatched",
+        "matched_cell_id": "",
+        "alias_suggestions": "",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "OCUM1",
+        "match_type": "unmatched",
+        "matched_cell_id": "",
+        "alias_suggestions": "",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "SNU16",
+        "match_type": "unmatched",
+        "matched_cell_id": "",
+        "alias_suggestions": "SNU1040",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "SNU216",
+        "match_type": "unmatched",
+        "matched_cell_id": "",
+        "alias_suggestions": "",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "SNU5",
+        "match_type": "unmatched",
+        "matched_cell_id": "",
+        "alias_suggestions": "SNUC5",
+        "note": "suggested_norms=['SNUC5']"
+      }
+    ],
+    "실제 시그니처 없음_플레이트에 cell은 있으나 trt_cp 없음": [],
+    "실제 데이터 부재_cell_info에 없음": [
+      {
+        "input": "HS746T",
+        "alias_suggestions": "HS578T",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "KATOIII",
+        "alias_suggestions": "",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "MKN45",
+        "alias_suggestions": "",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "MKN7",
+        "alias_suggestions": "",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "MKN74",
+        "alias_suggestions": "",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "NCI_N87",
+        "alias_suggestions": "",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "NUGC3",
+        "alias_suggestions": "",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "OCUM1",
+        "alias_suggestions": "",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "SNU16",
+        "alias_suggestions": "SNU1040",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "SNU216",
+        "alias_suggestions": "",
+        "note": "no close normalized match in cell_info"
+      },
+      {
+        "input": "SNU5",
+        "alias_suggestions": "SNUC5",
+        "note": "suggested_norms=['SNUC5']"
+      }
+    ]
+  },
+  "notes": {
+    "plate_coverage": "GSE92742 cell_info contains exactly one stomach primary_site line (AGS). Other historical gastric candidates are absent from this L1000 plate — not fixable by alias/normalize alone; use GSE70138 or another assay if those lines are required."
+  }
+}

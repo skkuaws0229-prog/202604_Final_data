@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-04-21T19:18:15.364476",
+  "tcga_desc_filter": "STAD",
+  "matching": {
+    "total_matched": 24,
+    "unmatched": 0,
+    "match_rate": 1.0
+  },
+  "labels": {
+    "rows": 6060,
+    "cells": 24,
+    "drugs": 295
+  },
+  "unmatched_cells": []
+}

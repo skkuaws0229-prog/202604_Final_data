@@ -1,0 +1,32 @@
+{
+  "nodes": [
+    {"id": "disease_breast_cancer", "label": "Breast Cancer", "type": "disease"},
+    {"id": "drug_trastuzumab", "label": "Trastuzumab", "type": "drug", "category": "FDA_APPROVED"},
+    {"id": "drug_pertuzumab", "label": "Pertuzumab", "type": "drug", "category": "FDA_APPROVED"},
+    {"id": "drug_palbociclib", "label": "Palbociclib", "type": "drug", "category": "FDA_APPROVED"},
+    {"id": "drug_ribociclib", "label": "Ribociclib", "type": "drug", "category": "FDA_APPROVED"},
+    {"id": "drug_tamoxifen", "label": "Tamoxifen", "type": "drug", "category": "FDA_APPROVED"},
+    {"id": "drug_olaparib", "label": "Olaparib", "type": "drug", "category": "FDA_APPROVED"},
+    {"id": "drug_tucatinib", "label": "Tucatinib", "type": "drug", "category": "REPURPOSING_CANDIDATE"},
+    {"id": "target_erbb2", "label": "ERBB2", "type": "target"},
+    {"id": "target_esr1", "label": "ESR1", "type": "target"},
+    {"id": "target_cdk4", "label": "CDK4", "type": "target"},
+    {"id": "target_brca1", "label": "BRCA1", "type": "target"}
+  ],
+  "edges": [
+    {"source": "drug_trastuzumab", "target": "disease_breast_cancer", "type": "predicted_for"},
+    {"source": "drug_pertuzumab", "target": "disease_breast_cancer", "type": "predicted_for"},
+    {"source": "drug_palbociclib", "target": "disease_breast_cancer", "type": "predicted_for"},
+    {"source": "drug_ribociclib", "target": "disease_breast_cancer", "type": "predicted_for"},
+    {"source": "drug_tamoxifen", "target": "disease_breast_cancer", "type": "predicted_for"},
+    {"source": "drug_olaparib", "target": "disease_breast_cancer", "type": "predicted_for"},
+    {"source": "drug_tucatinib", "target": "disease_breast_cancer", "type": "predicted_for"},
+    {"source": "drug_trastuzumab", "target": "target_erbb2", "type": "targets"},
+    {"source": "drug_pertuzumab", "target": "target_erbb2", "type": "targets"},
+    {"source": "drug_tucatinib", "target": "target_erbb2", "type": "targets"},
+    {"source": "drug_tamoxifen", "target": "target_esr1", "type": "targets"},
+    {"source": "drug_palbociclib", "target": "target_cdk4", "type": "targets"},
+    {"source": "drug_ribociclib", "target": "target_cdk4", "type": "targets"},
+    {"source": "drug_olaparib", "target": "target_brca1", "type": "targets"}
+  ]
+}

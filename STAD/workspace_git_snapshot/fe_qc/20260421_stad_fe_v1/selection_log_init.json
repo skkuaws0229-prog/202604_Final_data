@@ -1,0 +1,16 @@
+{
+  "initial_shape": [
+    5118,
+    19998
+  ],
+  "initial_counts": {
+    "gene": 17919,
+    "morgan": 0,
+    "lincs": 5,
+    "target": 10,
+    "pathway": 0,
+    "drug_desc": 9,
+    "other": 2053
+  },
+  "steps": []
+}

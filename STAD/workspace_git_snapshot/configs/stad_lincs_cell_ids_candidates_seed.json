@@ -1,0 +1,17 @@
+{
+  "cell_ids": [
+    "AGS",
+    "HS746T",
+    "KATOIII",
+    "MKN45",
+    "MKN7",
+    "MKN74",
+    "NCI_N87",
+    "NUGC3",
+    "OCUM1",
+    "SNU16",
+    "SNU216",
+    "SNU5"
+  ],
+  "notes": "Historical stomach-line candidate list for review against GSE92742 cell_info/sig_info. rebuild_stad_lincs_cell_ids_gse92742.py reads this by default; outputs usable ids to stad_lincs_cell_ids.json."
+}

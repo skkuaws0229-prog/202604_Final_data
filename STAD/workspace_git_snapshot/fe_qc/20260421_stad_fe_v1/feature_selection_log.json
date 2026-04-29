@@ -1,0 +1,68 @@
+{
+  "initial_shape": [
+    5118,
+    19998
+  ],
+  "initial_counts": {
+    "gene": 17919,
+    "morgan": 2048,
+    "lincs": 5,
+    "target": 10,
+    "pathway": 0,
+    "drug_desc": 9,
+    "drug_other": 5
+  },
+  "steps": [
+    {
+      "step": "gene_low_variance",
+      "threshold": 0.01,
+      "before": 17919,
+      "removed": 13598,
+      "after": 4321
+    },
+    {
+      "step": "gene_high_correlation",
+      "threshold": 0.95,
+      "before": 4321,
+      "removed": 390,
+      "after": 3931
+    },
+    {
+      "step": "morgan_low_variance",
+      "threshold": 0.01,
+      "before": 2048,
+      "removed": 994,
+      "after": 1054
+    },
+    {
+      "step": "morgan_high_correlation",
+      "threshold": 0.95,
+      "before": 1054,
+      "removed": 8,
+      "after": 1046
+    },
+    {
+      "step": "other_keep_all",
+      "kept_categories": [
+        "lincs",
+        "target",
+        "pathway",
+        "drug_desc",
+        "drug_other"
+      ],
+      "before": 29,
+      "removed": 0,
+      "after": 29
+    }
+  ],
+  "final_counts": {
+    "gene": 3931,
+    "morgan": 1046,
+    "other": 29,
+    "total_features": 5006
+  },
+  "thresholds": {
+    "low_variance": 0.01,
+    "high_correlation": 0.95
+  }
+}

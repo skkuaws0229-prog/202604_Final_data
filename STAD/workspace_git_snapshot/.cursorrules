@@ -1,0 +1,32 @@
+# STAD (위암) 파이프라인 Cursor Rules
+
+Drug repurposing for **Stomach Adenocarcinoma (TCGA-STAD)**. Protocol code follows Lung/Colon; data are STAD-only.
+
+## Project Base Path
+`/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD`
+
+## Reference Pipelines (code only)
+- Colon: `.../20260420_new_pre_project_biso_Colon`
+- Lung: `.../20260416_new_pre_project_biso_Lung`
+
+## CRITICAL RULES
+1. `curated_data/` is READ-ONLY after download. Never modify or delete raw mirrors.
+2. Raw source of truth: `s3://say2-4team/Stad_raw/` — do not replace with team4 `tmp_data/` or unvetted parquet roots.
+3. If `Stad_raw/` root contains pre-built parquet mirrors of pipeline inputs, treat as **excluded** unless listed in `configs/CONTEXT.md` allowlist (same principle as Colon root parquets).
+4. **LINCS GSE** is controlled only by `configs/lincs_source.json` (team standard). Do not hardcode a second GSE elsewhere without updating that file.
+5. Proxy or substitute cohorts: STOP and ask the user.
+6. On errors: STOP and report; do not silently patch data.
+7. If uncertain: say so and ask.
+
+## Data Allowlist (baseline; expand only via CONTEXT + user approval)
+- Use: `gdsc`, `depmap`, `lincs` (GSE from `lincs_source.json`), `drugbank`, `chembl`, `admet`, `cbioportal` (TCGA-STAD + CPTAC-STAD as documented), `geo` (GSE62254, GSE15459, **GSE84437**), `additional_sources` (`cosmic`, `cosmic_stad`, `prism`, `clinicaltrials`, …), `cptac_stad` (README + **pdc_manifests** for proteome file lists), and optional `msigdb`, `opentargets`, `string` when present under `Stad_raw/` and enabled in CONTEXT.
+
+## External Validation (Tier 1)
+- Primary GEO: **GSE62254 (ACRG)**, **GSE15459**
+- Supplement: **CPTAC-STAD**, PRISM (gastric subset), COSMIC (STAD), ClinicalTrials (gastric)
+
+## Coding
+- Python 3.10, conda `drug4`
+- Type hints, docstrings with I/O shapes, log file I/O with timestamps under `logs/`
+- Prefer `pathlib`, f-strings, pandas/pyarrow
+- When adapting Colon/Lung scripts, cite source path in file header comment

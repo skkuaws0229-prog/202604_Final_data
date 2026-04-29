@@ -1,0 +1,335 @@
+{
+  "generated_at": "2026-04-21T19:18:19.376589",
+  "inputs": {
+    "labels_uri": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/data/labels.parquet",
+    "depmap_long_uri": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/curated_data/processed/depmap/depmap_crispr_long_stad.parquet",
+    "depmap_model_uri": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/curated_data/processed/depmap/Model.parquet",
+    "gdsc_fe_uri": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/data/GDSC2-dataset.parquet"
+  },
+  "labels_unique_cells": 24,
+  "matched_cells": [
+    {
+      "label_sample_id": "2313287",
+      "depmap_cell_line_name": "23132/87",
+      "depmap_stripped_name": "2313287",
+      "model_id": "ACH-000948",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "AGS",
+      "depmap_cell_line_name": "AGS",
+      "depmap_stripped_name": "AGS",
+      "model_id": "ACH-000880",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "FU97",
+      "depmap_cell_line_name": "FU97",
+      "depmap_stripped_name": "FU97",
+      "model_id": "ACH-000633",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "GCIY",
+      "depmap_cell_line_name": "GCIY",
+      "depmap_stripped_name": "GCIY",
+      "model_id": "ACH-000047",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "HGC27",
+      "depmap_cell_line_name": "HGC-27",
+      "depmap_stripped_name": "HGC27",
+      "model_id": "ACH-000847",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "HS746T",
+      "depmap_cell_line_name": "Hs 746T",
+      "depmap_stripped_name": "HS746T",
+      "model_id": "ACH-000616",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "HSC39",
+      "depmap_cell_line_name": "HSC-39",
+      "depmap_stripped_name": "HSC39",
+      "model_id": "ACH-002141",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "IM95",
+      "depmap_cell_line_name": "IM95",
+      "depmap_stripped_name": "IM95",
+      "model_id": "ACH-000919",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "KATOIII",
+      "depmap_cell_line_name": "KATO III",
+      "depmap_stripped_name": "KATOIII",
+      "model_id": "ACH-000793",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "MKN28",
+      "depmap_cell_line_name": "MKN28",
+      "depmap_stripped_name": "MKN28",
+      "model_id": "ACH-002161",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "MKN45",
+      "depmap_cell_line_name": "MKN-45",
+      "depmap_stripped_name": "MKN45",
+      "model_id": "ACH-000356",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "MKN7",
+      "depmap_cell_line_name": "MKN7",
+      "depmap_stripped_name": "MKN7",
+      "model_id": "ACH-000678",
+      "match_type": "exact_stripped",
+      "has_crispr": false
+    },
+    {
+      "label_sample_id": "NCIN87",
+      "depmap_cell_line_name": "NCI-N87",
+      "depmap_stripped_name": "NCIN87",
+      "model_id": "ACH-000427",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "NUGC3",
+      "depmap_cell_line_name": "NUGC-3",
+      "depmap_stripped_name": "NUGC3",
+      "model_id": "ACH-000911",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "NUGC4",
+      "depmap_cell_line_name": "NUGC-4",
+      "depmap_stripped_name": "NUGC4",
+      "model_id": "ACH-000674",
+      "match_type": "exact_stripped",
+      "has_crispr": false
+    },
+    {
+      "label_sample_id": "OCUM1",
+      "depmap_cell_line_name": "OCUM-1",
+      "depmap_stripped_name": "OCUM1",
+      "model_id": "ACH-000247",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "RERFGC1B",
+      "depmap_cell_line_name": "RERF-GC-1B",
+      "depmap_stripped_name": "RERFGC1B",
+      "model_id": "ACH-000144",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "RF48",
+      "depmap_cell_line_name": "RF-48",
+      "depmap_stripped_name": "RF48",
+      "model_id": "ACH-002301",
+      "match_type": "exact_stripped",
+      "has_crispr": false
+    },
+    {
+      "label_sample_id": "SKGT2",
+      "depmap_cell_line_name": "SK-GT-2",
+      "depmap_stripped_name": "SKGT2",
+      "model_id": "ACH-001653",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "SNU1",
+      "depmap_cell_line_name": "SNU-1",
+      "depmap_stripped_name": "SNU1",
+      "model_id": "ACH-000932",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "SNU16",
+      "depmap_cell_line_name": "SNU-16",
+      "depmap_stripped_name": "SNU16",
+      "model_id": "ACH-000581",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "SNU5",
+      "depmap_cell_line_name": "SNU-5",
+      "depmap_stripped_name": "SNU5",
+      "model_id": "ACH-000303",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    },
+    {
+      "label_sample_id": "TGBC11TKB",
+      "depmap_cell_line_name": "TGBC11TKB",
+      "depmap_stripped_name": "TGBC11TKB",
+      "model_id": "ACH-000949",
+      "match_type": "exact_stripped",
+      "has_crispr": false
+    },
+    {
+      "label_sample_id": "TMK1",
+      "depmap_cell_line_name": "TMK-1",
+      "depmap_stripped_name": "TMK1",
+      "model_id": "ACH-002202",
+      "match_type": "exact_stripped",
+      "has_crispr": true
+    }
+  ],
+  "unmatched_model": [],
+  "unmatched_crispr": [
+    {
+      "label_sample_id": "MKN7",
+      "reason": "no_crispr_rows_in_depmap_long"
+    },
+    {
+      "label_sample_id": "NUGC4",
+      "reason": "no_crispr_rows_in_depmap_long"
+    },
+    {
+      "label_sample_id": "RF48",
+      "reason": "no_crispr_rows_in_depmap_long"
+    },
+    {
+      "label_sample_id": "TGBC11TKB",
+      "reason": "no_crispr_rows_in_depmap_long"
+    }
+  ],
+  "summary": {
+    "matched_total": 24,
+    "matched_with_crispr": 20,
+    "unmatched_model_count": 0,
+    "unmatched_crispr_count": 4,
+    "output_depmap_rows": 355284,
+    "output_depmap_cells": 20,
+    "gdsc_unique_cells_before_sync": 24,
+    "gdsc_cells_remapped_count": 24,
+    "gdsc_cells_unmapped_count": 0
+  },
+  "gdsc_cell_line_sync": {
+    "remapped": [
+      {
+        "from": "23132-87",
+        "to": "2313287"
+      },
+      {
+        "from": "AGS",
+        "to": "AGS"
+      },
+      {
+        "from": "FU97",
+        "to": "FU97"
+      },
+      {
+        "from": "GCIY",
+        "to": "GCIY"
+      },
+      {
+        "from": "HGC-27",
+        "to": "HGC27"
+      },
+      {
+        "from": "HSC-39",
+        "to": "HSC39"
+      },
+      {
+        "from": "Hs-746T",
+        "to": "HS746T"
+      },
+      {
+        "from": "IM-95",
+        "to": "IM95"
+      },
+      {
+        "from": "KATOIII",
+        "to": "KATOIII"
+      },
+      {
+        "from": "MKN28",
+        "to": "MKN28"
+      },
+      {
+        "from": "MKN45",
+        "to": "MKN45"
+      },
+      {
+        "from": "MKN7",
+        "to": "MKN7"
+      },
+      {
+        "from": "NCI-N87",
+        "to": "NCIN87"
+      },
+      {
+        "from": "NUGC-3",
+        "to": "NUGC3"
+      },
+      {
+        "from": "NUGC-4",
+        "to": "NUGC4"
+      },
+      {
+        "from": "OCUM-1",
+        "to": "OCUM1"
+      },
+      {
+        "from": "RERF-GC-1B",
+        "to": "RERFGC1B"
+      },
+      {
+        "from": "RF-48",
+        "to": "RF48"
+      },
+      {
+        "from": "SK-GT-2",
+        "to": "SKGT2"
+      },
+      {
+        "from": "SNU-1",
+        "to": "SNU1"
+      },
+      {
+        "from": "SNU-16",
+        "to": "SNU16"
+      },
+      {
+        "from": "SNU-5",
+        "to": "SNU5"
+      },
+      {
+        "from": "TGBC11TKB",
+        "to": "TGBC11TKB"
+      },
+      {
+        "from": "TMK-1",
+        "to": "TMK1"
+      }
+    ],
+    "unmapped": []
+  }
+}

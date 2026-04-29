@@ -1,0 +1,7 @@
+2026-04-21 10:40:11,032 INFO Loading inputs
+2026-04-21 10:40:13,366 INFO Building merged pair features (pathway + chem + LINCS + target)
+2026-04-21 10:40:22,390 INFO Done. Outputs written to pair_features
+2026-04-21 10:40:22,390 INFO target 없는 drug 비율: 0.0000
+2026-04-21 10:40:22,390 INFO overlap count 분포: {"count": 5118.0, "mean": 0.03223915592028136, "std": 0.20242835875588538, "min": 0.0, "25%": 0.0, "50%": 0.0, "75%": 0.0, "max": 3.0}
+2026-04-21 10:40:22,390 INFO target_expr_mean 분포: {"count": 5118.0, "mean": 0.1624882719132917, "std": 0.3036611974825288, "min": 0.0, "25%": 0.0, "50%": 0.005353682674467564, "75%": 0.12430725246667862, "max": 1.0}
+2026-04-21 10:40:22,390 INFO target feature null 비율: {"target_overlap_count": 0.0, "target_overlap_ratio": 0.0, "target_overlap_down_count": 0.0, "target_overlap_down_ratio": 0.0, "target_expr_mean": 0.0, "target_expr_std": 0.0, "target_pathway_score_mean": 0.0, "target_pathway_hit_count": 0.0, "target_gene_coverage_ratio": 0.0, "target_gene_count": 0.0}

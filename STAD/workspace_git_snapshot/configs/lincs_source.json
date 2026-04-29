@@ -1,0 +1,6 @@
+{
+  "lincs_gse": "GSE92742",
+  "cell_id_list_uri": "configs/stad_lincs_cell_ids.json",
+  "notes": "Default matches Colon/Lung FE practice (Level 5 COMPZ gctx, multi cell lines). GSE70138 in this workspace snapshot lists only AGS for stomach primary_site; if the team standard is GSE70138-only, change lincs_gse and re-validate cell_id_list against that plate's cell_info.",
+  "s3_lincs_prefix_template": "s3://say2-4team/Stad_raw/lincs/{gse}/"
+}

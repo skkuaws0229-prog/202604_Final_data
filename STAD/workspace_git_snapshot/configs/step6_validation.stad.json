@@ -1,0 +1,45 @@
+{
+  "cancer_type": "stad",
+  "results_prefix": "stad",
+  "input_groups": {
+    "external_cohorts": ["prism", "clinical_trials", "geo"],
+    "disease_specific_annotation": ["cosmic"],
+    "optional_proteomics_manifest": ["cptac_pdc"]
+  },
+  "training_results": {
+    "top30_2b_with_names": "results/stad_top30_phase2b_catboost_with_names.csv",
+    "top30_2c_with_names": "results/stad_top30_phase2c_catboost_with_names.csv",
+    "top30_unified_with_names": "results/stad_top30_unified_2b_and_2c_with_names.csv"
+  },
+  "prism": {
+    "enabled": true,
+    "base_dir": "curated_data/additional_sources/prism",
+    "lineage_contains_any_of": ["stomach", "gastric", "upper aerodigestive", "esophagus"]
+  },
+  "clinical_trials": {
+    "enabled": true,
+    "base_dir": "curated_data/additional_sources/clinicaltrials",
+    "file_stem": "clinicaltrials_gastric_cancer"
+  },
+  "cosmic": {
+    "enabled": true,
+    "mode": "parquet_bundle",
+    "parquet_dir": "curated_data/additional_sources/cosmic_stad/20260421",
+    "actionability_filename": "cosmic_stad_actionability_v19_grch37.parquet",
+    "cancer_gene_census_filename": "cosmic_stad_cancer_gene_census_v103_grch38.parquet"
+  },
+  "cptac": {
+    "enabled": true,
+    "mode": "pdc_manifest",
+    "manifest_dir": "curated_data/cptac_stad/pdc_manifests/20260421",
+    "cbio_datasets": []
+  },
+  "geo": {
+    "enabled": true,
+    "matrix_files": {
+      "GSE62254": "curated_data/geo/GSE62254",
+      "GSE15459": "curated_data/geo/GSE15459",
+      "GSE84437": "curated_data/geo/GSE84437"
+    }
+  }
+}

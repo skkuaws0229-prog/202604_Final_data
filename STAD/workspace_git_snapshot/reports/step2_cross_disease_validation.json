@@ -1,0 +1,251 @@
+{
+  "schema_diff": {
+    "labels": {
+      "exists": {
+        "stad": true,
+        "lung": false,
+        "colon": true
+      },
+      "stad_only_columns_count": 0,
+      "stad_only_columns_sample": [],
+      "missing_in_stad_vs_lung_count": 0,
+      "missing_in_stad_vs_lung_sample": [],
+      "missing_in_stad_vs_colon_count": 0,
+      "missing_in_stad_vs_colon_sample": [],
+      "common_columns_all_three_count": 0,
+      "dtype_mismatch_on_common_count": 0,
+      "dtype_mismatch_on_common_sample": {},
+      "shape": {
+        "stad": [
+          6060,
+          4
+        ],
+        "lung": null,
+        "colon": [
+          9692,
+          4
+        ]
+      }
+    },
+    "drug_features": {
+      "exists": {
+        "stad": true,
+        "lung": false,
+        "colon": true
+      },
+      "stad_only_columns_count": 0,
+      "stad_only_columns_sample": [],
+      "missing_in_stad_vs_lung_count": 0,
+      "missing_in_stad_vs_lung_sample": [],
+      "missing_in_stad_vs_colon_count": 0,
+      "missing_in_stad_vs_colon_sample": [],
+      "common_columns_all_three_count": 0,
+      "dtype_mismatch_on_common_count": 0,
+      "dtype_mismatch_on_common_sample": {},
+      "shape": {
+        "stad": [
+          295,
+          5
+        ],
+        "lung": null,
+        "colon": [
+          295,
+          5
+        ]
+      }
+    },
+    "drug_target_mapping": {
+      "exists": {
+        "stad": true,
+        "lung": false,
+        "colon": true
+      },
+      "stad_only_columns_count": 0,
+      "stad_only_columns_sample": [],
+      "missing_in_stad_vs_lung_count": 0,
+      "missing_in_stad_vs_lung_sample": [],
+      "missing_in_stad_vs_colon_count": 0,
+      "missing_in_stad_vs_colon_sample": [],
+      "common_columns_all_three_count": 0,
+      "dtype_mismatch_on_common_count": 0,
+      "dtype_mismatch_on_common_sample": {},
+      "shape": {
+        "stad": [
+          485,
+          2
+        ],
+        "lung": null,
+        "colon": [
+          485,
+          2
+        ]
+      }
+    },
+    "lincs_drug_level_prefixed": {
+      "exists": {
+        "stad": true,
+        "lung": false,
+        "colon": true
+      },
+      "stad_only_columns_count": 0,
+      "stad_only_columns_sample": [],
+      "missing_in_stad_vs_lung_count": 0,
+      "missing_in_stad_vs_lung_sample": [],
+      "missing_in_stad_vs_colon_count": 0,
+      "missing_in_stad_vs_colon_sample": [],
+      "common_columns_all_three_count": 0,
+      "dtype_mismatch_on_common_count": 0,
+      "dtype_mismatch_on_common_sample": {},
+      "shape": {
+        "stad": [
+          37,
+          12023
+        ],
+        "lung": null,
+        "colon": [
+          91,
+          12023
+        ]
+      }
+    },
+    "gdsc2_dataset": {
+      "exists": {
+        "stad": true,
+        "lung": false,
+        "colon": true
+      },
+      "stad_only_columns_count": 0,
+      "stad_only_columns_sample": [],
+      "missing_in_stad_vs_lung_count": 0,
+      "missing_in_stad_vs_lung_sample": [],
+      "missing_in_stad_vs_colon_count": 15,
+      "missing_in_stad_vs_colon_sample": [
+        "AUC",
+        "COMPANY_ID",
+        "COSMIC_ID",
+        "DATASET",
+        "MAX_CONC",
+        "MIN_CONC",
+        "NLME_CURVE_ID",
+        "NLME_RESULT_ID",
+        "PATHWAY_NAME",
+        "PUTATIVE_TARGET",
+        "RMSE",
+        "SANGER_MODEL_ID",
+        "TCGA_DESC",
+        "WEBRELEASE",
+        "Z_SCORE"
+      ],
+      "common_columns_all_three_count": 0,
+      "dtype_mismatch_on_common_count": 0,
+      "dtype_mismatch_on_common_sample": {},
+      "shape": {
+        "stad": [
+          6060,
+          4
+        ],
+        "lung": null,
+        "colon": [
+          9692,
+          19
+        ]
+      }
+    }
+  },
+  "mapping_integrity": {
+    "stad": {
+      "keys": {
+        "labels_drug_key": "canonical_drug_id",
+        "labels_sample_key": "sample_id",
+        "drug_features_key": "canonical_drug_id",
+        "drug_target_mapping_key": "canonical_drug_id",
+        "lincs_key": "canonical_drug_id"
+      },
+      "labels_to_drug_features": {
+        "labels_unique_drugs": 295,
+        "drug_features_unique_drugs": 295,
+        "matched_drugs": 295,
+        "match_rate": 1.0
+      },
+      "drug_features_to_drug_target_mapping": {
+        "drug_features_unique_drugs": 295,
+        "drug_target_mapping_unique_drugs": 295,
+        "matched_drugs": 295,
+        "match_rate": 1.0
+      },
+      "labels_to_lincs_drug_level": {
+        "labels_unique_drugs": 295,
+        "lincs_unique_drugs": 37,
+        "matched_drugs": 37,
+        "match_rate": 0.12542372881355932
+      },
+      "quality": {
+        "labels_sample_id_duplicate_rows": 6036,
+        "labels_row_count": 6060,
+        "drug_features_row_count": 295,
+        "drug_target_mapping_row_count": 485,
+        "lincs_row_count": 37
+      },
+      "blockers": []
+    },
+    "lung": {
+      "status": "insufficient_files",
+      "blockers": [
+        "missing labels or drug_features"
+      ]
+    },
+    "colon": {
+      "keys": {
+        "labels_drug_key": "canonical_drug_id",
+        "labels_sample_key": "sample_id",
+        "drug_features_key": "canonical_drug_id",
+        "drug_target_mapping_key": "canonical_drug_id",
+        "lincs_key": "canonical_drug_id"
+      },
+      "labels_to_drug_features": {
+        "labels_unique_drugs": 295,
+        "drug_features_unique_drugs": 295,
+        "matched_drugs": 295,
+        "match_rate": 1.0
+      },
+      "drug_features_to_drug_target_mapping": {
+        "drug_features_unique_drugs": 295,
+        "drug_target_mapping_unique_drugs": 295,
+        "matched_drugs": 295,
+        "match_rate": 1.0
+      },
+      "labels_to_lincs_drug_level": {
+        "labels_unique_drugs": 295,
+        "lincs_unique_drugs": 91,
+        "matched_drugs": 91,
+        "match_rate": 0.30847457627118646
+      },
+      "quality": {
+        "labels_sample_id_duplicate_rows": 9657,
+        "labels_row_count": 9692,
+        "drug_features_row_count": 295,
+        "drug_target_mapping_row_count": 485,
+        "lincs_row_count": 91
+      },
+      "blockers": []
+    }
+  },
+  "summary": {
+    "step3_ready": true,
+    "blockers": [],
+    "warnings": [
+      "low_lincs_coverage:0.1254 (AGS-only may be expected under GSE92742)"
+    ],
+    "missing_files_by_project": {
+      "stad": [],
+      "lung": [
+        "labels",
+        "drug_features",
+        "drug_target_mapping",
+        "lincs_drug_level_prefixed",
+        "gdsc2_dataset"
+      ],
+      "colon": []
+    }
+  }
+}

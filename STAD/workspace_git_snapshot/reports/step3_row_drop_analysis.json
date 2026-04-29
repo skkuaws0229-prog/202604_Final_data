@@ -1,0 +1,22 @@
+{
+  "analyzed_at": "2026-04-21",
+  "stad": {
+    "label_pair_rows": 6060,
+    "unmatched_samples": 2339,
+    "unmatched_drugs": 0,
+    "join_rate_samples": 0.614026402640264,
+    "join_rate_drugs": 1.0,
+    "final_features_rows": 3721
+  },
+  "colon": {
+    "label_pair_rows": 9692,
+    "unmatched_samples": 0,
+    "unmatched_drugs": 0,
+    "join_rate_samples": 1.0,
+    "join_rate_drugs": 1.0,
+    "final_features_rows": 9692
+  },
+  "root_cause": "(\uac00)",
+  "explanation": "STAD row drop is primarily sample-side attrition: unmatched_samples=2339/6060 (38.60%), while unmatched_drugs=0 and join_rate_drugs=1.0. Colon baseline shows unmatched_samples=0, so the reduction aligns with STAD sample feature coverage gap (DepMap CRISPR/sample_features join) rather than drug-side loss.",
+  "verdict": "need_human_review"
+}

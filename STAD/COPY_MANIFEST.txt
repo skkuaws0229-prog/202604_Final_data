@@ -1,0 +1,24 @@
+STAD reproducibility bundle — copy-only snapshot (sources were not modified or deleted).
+
+Created (UTC workflow): 2026-04-29
+
+S3 destination (canonical):
+  s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/STAD/
+
+Sources copied INTO that prefix:
+  1) Raw team mirror (820 objects, ~28.5 GB):
+     s3://say2-4team/Stad_raw/
+     -> .../202604_Final_data/STAD/Stad_raw/
+  2) Pipeline work snapshot from team STAD prefix (~111 MB, 75 objects):
+     s3://say2-4team/20260408_new_pre_project_biso/20260421_new_pre_project_biso_STAD/
+     -> .../202604_Final_data/STAD/pipeline_s3_work/
+  3) Repository workspace snapshot (results, fe_qc, configs, reports, scripts, stad_dashboard, key docs):
+     Local: 20260421_new_pre_project_biso_STAD/
+     -> .../202604_Final_data/STAD/workspace_git_snapshot/
+
+Methods: aws s3 sync / aws s3 cp (read source; write destination only).
+
+Restore local mirror from S3:
+  aws s3 sync s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/STAD/ ./202604_Final_data_STAD_mirror/
+
+See STAD_reproduction_protocol.md and configs/CONTEXT.md for rerun steps; raw inputs align with Stad_raw layout in CONTEXT.md.

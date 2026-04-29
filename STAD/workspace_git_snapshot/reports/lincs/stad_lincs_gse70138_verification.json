@@ -1,0 +1,18 @@
+{
+  "verified_at": "2026-04-21",
+  "gse": "GSE70138",
+  "stomach_cell_ids": [
+    "AGS"
+  ],
+  "stomach_trt_cp_counts": {
+    "AGS": 0
+  },
+  "candidate_exact_matches": [
+    "AGS"
+  ],
+  "baseline_gse92742": {
+    "AGS_trt_cp": 362
+  },
+  "decision": "no_merge_no_replace",
+  "reason": "GSE70138 offers zero trt_cp signatures for stomach cells; merging/replacing yields no incremental coverage"
+}

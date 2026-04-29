@@ -1,0 +1,33 @@
+{
+  "nodes": [
+    {"id": "disease_colorectal_cancer", "label": "Colorectal Cancer", "type": "disease"},
+    {"id": "drug_oxaliplatin", "label": "Oxaliplatin", "type": "drug", "category": "FDA_APPROVED_CRC"},
+    {"id": "drug_5fu", "label": "5-Fluorouracil", "type": "drug", "category": "FDA_APPROVED_CRC"},
+    {"id": "drug_capecitabine", "label": "Capecitabine", "type": "drug", "category": "FDA_APPROVED_CRC"},
+    {"id": "drug_bevacizumab", "label": "Bevacizumab", "type": "drug", "category": "FDA_APPROVED_CRC"},
+    {"id": "drug_cetuximab", "label": "Cetuximab", "type": "drug", "category": "FDA_APPROVED_CRC"},
+    {"id": "drug_panitumumab", "label": "Panitumumab", "type": "drug", "category": "FDA_APPROVED_CRC"},
+    {"id": "drug_regorafenib", "label": "Regorafenib", "type": "drug", "category": "REPURPOSING_CANDIDATE"},
+    {"id": "drug_trifluridine_tipiracil", "label": "Trifluridine/Tipiracil", "type": "drug", "category": "FDA_APPROVED_CRC"},
+    {"id": "target_egfr", "label": "EGFR", "type": "target"},
+    {"id": "target_vegfa", "label": "VEGFA", "type": "target"},
+    {"id": "target_tyms", "label": "TYMS", "type": "target"},
+    {"id": "target_kras", "label": "KRAS", "type": "target"}
+  ],
+  "edges": [
+    {"source": "drug_oxaliplatin", "target": "disease_colorectal_cancer", "type": "predicted_for"},
+    {"source": "drug_5fu", "target": "disease_colorectal_cancer", "type": "predicted_for"},
+    {"source": "drug_capecitabine", "target": "disease_colorectal_cancer", "type": "predicted_for"},
+    {"source": "drug_bevacizumab", "target": "disease_colorectal_cancer", "type": "predicted_for"},
+    {"source": "drug_cetuximab", "target": "disease_colorectal_cancer", "type": "predicted_for"},
+    {"source": "drug_panitumumab", "target": "disease_colorectal_cancer", "type": "predicted_for"},
+    {"source": "drug_regorafenib", "target": "disease_colorectal_cancer", "type": "predicted_for"},
+    {"source": "drug_trifluridine_tipiracil", "target": "disease_colorectal_cancer", "type": "predicted_for"},
+    {"source": "drug_cetuximab", "target": "target_egfr", "type": "targets"},
+    {"source": "drug_panitumumab", "target": "target_egfr", "type": "targets"},
+    {"source": "drug_bevacizumab", "target": "target_vegfa", "type": "targets"},
+    {"source": "drug_5fu", "target": "target_tyms", "type": "targets"},
+    {"source": "drug_capecitabine", "target": "target_tyms", "type": "targets"},
+    {"source": "drug_regorafenib", "target": "target_vegfa", "type": "targets"}
+  ]
+}

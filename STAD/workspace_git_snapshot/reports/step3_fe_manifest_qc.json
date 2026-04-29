@@ -1,0 +1,70 @@
+{
+  "qc_at": "2026-04-21",
+  "source_manifest": "s3://say2-4team/20260408_new_pre_project_biso/20260421_new_pre_project_biso_STAD/fe_output/20260421_stad_fe_v1/features/manifest.json",
+  "stad": {
+    "features_shape": [
+      3721,
+      18315
+    ],
+    "labels_rows": 3721,
+    "missing_threshold": 0.7,
+    "variance_threshold": 0.0,
+    "dropped_high_missing_count": 0,
+    "dropped_low_variance_count": 134,
+    "leakage_columns_removed": [],
+    "imputation_strategies": [
+      "UNK",
+      "median"
+    ],
+    "imputation_entry_count": 18447
+  },
+  "colon_comparison": {
+    "source_manifest": "s3://say2-4team/20260408_new_pre_project_biso/20260420_new_pre_project_biso_Colon/fe_output/20260420_colon_fe_v2/features/manifest.json",
+    "colon_features_shape": [
+      9692,
+      17925
+    ],
+    "shape_order_matches": true,
+    "leakage_matches": true,
+    "notes": "Compared against Colon v2 manifest as latest FE baseline."
+  },
+  "pair_features_check": {
+    "file_count": 7,
+    "all_nonzero": true,
+    "files": [
+      {
+        "key": "20260408_new_pre_project_biso/20260421_new_pre_project_biso_STAD/fe_output/20260421_stad_fe_v1/pair_features/drug_chem_features.parquet",
+        "size": 1357328
+      },
+      {
+        "key": "20260408_new_pre_project_biso/20260421_new_pre_project_biso_STAD/fe_output/20260421_stad_fe_v1/pair_features/feature_manifest.json",
+        "size": 5745
+      },
+      {
+        "key": "20260408_new_pre_project_biso/20260421_new_pre_project_biso_STAD/fe_output/20260421_stad_fe_v1/pair_features/pair_features_newfe.parquet",
+        "size": 1551266
+      },
+      {
+        "key": "20260408_new_pre_project_biso/20260421_new_pre_project_biso_STAD/fe_output/20260421_stad_fe_v1/pair_features/pair_features_newfe_v2.parquet",
+        "size": 1578738
+      },
+      {
+        "key": "20260408_new_pre_project_biso/20260421_new_pre_project_biso_STAD/fe_output/20260421_stad_fe_v1/pair_features/pair_lincs_features.parquet",
+        "size": 32947
+      },
+      {
+        "key": "20260408_new_pre_project_biso/20260421_new_pre_project_biso_STAD/fe_output/20260421_stad_fe_v1/pair_features/pair_target_features.parquet",
+        "size": 33398
+      },
+      {
+        "key": "20260408_new_pre_project_biso/20260421_new_pre_project_biso_STAD/fe_output/20260421_stad_fe_v1/pair_features/sample_pathway_features.parquet",
+        "size": 10765
+      }
+    ]
+  },
+  "verdict": "fail",
+  "blockers": [
+    "features_rows expected 6060, got 3721"
+  ],
+  "warnings": []
+}

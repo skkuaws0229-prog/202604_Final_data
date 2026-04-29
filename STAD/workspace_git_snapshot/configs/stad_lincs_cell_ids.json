@@ -1,0 +1,10 @@
+{
+  "cell_ids": [
+    "AGS"
+  ],
+  "selection_criteria": "GSE92742 only: cell_id must appear in GSE92742 cell_info match path AND have pert_type==trt_cp signatures in sig_info. Rebuilt by scripts/rebuild_stad_lincs_cell_ids_gse92742.py",
+  "gse": "GSE92742",
+  "candidates_seed": "configs/stad_lincs_cell_ids_candidates_seed.json",
+  "review_table": "reports/lincs/stad_lincs_cell_id_review.csv",
+  "qc_report": "reports/lincs/stad_lincs_cell_id_qc.json"
+}

@@ -1,0 +1,58 @@
+{
+  "input_lincs_signatures": 362,
+  "input_unique_pert_iname": 356,
+  "gdsc_total_drugs": 295,
+  "matched_signatures": 38,
+  "matched_unique_drugs": 37,
+  "match_rate_percent": 12.54,
+  "output_drugs": 37,
+  "output_genes": 12328,
+  "output_shape": [
+    37,
+    12329
+  ],
+  "missing_values": 0,
+  "output_file_mb": 8.41,
+  "matched_drug_examples": {
+    "1494": {
+      "name": "SN-38",
+      "n_signatures": 1
+    },
+    "1268": {
+      "name": "XAV-939",
+      "n_signatures": 1
+    },
+    "2039": {
+      "name": "AGK-2",
+      "n_signatures": 1
+    },
+    "1179": {
+      "name": "MK-1775",
+      "n_signatures": 1
+    },
+    "1736": {
+      "name": "selumetinib",
+      "n_signatures": 1
+    },
+    "1133": {
+      "name": "serdemetan",
+      "n_signatures": 1
+    },
+    "1026": {
+      "name": "tanespimycin",
+      "n_signatures": 1
+    },
+    "1199": {
+      "name": "tamoxifen",
+      "n_signatures": 1
+    },
+    "1910": {
+      "name": "ABT-737",
+      "n_signatures": 1
+    },
+    "1011": {
+      "name": "navitoclax",
+      "n_signatures": 1
+    }
+  }
+}

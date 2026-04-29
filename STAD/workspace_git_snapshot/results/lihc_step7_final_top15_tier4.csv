@@ -1,0 +1,16 @@
+tier_order_rank,recommendation_rank,drug_name,canonical_drug_id,verdict,safety_score,pred_ic50_mean,usage_category,n_clinical_trials,external_support_count,tier,tier_note
+1,2,Topotecan,1808,PASS,7.5,-0.1583007,CLINICAL_TRIAL,1,5,tier1,High confidence: ADMET pass + strong clinical/external support
+2,1,Irinotecan,1088,PASS,6.4,1.238154,FDA_APPROVED_GASTRIC,1,5,tier1,High confidence: ADMET pass + strong clinical/external support
+3,5,Camptothecin,1003,PASS,6.25,0.6874082,RESEARCH_PHASE_GASTRIC,1,5,tier1,High confidence: ADMET pass + strong clinical/external support
+4,3,Vinorelbine,2048,PASS,7.25,1.4928697,CLINICAL_TRIAL,2,2,tier2,Promising: ADMET pass with moderate support
+5,4,Vinblastine,1004,PASS,7.0,1.0201981,REPURPOSING_CANDIDATE,0,2,tier2,Promising: ADMET pass with moderate support
+6,6,Temsirolimus,1016,WARNING,5.5,-0.30921328,RESEARCH_PHASE_GASTRIC,1,4,tier3,Conditional: ADMET warning but multi-source support
+7,7,Rapamycin,1084,WARNING,5.5,1.5069047,CLINICAL_TRIAL,1,2,tier3,Conditional: ADMET warning but multi-source support
+8,8,Staurosporine,1034,WARNING,5.25,1.1406467,REPURPOSING_CANDIDATE,0,2,tier3,Conditional: ADMET warning but multi-source support
+9,9,Bosutinib,1019,WARNING,5.25,1.900915,REPURPOSING_CANDIDATE,0,4,tier3,Conditional: ADMET warning but multi-source support
+10,11,Bleomycin,1812,WARNING,5.0,-1.1402773,REPURPOSING_CANDIDATE,0,2,tier3,Conditional: ADMET warning but multi-source support
+11,12,Elesclomol,1031,WARNING,5.0,-0.58910453,REPURPOSING_CANDIDATE,0,2,tier3,Conditional: ADMET warning but multi-source support
+12,13,MG-132,1862,WARNING,5.0,0.5785534,REPURPOSING_CANDIDATE,0,3,tier3,Conditional: ADMET warning but multi-source support
+13,14,Lestaurtinib,1024,WARNING,5.0,0.85031027,REPURPOSING_CANDIDATE,0,3,tier3,Conditional: ADMET warning but multi-source support
+14,10,Bleomycin (50 uM),1378,WARNING,5.0,-1.2004384,REPURPOSING_CANDIDATE,0,1,tier4,Exploratory: ADMET warning and limited external support
+15,15,CCT-018159,1170,WARNING,5.0,0.95840305,REPURPOSING_CANDIDATE,0,1,tier4,Exploratory: ADMET warning and limited external support

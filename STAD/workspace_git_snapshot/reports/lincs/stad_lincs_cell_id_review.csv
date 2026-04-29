@@ -1,0 +1,13 @@
+input_name,normalized_input,matched_cell_id,match_type,in_cell_info,in_sig_info_trt_cp,trt_cp_signature_count,note,alias_suggestions,row_kind
+AGS,AGS,AGS,exact,True,True,362,,,candidate
+HS746T,HS746T,,unmatched,False,False,0,no close normalized match in cell_info,HS578T,candidate
+KATOIII,KATOIII,,unmatched,False,False,0,no close normalized match in cell_info,,candidate
+MKN45,MKN45,,unmatched,False,False,0,no close normalized match in cell_info,,candidate
+MKN7,MKN7,,unmatched,False,False,0,no close normalized match in cell_info,,candidate
+MKN74,MKN74,,unmatched,False,False,0,no close normalized match in cell_info,,candidate
+NCI_N87,NCIN87,,unmatched,False,False,0,no close normalized match in cell_info,,candidate
+NUGC3,NUGC3,,unmatched,False,False,0,no close normalized match in cell_info,,candidate
+OCUM1,OCUM1,,unmatched,False,False,0,no close normalized match in cell_info,,candidate
+SNU16,SNU16,,unmatched,False,False,0,no close normalized match in cell_info,SNU1040,candidate
+SNU216,SNU216,,unmatched,False,False,0,no close normalized match in cell_info,,candidate
+SNU5,SNU5,,unmatched,False,False,0,suggested_norms=['SNUC5'],SNUC5,candidate

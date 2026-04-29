@@ -1,0 +1,81 @@
+{
+  "colon_model_shape": [
+    1959,
+    43
+  ],
+  "stad_model_shape": [
+    1959,
+    43
+  ],
+  "stripped_cellline_has_special_count_colon": 0,
+  "stripped_cellline_sample_with_special": [],
+  "hct116_lookup": {
+    "StrippedCellLineName==HCT 116": 0,
+    "StrippedCellLineName==HCT116": 1,
+    "CellLineName==HCT 116": 1
+  },
+  "hgc27_lookup": {
+    "colon_StrippedCellLineName==HGC-27": 0,
+    "colon_StrippedCellLineName==HGC27": 1,
+    "colon_CellLineName==HGC-27": 1,
+    "stad_StrippedCellLineName==HGC-27": 0,
+    "stad_StrippedCellLineName==HGC27": 1,
+    "stad_CellLineName==HGC-27": 1
+  },
+  "model_intersection_count": 1959,
+  "model_colon_only_count": 0,
+  "model_stad_only_count": 0,
+  "colon_lookup_raw": {
+    "HCT 116": {
+      "StrippedCellLineName": 0,
+      "CellLineName": 1
+    },
+    "HCT-116": {
+      "StrippedCellLineName": 0,
+      "CellLineName": 0
+    },
+    "HCT116": {
+      "StrippedCellLineName": 1,
+      "CellLineName": 0
+    },
+    "KATO III": {
+      "StrippedCellLineName": 0,
+      "CellLineName": 1
+    },
+    "HGC-27": {
+      "StrippedCellLineName": 0,
+      "CellLineName": 1
+    },
+    "HGC27": {
+      "StrippedCellLineName": 1,
+      "CellLineName": 0
+    }
+  },
+  "stad_lookup_raw": {
+    "HGC-27": {
+      "StrippedCellLineName": 0,
+      "CellLineName": 1
+    },
+    "HGC27": {
+      "StrippedCellLineName": 1,
+      "CellLineName": 0
+    },
+    "KATO III": {
+      "StrippedCellLineName": 0,
+      "CellLineName": 1
+    },
+    "KATOIII": {
+      "StrippedCellLineName": 1,
+      "CellLineName": 0
+    },
+    "MKN-45": {
+      "StrippedCellLineName": 0,
+      "CellLineName": 1
+    },
+    "MKN45": {
+      "StrippedCellLineName": 1,
+      "CellLineName": 0
+    }
+  },
+  "conclusion": "Colon and STAD Model.parquet are row-identical by ModelID; StrippedCellLineName includes space/hyphen entries (e.g., HCT 116), confirming stripped values are not universally punctuation-free."
+}

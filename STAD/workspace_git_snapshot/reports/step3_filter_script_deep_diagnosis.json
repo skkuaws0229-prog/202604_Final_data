@@ -1,0 +1,219 @@
+{
+  "colon_normalize_call_sites": {
+    "script": "20260420_new_pre_project_biso_Colon/scripts/filter_colon_cell_lines.py",
+    "call_sites": [
+      {
+        "function": "normalize_strict",
+        "line": 121,
+        "context": "build_depmap_lookup",
+        "input_column_or_value": "model_df[\"StrippedCellLineName\"] -> stripped",
+        "result_target": "key_strict -> depmap_lookup[\"strict\"]"
+      },
+      {
+        "function": "normalize_fallback",
+        "line": 126,
+        "context": "build_depmap_lookup",
+        "input_column_or_value": "model_df[\"StrippedCellLineName\"] -> stripped",
+        "result_target": "key_fallback -> depmap_lookup[\"fallback\"]"
+      },
+      {
+        "function": "normalize_strict",
+        "line": 144,
+        "context": "match_cell_lines Stage 1",
+        "input_column_or_value": "gdsc_cells list element -> gdsc_name (from GDSC CELL_LINE_NAME unique)",
+        "result_target": "key used for strict lookup; if hit -> matched + match_log(stage=strict)"
+      },
+      {
+        "function": "normalize_fallback",
+        "line": 164,
+        "context": "match_cell_lines Stage 2",
+        "input_column_or_value": "unmatched gdsc_name from Stage 1 only",
+        "result_target": "key used for fallback lookup; if hit -> matched + match_log(stage=fallback)"
+      }
+    ],
+    "stage_flow": {
+      "strict_to_fallback_condition": "Fallback runs only for names appended to unmatched during Stage 1 (strict miss).",
+      "fallback_skip_branch": "If Stage 1 matched all gdsc_names (unmatched list empty), fallback loop iterates zero times and is effectively skipped."
+    },
+    "runtime_stage_counts_from_matched_csv": {
+      "strict": 46
+    }
+  },
+  "stad_normalize_call_sites": {
+    "script": "20260421_new_pre_project_biso_STAD/scripts/filter_stad_cell_lines.py",
+    "call_sites": [
+      {
+        "function": "normalize_strict",
+        "line": 88,
+        "context": "build_depmap_lookup",
+        "input_column_or_value": "model_df[\"StrippedCellLineName\"] -> stripped",
+        "result_target": "ks -> depmap_lookup[\"strict\"]"
+      },
+      {
+        "function": "normalize_fallback",
+        "line": 91,
+        "context": "build_depmap_lookup",
+        "input_column_or_value": "model_df[\"StrippedCellLineName\"] -> stripped",
+        "result_target": "kf -> depmap_lookup[\"fallback\"]"
+      },
+      {
+        "function": "normalize_strict",
+        "line": 104,
+        "context": "match_cell_lines Stage 1",
+        "input_column_or_value": "gdsc_cells list element -> gdsc_name (from GDSC CELL_LINE_NAME unique)",
+        "result_target": "key used for strict lookup; if hit -> matched + match_log(stage=strict)"
+      },
+      {
+        "function": "normalize_fallback",
+        "line": 123,
+        "context": "match_cell_lines Stage 2",
+        "input_column_or_value": "unmatched gdsc_name from Stage 1 only",
+        "result_target": "key used for fallback lookup; if hit -> matched + match_log(stage=fallback)"
+      }
+    ],
+    "stage_flow": {
+      "strict_to_fallback_condition": "Fallback runs only for names appended to unmatched during Stage 1 (strict miss).",
+      "fallback_skip_branch": "If Stage 1 matched all gdsc_names (unmatched list empty), fallback loop iterates zero times and is effectively skipped."
+    },
+    "runtime_stage_counts_from_matched_csv": {
+      "strict": 24
+    }
+  },
+  "step2_4_matching_report_stad": {
+    "timestamp": "2026-04-21T15:01:02.966554",
+    "tcga_desc_filter": "STAD",
+    "matching": {
+      "total_matched": 24,
+      "unmatched": 0,
+      "match_rate": 1.0
+    },
+    "labels": {
+      "rows": 6060,
+      "cells": 24,
+      "drugs": 295
+    },
+    "unmatched_cells": []
+  },
+  "matched_stad_sample_rows": [
+    {
+      "gdsc_name": "23132-87",
+      "normalized": "2313287",
+      "stage": "strict",
+      "depmap_stripped": "2313287",
+      "depmap_model_id": "ACH-000948",
+      "has_crispr": false,
+      "n_drugs_measured": 279
+    },
+    {
+      "gdsc_name": "AGS",
+      "normalized": "ags",
+      "stage": "strict",
+      "depmap_stripped": "AGS",
+      "depmap_model_id": "ACH-000880",
+      "has_crispr": true,
+      "n_drugs_measured": 279
+    },
+    {
+      "gdsc_name": "FU97",
+      "normalized": "fu97",
+      "stage": "strict",
+      "depmap_stripped": "FU97",
+      "depmap_model_id": "ACH-000633",
+      "has_crispr": true,
+      "n_drugs_measured": 170
+    },
+    {
+      "gdsc_name": "GCIY",
+      "normalized": "gciy",
+      "stage": "strict",
+      "depmap_stripped": "GCIY",
+      "depmap_model_id": "ACH-000047",
+      "has_crispr": true,
+      "n_drugs_measured": 280
+    },
+    {
+      "gdsc_name": "HGC-27",
+      "normalized": "hgc27",
+      "stage": "strict",
+      "depmap_stripped": "HGC27",
+      "depmap_model_id": "ACH-000847",
+      "has_crispr": false,
+      "n_drugs_measured": 277
+    }
+  ],
+  "matched_colon_sample_rows": [
+    {
+      "gdsc_name": "C2BBe1",
+      "normalized": "c2bbe1",
+      "stage": "strict",
+      "depmap_stripped": "C2BBE1",
+      "depmap_model_id": "ACH-000009",
+      "has_crispr": false,
+      "n_drugs_measured": 280
+    },
+    {
+      "gdsc_name": "CCK-81",
+      "normalized": "cck81",
+      "stage": "strict",
+      "depmap_stripped": "CCK81",
+      "depmap_model_id": "ACH-000963",
+      "has_crispr": false,
+      "n_drugs_measured": 281
+    },
+    {
+      "gdsc_name": "CL-11",
+      "normalized": "cl11",
+      "stage": "strict",
+      "depmap_stripped": "CL11",
+      "depmap_model_id": "ACH-000249",
+      "has_crispr": false,
+      "n_drugs_measured": 280
+    },
+    {
+      "gdsc_name": "COLO-205",
+      "normalized": "colo205",
+      "stage": "strict",
+      "depmap_stripped": "COLO205",
+      "depmap_model_id": "ACH-001039",
+      "has_crispr": false,
+      "n_drugs_measured": 280
+    },
+    {
+      "gdsc_name": "COLO-320-HSR",
+      "normalized": "colo320hsr",
+      "stage": "strict",
+      "depmap_stripped": "COLO320HSR",
+      "depmap_model_id": "ACH-002219",
+      "has_crispr": false,
+      "n_drugs_measured": 281
+    }
+  ],
+  "depmap_model_contains_hyphenated_names": {
+    "HGC-27": false,
+    "HS 746T": true,
+    "KATO III": true,
+    "MKN-45": false,
+    "NCI-N87": false
+  },
+  "depmap_model_query_examples": {
+    "HGC-27": [],
+    "HS 746T": [
+      {
+        "ModelID": "ACH-000616",
+        "CellLineName": "Hs 746T",
+        "StrippedCellLineName": "HS746T"
+      }
+    ],
+    "KATO III": [
+      {
+        "ModelID": "ACH-000793",
+        "CellLineName": "KATO III",
+        "StrippedCellLineName": "KATOIII"
+      }
+    ],
+    "MKN-45": [],
+    "NCI-N87": []
+  },
+  "hypothesis_confirmed": "(다)",
+  "evidence": "STAD step2_4_matching_report shows total_matched=24, unmatched=0 and matched_stad_cell_lines.csv stage is strict for shown rows, so normalize path executed during Step2 matching. However Step3 join_qc_report previously showed unmatched_samples=2339/6060 because labels sample_id uses DepMap StrippedCellLineName while prepare_fe_inputs sample_features index comes from depmap_long cell_line_name, creating key-format divergence at FE bridge stage rather than Stage2 matching failure."
+}

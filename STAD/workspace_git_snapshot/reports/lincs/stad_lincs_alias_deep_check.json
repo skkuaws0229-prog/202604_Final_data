@@ -1,0 +1,624 @@
+{
+  "generated_at": "2026-04-21 16:52:33",
+  "inputs": {
+    "cell_info": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/curated_data/lincs/GSE92742/GSE92742_Broad_LINCS_cell_info.txt.gz",
+    "sig_info": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260421_new_pre_project_biso_STAD/curated_data/lincs/GSE92742/GSE92742_Broad_LINCS_sig_info.txt.gz"
+  },
+  "cell_info_shape": [
+    98,
+    14
+  ],
+  "sig_info_shape": [
+    473647,
+    2
+  ],
+  "cell_info_columns_summary": {
+    "cell_id": {
+      "n_unique": 98,
+      "sample_values": [
+        "A375",
+        "A375.311",
+        "A549",
+        "A549.311",
+        "A673"
+      ]
+    },
+    "cell_type": {
+      "n_unique": 5,
+      "sample_values": [
+        "cell line",
+        "differentiated",
+        "ESC",
+        "iPSC",
+        "primary"
+      ]
+    },
+    "base_cell_id": {
+      "n_unique": 82,
+      "sample_values": [
+        "A375",
+        "A549",
+        "A673",
+        "AGS",
+        "BT20"
+      ]
+    },
+    "precursor_cell_id": {
+      "n_unique": 11,
+      "sample_values": [
+        "-666",
+        "A375",
+        "A549",
+        "HA1E",
+        "HELA"
+      ]
+    },
+    "modification": {
+      "n_unique": 11,
+      "sample_values": [
+        "-666",
+        "genetically modified to stably express Cas9 protein",
+        "genetically  modified to stably express Cas9 protein",
+        "immortalized normal",
+        "bone marrow cells that were immortalized"
+      ]
+    },
+    "sample_type": {
+      "n_unique": 4,
+      "sample_values": [
+        "tumor",
+        "-666",
+        "normal",
+        "primary"
+      ]
+    },
+    "primary_site": {
+      "n_unique": 20,
+      "sample_values": [
+        "skin",
+        "lung",
+        "bone",
+        "stomach",
+        "breast"
+      ]
+    },
+    "subtype": {
+      "n_unique": 44,
+      "sample_values": [
+        "malignant melanoma",
+        "non small cell lung cancer| carcinoma",
+        "ewing's sarcoma",
+        "adenocarcinoma",
+        "carcinoma"
+      ]
+    },
+    "original_growth_pattern": {
+      "n_unique": 4,
+      "sample_values": [
+        "adherent",
+        "-666",
+        "suspension",
+        "mix"
+      ]
+    },
+    "provider_catalog_id": {
+      "n_unique": 41,
+      "sample_values": [
+        "CRL-1619",
+        "CCL-185",
+        "CRL-1598",
+        "CRL-1739",
+        "HTB-19"
+      ]
+    },
+    "original_source_vendor": {
+      "n_unique": 13,
+      "sample_values": [
+        "ATCC",
+        "DSMZ",
+        "ECACC",
+        "-666",
+        "HSRRB"
+      ]
+    },
+    "donor_age": {
+      "n_unique": 25,
+      "sample_values": [
+        "54",
+        "58",
+        "-666",
+        "74",
+        "31"
+      ]
+    },
+    "donor_sex": {
+      "n_unique": 3,
+      "sample_values": [
+        "F",
+        "M",
+        "-666"
+      ]
+    },
+    "donor_ethnicity": {
+      "n_unique": 3,
+      "sample_values": [
+        "-666",
+        "Caucasian",
+        "Black"
+      ]
+    }
+  },
+  "keyword_config": {
+    "keywords": [
+      "gastric",
+      "stomach",
+      "GI",
+      "intestin"
+    ],
+    "text_columns_checked": [
+      "cell_id",
+      "cell_type",
+      "base_cell_id",
+      "precursor_cell_id",
+      "modification",
+      "sample_type",
+      "primary_site",
+      "subtype",
+      "original_growth_pattern",
+      "provider_catalog_id",
+      "original_source_vendor",
+      "donor_sex",
+      "donor_ethnicity"
+    ]
+  },
+  "broader_keyword_hits": {
+    "row_count": 19,
+    "cell_ids": [
+      "AGS",
+      "CL34",
+      "HCT116",
+      "HELA",
+      "HELA.311",
+      "HT115",
+      "HT29",
+      "HT29.311",
+      "LOVO",
+      "MDST8",
+      "NCIH508",
+      "NCIH716",
+      "RKO",
+      "RMGI",
+      "SNU1040",
+      "SNUC5",
+      "SW480",
+      "SW620",
+      "SW948"
+    ],
+    "preview_rows_top50": [
+      {
+        "cell_id": "AGS",
+        "cell_type": "cell line",
+        "base_cell_id": "AGS",
+        "precursor_cell_id": "-666",
+        "modification": "-666",
+        "sample_type": "tumor",
+        "primary_site": "stomach",
+        "subtype": "adenocarcinoma",
+        "original_growth_pattern": "adherent",
+        "provider_catalog_id": "CRL-1739",
+        "original_source_vendor": "ATCC",
+        "donor_age": "54",
+        "donor_sex": "F",
+        "donor_ethnicity": "Caucasian"
+      },
+      {
+        "cell_id": "CL34",
+        "cell_type": "cell line",
+        "base_cell_id": "CL34",
+        "precursor_cell_id": "-666",
+        "modification": "-666",
+        "sample_type": "tumor",
+        "primary_site": "large intestine",
+        "subtype": "colorectal adenocarcinoma",
+        "original_growth_pattern": "adherent",
+        "provider_catalog_id": "-666",
+        "original_source_vendor": "DSMZ",
+        "donor_age": "-666",
+        "donor_sex": "F",
+        "donor_ethnicity": "-666"
+      },
+      {
+        "cell_id": "HCT116",
+        "cell_type": "cell line",
+        "base_cell_id": "HCT116",
+        "precursor_cell_id": "-666",
+        "modification": "-666",
+        "sample_type": "tumor",
+        "primary_site": "large intestine",
+        "subtype": "colorectal carcinoma",
+        "original_growth_pattern": "adherent",
+        "provider_catalog_id": "CCL-247",
+        "original_source_vendor": "ATCC",
+        "donor_age": "-666",
+        "donor_sex": "M",
+        "donor_ethnicity": "-666"
+      },
+      {
+        "cell_id": "HELA",
+        "cell_type": "cell line",
+        "base_cell_id": "HELA",
+        "precursor_cell_id": "-666",
+        "modification": "-666",
+        "sample_type": "tumor",
+        "primary_site": "large intestine",
+        "subtype": "adenocarcinoma",
+        "original_growth_pattern": "adherent",
+        "provider_catalog_id": "CCL-2",
+        "original_source_vendor": "ATCC",
+        "donor_age": "31",
+        "donor_sex": "F",
+        "donor_ethnicity": "Black"
+      },
+      {
+        "cell_id": "HELA.311",
+        "cell_type": "cell line",
+        "base_cell_id": "HELA",
+        "precursor_cell_id": "HELA",
+        "modification": "genetically modified to stably express Cas9 protein",
+        "sample_type": "tumor",
+        "primary_site": "large intestine",
+        "subtype": "adenocarcinoma",
+        "original_growth_pattern": "adherent",
+        "provider_catalog_id": "CCL-2",
+        "original_source_vendor": "ATCC",
+        "donor_age": "31",
+        "donor_sex": "F",
+        "donor_ethnicity": "Black"
+      },
+      {
+        "cell_id": "HT115",
+        "cell_type": "cell line",
+        "base_cell_id": "HT115",
+        "precursor_cell_id": "-666",
+        "modification": "-666",
+        "sample_type": "tumor",
+        "primary_site": "large intestine",
+        "subtype": "colorectal carcinoma",
+        "original_growth_pattern": "adherent",
+        "provider_catalog_id": "-666",
+        "original_source_vendor": "ECACC",
+        "donor_age": "-666",
+        "donor_sex": "-666",
+        "donor_ethnicity": "-666"
+      },
+      {
+        "cell_id": "HT29",
+        "cell_type": "cell line",
+        "base_cell_id": "HT29",
+        "precursor_cell_id": "-666",
+        "modification": "-666",
+        "sample_type": "tumor",
+        "primary_site": "large intestine",
+        "subtype": "colorectal adenocarcinoma",
+        "original_growth_pattern": "adherent",
+        "provider_catalog_id": "HTB-38",
+        "original_source_vendor": "ATCC",
+        "donor_age": "44",
+        "donor_sex": "F",
+        "donor_ethnicity": "Caucasian"
+      },
+      {
+        "cell_id": "HT29.311",
+        "cell_type": "cell line",
+        "base_cell_id": "HT29",
+        "precursor_cell_id": "HT29",
+        "modification": "genetically modified to stably express Cas9 protein",
+        "sample_type": "tumor",
+        "primary_site": "large intestine",
+        "subtype": "colorectal adenocarcinoma",
+        "original_growth_pattern": "adherent",
+        "provider_catalog_id": "HTB-38",
+        "original_source_vendor": "ATCC",
+        "donor_age": "44",
+        "donor_sex": "F",
+        "donor_ethnicity": "Caucasian"
+      },
+      {
+        "cell_id": "LOVO",
+        "cell_type": "cell line",
+        "base_cell_id": "LOVO",
+        "precursor_cell_id": "-666",
+        "modification": "-666",
+        "sample_type": "tumor",
+        "primary_site": "large intestine",
+        "subtype": "colorectal adenocarcinoma",
+        "original_growth_pattern": "adherent",
+        "provider_catalog_id": "CCL-229",
+        "original_source_vendor": "ATCC",
+        "donor_age": "56",
+        "donor_sex": "M",
+        "donor_ethnicity": "-666"
+      },
+      {
+        "cell_id": "MDST8",
+        "cell_type": "cell line",
+        "base_cell_id": "MDST8",
+        "precursor_cell_id": "-666",
+        "modification": "-666",
+        "sample_type": "tumor",
+        "primary_site": "large intestine",
+        "subtype": "colorectal carcinoma",
+        "original_growth_pattern": "adherent",
+        "provider_catalog_id": "-666",
+        "original_source_vendor": "ECACC",
+        "donor_age": "-666",
+        "donor_sex": "-666",
+        "donor_ethnicity": "-666"
+      },
+      {
+        "cell_id": "NCIH508",
+        "cell_type": "cell line",
+        "base_cell_id": "NCIH508",
+        "precursor_cell_id": "-666",
+        "modification": "-666",
+        "sample_type": "tumor",
+        "primary_site": "large intestine",
+        "subtype": "colorectal adenocarcinoma",
+        "original_growth_pattern": "mix",
+        "provider_catalog_id": "CCL-253",
+        "original_source_vendor": "ATCC",
+        "donor_age": "55",
+        "donor_sex": "M",
+        "donor_ethnicity": "Caucasian"
+      },
+      {
+        "cell_id": "NCIH716",
+        "cell_type": "cell line",
+        "base_cell_id": "NCIH716",
+        "precursor_cell_id": "-666",
+        "modification": "-666",
+        "sample_type": "tumor",
+        "primary_site": "large intestine",
+        "subtype": "colorectal adenocarcinoma",
+        "original_growth_pattern": "suspension",
+        "provider_catalog_id": "CCL-251",
+        "original_source_vendor": "ATCC",
+        "donor_age": "33",
+        "donor_sex": "M",
+        "donor_ethnicity": "Caucasian"
+      },
+      {
+        "cell_id": "RKO",
+        "cell_type": "cell line",
+        "base_cell_id": "RKO",
+        "precursor_cell_id": "-666",
+        "modification": "-666",
+        "sample_type": "tumor",
+        "primary_site": "large intestine",
+        "subtype": "colorectal carcinoma",
+        "original_growth_pattern": "adherent",
+        "provider_catalog_id": "-666",
+        "original_source_vendor": "ATCC",
+        "donor_age": "-666",
+        "donor_sex": "-666",
+        "donor_ethnicity": "-666"
+      },
+      {
+        "cell_id": "RMGI",
+        "cell_type": "cell line",
+        "base_cell_id": "RMGI",
+        "precursor_cell_id": "-666",
+        "modification": "-666",
+        "sample_type": "tumor",
+        "primary_site": "ovary",
+        "subtype": "carcinoma| clear cell",
+        "original_growth_pattern": "adherent",
+        "provider_catalog_id": "-666",
+        "original_source_vendor": "HSRRB",
+        "donor_age": "-666",
+        "donor_sex": "F",
+        "donor_ethnicity": "-666"
+      },
+      {
+        "cell_id": "SNU1040",
+        "cell_type": "cell line",
+        "base_cell_id": "SNU1040",
+        "precursor_cell_id": "-666",
+        "modification": "-666",
+        "sample_type": "tumor",
+        "primary_site": "large intestine",
+        "subtype": "colorectal carcinoma",
+        "original_growth_pattern": "mix",
+        "provider_catalog_id": "-666",
+        "original_source_vendor": "KCLB",
+        "donor_age": "-666",
+        "donor_sex": "M",
+        "donor_ethnicity": "-666"
+      },
+      {
+        "cell_id": "SNUC5",
+        "cell_type": "cell line",
+        "base_cell_id": "SNUC5",
+        "precursor_cell_id": "-666",
+        "modification": "-666",
+        "sample_type": "tumor",
+        "primary_site": "large intestine",
+        "subtype": "colorectal adenocarcinoma",
+        "original_growth_pattern": "adherent",
+        "provider_catalog_id": "-666",
+        "original_source_vendor": "KCLB",
+        "donor_age": "-666",
+        "donor_sex": "F",
+        "donor_ethnicity": "-666"
+      },
+      {
+        "cell_id": "SW480",
+        "cell_type": "cell line",
+        "base_cell_id": "SW480",
+        "precursor_cell_id": "-666",
+        "modification": "-666",
+        "sample_type": "tumor",
+        "primary_site": "large intestine",
+        "subtype": "colorectal adenocarcinoma",
+        "original_growth_pattern": "adherent",
+        "provider_catalog_id": "CCL-228",
+        "original_source_vendor": "ATCC",
+        "donor_age": "50",
+        "donor_sex": "M",
+        "donor_ethnicity": "Caucasian"
+      },
+      {
+        "cell_id": "SW620",
+        "cell_type": "cell line",
+        "base_cell_id": "SW620",
+        "precursor_cell_id": "-666",
+        "modification": "-666",
+        "sample_type": "tumor",
+        "primary_site": "large intestine",
+        "subtype": "colorectal adenocarcinoma",
+        "original_growth_pattern": "adherent",
+        "provider_catalog_id": "CCL-227",
+        "original_source_vendor": "ATCC",
+        "donor_age": "51",
+        "donor_sex": "M",
+        "donor_ethnicity": "Caucasian"
+      },
+      {
+        "cell_id": "SW948",
+        "cell_type": "cell line",
+        "base_cell_id": "SW948",
+        "precursor_cell_id": "-666",
+        "modification": "-666",
+        "sample_type": "tumor",
+        "primary_site": "large intestine",
+        "subtype": "colorectal adenocarcinoma",
+        "original_growth_pattern": "adherent",
+        "provider_catalog_id": "CCL-237",
+        "original_source_vendor": "ATCC",
+        "donor_age": "81",
+        "donor_sex": "F",
+        "donor_ethnicity": "Caucasian"
+      }
+    ]
+  },
+  "strict_stomach_gastric_hits_primary_site_or_subtype": {
+    "row_count": 1,
+    "cell_ids": [
+      "AGS"
+    ]
+  },
+  "candidate_substring_matches": {
+    "AGS": [
+      "AGS"
+    ],
+    "HS746T": [],
+    "KATOIII": [],
+    "MKN45": [],
+    "MKN7": [],
+    "MKN74": [],
+    "NCI_N87": [],
+    "NUGC3": [],
+    "OCUM1": [],
+    "SNU16": [],
+    "SNU216": [],
+    "SNU5": []
+  },
+  "non_standard_cell_id_patterns": {
+    "count": 47,
+    "preview_cell_ids_top50": [
+      "A375.311",
+      "A549.311",
+      "AGS",
+      "HA1E",
+      "HA1E.101",
+      "HA1E.311",
+      "HEK293T",
+      "HEKTE",
+      "HELA",
+      "HELA.311",
+      "HS27A",
+      "HS578T",
+      "HT29.311",
+      "HUVEC",
+      "JURKAT",
+      "LNCAP",
+      "LOVO",
+      "MCF10A",
+      "MCF7.101",
+      "MCF7.311",
+      "NKDBA",
+      "PC3.101",
+      "PC3.311",
+      "RKO",
+      "RMGI",
+      "RMUGS",
+      "SHSY5Y",
+      "SNGM",
+      "T3M10",
+      "TYKNU",
+      "U2OS",
+      "VCAP",
+      "YAPC",
+      "YAPC.311",
+      "MNEU.E",
+      "NEU",
+      "NEU.KCL",
+      "NPC",
+      "NPC.CAS9",
+      "NPC.TAK",
+      "FIBRNPC",
+      "ASC",
+      "ASC.C",
+      "PHH",
+      "SKB",
+      "SKL",
+      "SKL.C"
+    ]
+  },
+  "trt_cp_counts": {
+    "candidate_exact_ids": {
+      "AGS": 362,
+      "HS746T": 0,
+      "KATOIII": 0,
+      "MKN45": 0,
+      "MKN7": 0,
+      "MKN74": 0,
+      "NCI_N87": 0,
+      "NUGC3": 0,
+      "OCUM1": 0,
+      "SNU16": 0,
+      "SNU216": 0,
+      "SNU5": 0
+    },
+    "keyword_hit_cell_ids": {
+      "AGS": 362,
+      "CL34": 356,
+      "HCT116": 363,
+      "HELA": 0,
+      "HELA.311": 0,
+      "HT115": 355,
+      "HT29": 14513,
+      "HT29.311": 0,
+      "LOVO": 360,
+      "MDST8": 358,
+      "NCIH508": 360,
+      "NCIH716": 0,
+      "RKO": 362,
+      "RMGI": 356,
+      "SNU1040": 361,
+      "SNUC5": 351,
+      "SW480": 363,
+      "SW620": 362,
+      "SW948": 359
+    }
+  },
+  "recommendation": {
+    "new_stomach_like_cell_ids_found": [],
+    "should_update_candidates_seed": false,
+    "action": "no_new_cells_keep_AGS_only"
+  },
+  "notes": {
+    "gse92742_baseline": "Known usable STAD LINCS cell_id was AGS with 362 trt_cp signatures.",
+    "raw_policy": "No curated_data files modified."
+  }
+}

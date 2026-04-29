@@ -1,0 +1,169 @@
+{
+  "analyzed_at": "2026-04-21",
+  "stad_label_samples": [
+    "2313287",
+    "AGS",
+    "FU97",
+    "GCIY",
+    "HGC27",
+    "HS746T",
+    "HSC39",
+    "IM95",
+    "KATOIII",
+    "MKN28",
+    "MKN45",
+    "MKN7",
+    "NCIN87",
+    "NUGC3",
+    "NUGC4",
+    "OCUM1",
+    "RERFGC1B",
+    "RF48",
+    "SKGT2",
+    "SNU1",
+    "SNU16",
+    "SNU5",
+    "TGBC11TKB",
+    "TMK1"
+  ],
+  "stad_depmap_cells_count": 1150,
+  "matched_samples": [
+    "AGS",
+    "FU97",
+    "GCIY",
+    "IM95",
+    "MKN28"
+  ],
+  "unmatched_samples": [
+    "2313287",
+    "HGC27",
+    "HS746T",
+    "HSC39",
+    "KATOIII",
+    "MKN45",
+    "MKN7",
+    "NCIN87",
+    "NUGC3",
+    "NUGC4",
+    "OCUM1",
+    "RERFGC1B",
+    "RF48",
+    "SKGT2",
+    "SNU1",
+    "SNU16",
+    "SNU5",
+    "TGBC11TKB",
+    "TMK1"
+  ],
+  "unmatched_with_suggestions": {
+    "2313287": [
+      "23132/87"
+    ],
+    "HGC27": [
+      "HGC-27",
+      "GCT-27",
+      "HCC-827",
+      "HSC-2",
+      "HCS-2"
+    ],
+    "HS746T": [
+      "Hs 746T",
+      "Hs 766T",
+      "S462",
+      "H376"
+    ],
+    "HSC39": [
+      "HSC-39",
+      "HSC-3",
+      "HCC1395",
+      "HCC-1359",
+      "SF539"
+    ],
+    "KATOIII": [
+      "KATO III"
+    ],
+    "MKN45": [
+      "MKN-45",
+      "MKN74",
+      "MM485",
+      "MKN28"
+    ],
+    "MKN7": [
+      "MKN74",
+      "MKN28",
+      "MKN-45"
+    ],
+    "NCIN87": [
+      "NCI-N87",
+      "NCI-H2887",
+      "NCI-H2087",
+      "NCI-H82",
+      "NCI-H28"
+    ],
+    "NUGC3": [
+      "NUGC-3"
+    ],
+    "NUGC4": [
+      "SNU-C4",
+      "NUGC-3"
+    ],
+    "OCUM1": [
+      "OCUM-1",
+      "OCUG-1",
+      "OCUB-M",
+      "OAC-M5.1",
+      "UPMD1"
+    ],
+    "RERFGC1B": [
+      "RERF-GC-1B",
+      "RERF-LC-Sq1",
+      "RERF-LC-Ad1"
+    ],
+    "RF48": [],
+    "SKGT2": [
+      "SK-GT-2",
+      "SK-GT-4",
+      "SKG-I",
+      "SG231",
+      "SEMK2"
+    ],
+    "SNU1": [
+      "SNU-1",
+      "SNU-C1",
+      "SNU-81",
+      "SNU-61",
+      "SNU-16"
+    ],
+    "SNU16": [
+      "SNU-16",
+      "SNU-216",
+      "SNU-1",
+      "SNU-1196",
+      "SNU-1076"
+    ],
+    "SNU5": [
+      "SNU-5",
+      "SNU-C5",
+      "SNU-685",
+      "SNU-503",
+      "SNU-475"
+    ],
+    "TGBC11TKB": [
+      "TGBC1TKB",
+      "TGBC18TKB",
+      "TGBC52TKB",
+      "TT1TKB"
+    ],
+    "TMK1": [
+      "TMK-1",
+      "TM-31",
+      "TFK-1",
+      "TASK1"
+    ]
+  },
+  "colon_comparison": {
+    "colon_label_samples_count": 35,
+    "colon_all_matched": true
+  },
+  "root_cause_hypothesis": "name_format_mismatch"
+}

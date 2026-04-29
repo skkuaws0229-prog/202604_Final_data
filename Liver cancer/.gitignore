@@ -1,0 +1,2 @@
+# Large local S3 staging copies (re-upload with scripts/upload_lihc_v2_repro_to_s3.sh)
+s3_staging_upload/

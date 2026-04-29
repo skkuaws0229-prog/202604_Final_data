@@ -1,16 +1,16 @@
 rank,drug_name,step6_external_match,validation_evidence_tier,step7_decision,notes,fixed_tier
-1,Dactinomycin,matched,VT2,KEEP_TOP15,PRISM library/ClinicalTrials raw mention detected,Tier2
-2,Docetaxel,matched,VT1,KEEP_TOP15,Core evidence,Tier1
-3,Vinorelbine,matched,VT2,KEEP_TOP15,PRISM supported,Tier2
-4,Paclitaxel,matched,VT1,KEEP_TOP15,Core evidence,Tier1
-5,Temsirolimus,matched,VT2,KEEP_TOP15,OpenTargets/Context support,Tier2
-6,Topotecan,matched,VT2,KEEP_TOP15,OpenTargets/Context support,Tier2
-7,Vinblastine,matched,VT2,KEEP_TOP15,PRISM supported,Tier2
-8,SN-38,matched,VT2,KEEP_TOP15,PRISM + OpenTargets,Tier2
-9,Lestaurtinib,matched,VT3,KEEP_TOP15,OpenTargets support,Tier3
-10,SL0101,matched,VT3,KEEP_TOP15,Context/OpenTargets support,Tier3
-11,Teniposide,matched,VT2,KEEP_TOP15,PRISM supported,Tier2
-12,Irinotecan,matched,VT2,KEEP_TOP15,PRISM + CT support,Tier2
-13,Camptothecin,matched,VT4,REVIEW,VT4 control-like compound,Tier4
-14,Pyridostatin,unmatched,VT4,REVIEW,No external match after recheck,Tier4
-15,Schweinfurthin A,unmatched,VT4,REVIEW,No external match after recheck,Tier4
+1,Dactinomycin,matched,VT3,KEEP_TOP15,,Tier2
+2,Docetaxel,matched,VT3,KEEP_TOP15,,Tier1
+3,Vinorelbine,matched,VT3,KEEP_TOP15,,Tier2
+4,Paclitaxel,matched,VT3,KEEP_TOP15,,Tier1
+5,Temsirolimus,matched,VT3,KEEP_TOP15,,Tier2
+6,Topotecan,matched,VT3,KEEP_TOP15,,Tier2
+7,Vinblastine,unmatched,VT3,REVIEW,,Tier2
+8,SN-38,matched,VT3,KEEP_TOP15,,Tier2
+9,Lestaurtinib,matched,VT3,KEEP_TOP15,,Tier3
+10,SL0101,matched,VT3,KEEP_TOP15,,Tier3
+11,Teniposide,unmatched,VT3,REVIEW,,Tier2
+12,Irinotecan,matched,VT3,KEEP_TOP15,,Tier2
+13,Camptothecin,matched,VT3,KEEP_TOP15,,Tier4
+14,Pyridostatin,unmatched,VT3,REVIEW,,Tier4
+15,Schweinfurthin A,unmatched,VT3,REVIEW,,Tier4

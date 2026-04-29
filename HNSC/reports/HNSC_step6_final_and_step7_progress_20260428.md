@@ -33,6 +33,10 @@
   - 외부근거 매칭 + VT를 함께 고려
   - VT4 및 미매칭 물질은 `REVIEW`로 분리
 
+Step7 확장판 산출:
+- `results/20260427_hnsc_step4_v1/step7_top30_hnsc_extended.csv` (Top30 전체)
+- `results/20260427_hnsc_step4_v1/step7_top15_hnsc_extended.csv` (Top15)
+
 현재 Top15에서 `REVIEW`:
 - `Camptothecin` (VT4)
 - `Pyridostatin` (미매칭, VT4)

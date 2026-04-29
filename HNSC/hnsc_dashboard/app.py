@@ -36,6 +36,8 @@ st.caption(f"Root: {ROOT}")
 top15 = safe_read_csv(RES / "step7_top15_hnsc_provisional.csv")
 top15_fixed = safe_read_csv(RES / "step7_top15_hnsc_provisional_with_fixed_tier.csv")
 top30_fixed = safe_read_csv(RES / "top30_tier1234_fixed_hnsc.csv")
+top30_ext = safe_read_csv(RES / "step7_top30_hnsc_extended.csv")
+top15_ext = safe_read_csv(RES / "step7_top15_hnsc_extended.csv")
 ext = safe_read_csv(EXT / "top30_external_validation_independent.csv")
 summary = read_json(EXT / "external_validation_independent_summary.json")
 
@@ -109,6 +111,18 @@ else:
         "Top30 Tier 분포: "
         + ", ".join(f"{k}={v}" for k, v in top30_fixed["tier"].value_counts().sort_index().to_dict().items())
     )
+
+st.subheader("Step7 Extended Top30 (All Results Table)")
+if top30_ext.empty:
+    st.info("Step7 extended Top30 file not found.")
+else:
+    st.dataframe(top30_ext, width="stretch", height=420)
+
+st.subheader("Step7 Extended Top15")
+if top15_ext.empty:
+    st.info("Step7 extended Top15 file not found.")
+else:
+    st.dataframe(top15_ext, width="stretch", height=360)
 
 st.subheader("Linked Reports")
 st.markdown("- `reports/HNSC_step6_external_validation_preflight_20260428.md`")

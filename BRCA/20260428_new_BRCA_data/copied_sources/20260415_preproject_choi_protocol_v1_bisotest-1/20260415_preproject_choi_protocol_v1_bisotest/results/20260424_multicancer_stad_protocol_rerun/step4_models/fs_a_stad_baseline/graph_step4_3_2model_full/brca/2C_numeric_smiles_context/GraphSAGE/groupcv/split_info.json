@@ -1,0 +1,47 @@
+[
+  {
+    "split_id": "groupcv_fold1",
+    "train_rows": 5153,
+    "test_rows": 2577,
+    "train_unique_drugs": 197,
+    "test_unique_drugs": 98,
+    "train_unique_scaffolds": 155,
+    "test_unique_scaffolds": 79,
+    "train_test_drug_overlap_count": 0,
+    "train_test_drug_overlap_rate": 0.0,
+    "train_test_scaffold_overlap_count": 14,
+    "train_test_scaffold_overlap_rate": 0.17721518987341772,
+    "drug_overlap_rule_ok": true,
+    "scaffold_overlap_rule_ok": true
+  },
+  {
+    "split_id": "groupcv_fold2",
+    "train_rows": 5153,
+    "test_rows": 2577,
+    "train_unique_drugs": 196,
+    "test_unique_drugs": 99,
+    "train_unique_scaffolds": 152,
+    "test_unique_scaffolds": 76,
+    "train_test_drug_overlap_count": 0,
+    "train_test_drug_overlap_rate": 0.0,
+    "train_test_scaffold_overlap_count": 8,
+    "train_test_scaffold_overlap_rate": 0.10526315789473684,
+    "drug_overlap_rule_ok": true,
+    "scaffold_overlap_rule_ok": true
+  },
+  {
+    "split_id": "groupcv_fold3",
+    "train_rows": 5154,
+    "test_rows": 2576,
+    "train_unique_drugs": 197,
+    "test_unique_drugs": 98,
+    "train_unique_scaffolds": 148,
+    "test_unique_scaffolds": 83,
+    "train_test_drug_overlap_count": 0,
+    "train_test_drug_overlap_rate": 0.0,
+    "train_test_scaffold_overlap_count": 11,
+    "train_test_scaffold_overlap_rate": 0.13253012048192772,
+    "drug_overlap_rule_ok": true,
+    "scaffold_overlap_rule_ok": true
+  }
+]

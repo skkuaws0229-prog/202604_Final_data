@@ -1,0 +1,22 @@
+{
+  "date": "2026-04-28",
+  "dashboard": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260428_new_BRCA_data/brca_repro_dashboard.py",
+  "protocol": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260428_new_BRCA_data/BRCA_reproduction_protocol_20260428_v1.md",
+  "report": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260428_new_BRCA_data/BRCA_experiment_report_20260428.md",
+  "step4_summary": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260428_new_BRCA_data/brca_model_performance_summary.csv",
+  "step5_validation": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260428_new_BRCA_data/brca_directive_ensemble_validation_summary.csv",
+  "step5_top30": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260428_new_BRCA_data/brca_directive_top30_tiered_candidates.csv",
+  "step6_top15": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260428_new_BRCA_data/step6_metabric_validation/brca_top15_metabric_validated.csv",
+  "step6_top30": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260428_new_BRCA_data/step6_metabric_validation/brca_top30_metabric_scored.csv",
+  "step7_top30": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260428_new_BRCA_data/step7_admet_22assay/brca_admet_22assay_top30_detailed.csv",
+  "step7_top15": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260428_new_BRCA_data/step7_admet_22assay/brca_final15_after_admet.csv",
+  "commands": {
+    "step4_summary": "python3 scripts/extract_brca_step4_summary.py",
+    "step5_ensemble": "python3 scripts/run_brca_directive_ensemble.py",
+    "tier_classification": "python3 scripts/classify_brca_top30_tiers.py",
+    "step6_metabric": "python3 scripts/run_brca_step6_metabric_adapter.py",
+    "step7_admet": "python3 scripts/run_brca_step7_admet_adapter.py",
+    "materials": "python3 scripts/build_brca_repro_materials.py",
+    "dashboard": "streamlit run 20260428_new_BRCA_data/brca_repro_dashboard.py"
+  }
+}

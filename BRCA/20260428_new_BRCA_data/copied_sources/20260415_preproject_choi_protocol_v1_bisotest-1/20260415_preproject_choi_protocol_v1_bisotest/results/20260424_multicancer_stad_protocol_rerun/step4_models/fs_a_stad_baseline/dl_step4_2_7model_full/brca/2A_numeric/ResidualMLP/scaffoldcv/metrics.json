@@ -1,0 +1,225 @@
+{
+  "cancer": "brca",
+  "track": "2A_numeric",
+  "model": "ResidualMLP",
+  "eval_mode": "scaffoldcv",
+  "core_mean": {
+    "spearman": 0.2537632378984352,
+    "pearson": 0.2317599058151245,
+    "kendall_tau": 0.17512781891982765,
+    "rmse": 2.5587937266155847,
+    "mae": 1.9510914087295532,
+    "r2": 0.04535380999247233
+  },
+  "overfit": {
+    "train_spearman": 0.26413166522979736,
+    "test_spearman": 0.25376322865486145,
+    "spearman_gap": 0.010368436574935913,
+    "train_rmse": 2.552278757095337,
+    "test_rmse": 2.558793783187866,
+    "rmse_gap": -0.0065151057206094265,
+    "fold_mean": 0.25376322865486145,
+    "fold_std": 0.008629925549030304,
+    "fold_min": 0.2425459623336792,
+    "fold_max": 0.26353636384010315
+  },
+  "ranking_mean": {
+    "precision_at_5": 0.5333333333333333,
+    "precision_at_10": 0.3333333333333333,
+    "precision_at_30": 0.45555555555555555,
+    "ndcg_at_5": 0.17632408944989741,
+    "ndcg_at_10": 0.14202000448905885,
+    "ndcg_at_30": 0.16433847497527612,
+    "hit_rate_at_10": 1.0,
+    "hit_rate_at_30": 1.0
+  },
+  "split_leakage_mean": {
+    "train_rows": 5153.333333333333,
+    "test_rows": 2576.6666666666665,
+    "train_unique_drugs": 196.66666666666666,
+    "test_unique_drugs": 98.33333333333333,
+    "train_unique_scaffolds": 146.66666666666666,
+    "test_unique_scaffolds": 73.33333333333333,
+    "train_test_drug_overlap_count": 0.0,
+    "train_test_drug_overlap_rate": 0.0,
+    "train_test_scaffold_overlap_count": 0.0,
+    "train_test_scaffold_overlap_rate": 0.0
+  },
+  "label_drift_mean": {
+    "train_label_mean": 3.1267479260762534,
+    "test_label_mean": 3.1267632643381753,
+    "train_label_std": 2.6233232021331787,
+    "test_label_std": 2.61772886912028,
+    "label_mean_diff": -1.533826192220052e-05,
+    "label_ks_statistic": 0.038841211054895276,
+    "label_ks_pvalue": 0.12885177723524274
+  },
+  "imputation_summary": {
+    "nan_imputation_applied": false,
+    "nan_imputation_value": 0.0,
+    "nan_before_count": 0,
+    "nan_after_count": 0,
+    "inf_before_count": 0,
+    "inf_after_count": 0,
+    "imputation_scope": "model_input_only",
+    "original_input_modified": false
+  },
+  "folds": [
+    {
+      "split_id": "scaffoldcv_fold1",
+      "train": {
+        "spearman": 0.266612866589945,
+        "pearson": 0.2416112720966339,
+        "kendall_tau": 0.18472910640559298,
+        "rmse": 2.568332083089311,
+        "mae": 1.9525424242019653,
+        "r2": 0.05201387405395508
+      },
+      "test": {
+        "spearman": 0.2425459685372186,
+        "pearson": 0.22552110254764557,
+        "kendall_tau": 0.165447110169846,
+        "rmse": 2.5250878384863236,
+        "mae": 1.8997775316238403,
+        "r2": 0.0499577522277832
+      },
+      "ranking": {
+        "precision_at_5": 0.4,
+        "precision_at_10": 0.2,
+        "precision_at_30": 0.43333333333333335,
+        "ndcg_at_5": 0.14271611068321544,
+        "ndcg_at_10": 0.10667674885149252,
+        "ndcg_at_30": 0.17945091158906976,
+        "hit_rate_at_10": 1.0,
+        "hit_rate_at_30": 1.0
+      },
+      "split": {
+        "train_rows": 5153,
+        "test_rows": 2577,
+        "train_unique_drugs": 197,
+        "test_unique_drugs": 98,
+        "train_unique_scaffolds": 173,
+        "test_unique_scaffolds": 47,
+        "train_test_drug_overlap_count": 0,
+        "train_test_drug_overlap_rate": 0.0,
+        "train_test_scaffold_overlap_count": 0,
+        "train_test_scaffold_overlap_rate": 0.0,
+        "drug_overlap_rule_ok": true,
+        "scaffold_overlap_rule_ok": true
+      },
+      "drift": {
+        "train_label_mean": 3.2162575721740723,
+        "test_label_mean": 2.9477479457855225,
+        "train_label_std": 2.637850522994995,
+        "test_label_std": 2.590627908706665,
+        "label_mean_diff": 0.2685096263885498,
+        "label_ks_statistic": 0.045896536115170694,
+        "label_ks_pvalue": 0.001373907485466587
+      }
+    },
+    {
+      "split_id": "scaffoldcv_fold2",
+      "train": {
+        "spearman": 0.25798385944555124,
+        "pearson": 0.22963516414165497,
+        "kendall_tau": 0.17724447361273668,
+        "rmse": 2.6335041711012654,
+        "mae": 1.9567651748657227,
+        "r2": 0.05224347114562988
+      },
+      "test": {
+        "spearman": 0.2635363658533867,
+        "pearson": 0.25372806191444397,
+        "kendall_tau": 0.18232541162385005,
+        "rmse": 2.378974299718154,
+        "mae": 1.8581650257110596,
+        "r2": 0.06300884485244751
+      },
+      "ranking": {
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.4,
+        "precision_at_30": 0.5333333333333333,
+        "ndcg_at_5": 0.3680846609573638,
+        "ndcg_at_10": 0.3013290563324777,
+        "ndcg_at_30": 0.2928212886716816,
+        "hit_rate_at_10": 1.0,
+        "hit_rate_at_30": 1.0
+      },
+      "split": {
+        "train_rows": 5153,
+        "test_rows": 2577,
+        "train_unique_drugs": 196,
+        "test_unique_drugs": 99,
+        "train_unique_scaffolds": 133,
+        "test_unique_scaffolds": 87,
+        "train_test_drug_overlap_count": 0,
+        "train_test_drug_overlap_rate": 0.0,
+        "train_test_scaffold_overlap_count": 0,
+        "train_test_scaffold_overlap_rate": 0.0,
+        "drug_overlap_rule_ok": true,
+        "scaffold_overlap_rule_ok": true
+      },
+      "drift": {
+        "train_label_mean": 3.1161015033721924,
+        "test_label_mean": 3.148021697998047,
+        "train_label_std": 2.7051143646240234,
+        "test_label_std": 2.4576611518859863,
+        "label_mean_diff": -0.03192019462585449,
+        "label_ks_statistic": 0.021706672221184265,
+        "label_ks_pvalue": 0.3846689822805079
+      }
+    },
+    {
+      "split_id": "scaffoldcv_fold3",
+      "train": {
+        "spearman": 0.26779829158313506,
+        "pearson": 0.24831537902355194,
+        "kendall_tau": 0.1839097213537587,
+        "rmse": 2.454999462679243,
+        "mae": 1.9085477590560913,
+        "r2": 0.056176722049713135
+      },
+      "test": {
+        "spearman": 0.25520737930470017,
+        "pearson": 0.216030552983284,
+        "kendall_tau": 0.17761093496578687,
+        "rmse": 2.7723190416422754,
+        "mae": 2.0953316688537598,
+        "r2": 0.02309483289718628
+      },
+      "ranking": {
+        "precision_at_5": 0.6,
+        "precision_at_10": 0.4,
+        "precision_at_30": 0.4,
+        "ndcg_at_5": 0.018171496709112986,
+        "ndcg_at_10": 0.018054208283206325,
+        "ndcg_at_30": 0.020743224665077047,
+        "hit_rate_at_10": 1.0,
+        "hit_rate_at_30": 1.0
+      },
+      "split": {
+        "train_rows": 5154,
+        "test_rows": 2576,
+        "train_unique_drugs": 197,
+        "test_unique_drugs": 98,
+        "train_unique_scaffolds": 134,
+        "test_unique_scaffolds": 86,
+        "train_test_drug_overlap_count": 0,
+        "train_test_drug_overlap_rate": 0.0,
+        "train_test_scaffold_overlap_count": 0,
+        "train_test_scaffold_overlap_rate": 0.0,
+        "drug_overlap_rule_ok": true,
+        "scaffold_overlap_rule_ok": true
+      },
+      "drift": {
+        "train_label_mean": 3.047884702682495,
+        "test_label_mean": 3.284520149230957,
+        "train_label_std": 2.5270047187805176,
+        "test_label_std": 2.8048975467681885,
+        "label_mean_diff": -0.23663544654846191,
+        "label_ks_statistic": 0.04892042482833089,
+        "label_ks_pvalue": 0.000512441939753741
+      }
+    }
+  ]
+}

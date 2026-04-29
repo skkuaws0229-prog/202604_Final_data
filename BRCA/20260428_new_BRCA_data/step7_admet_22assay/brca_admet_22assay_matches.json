@@ -1,0 +1,605 @@
+{
+  "ascorbate (vitamin C)": {
+    "drug_id": 2438,
+    "drug_name": "ascorbate (vitamin C)",
+    "smiles": "C(C(C1C(=C(C(=O)O1)[O-])O)O)O",
+    "assays": {},
+    "n_exact": 0,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 0
+  },
+  "N-acetyl cysteine": {
+    "drug_id": 2499,
+    "drug_name": "N-acetyl cysteine",
+    "smiles": "CC(=O)N[C@@H](CS)C(O)=O",
+    "assays": {
+      "ames": {
+        "similarity": 1.0,
+        "value": 1.0,
+        "match_type": "exact"
+      },
+      "ld50_zhu": {
+        "similarity": 1.0,
+        "value": 1.509,
+        "match_type": "exact"
+      },
+      "bioavailability_ma": {
+        "similarity": 1.0,
+        "value": 0.0,
+        "match_type": "exact"
+      },
+      "half_life_obach": {
+        "similarity": 1.0,
+        "value": 5.5,
+        "match_type": "exact"
+      }
+    },
+    "n_exact": 4,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 4
+  },
+  "glutathione": {
+    "drug_id": 2439,
+    "drug_name": "glutathione",
+    "smiles": "N[C@@H](CCC(=O)N[C@@H](CS)C(=O)NCC(=O)O)C(=O)O",
+    "assays": {
+      "ames": {
+        "similarity": 1.0,
+        "value": 1.0,
+        "match_type": "exact"
+      }
+    },
+    "n_exact": 1,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 1
+  },
+  "alpha-lipoic acid": {
+    "drug_id": 2498,
+    "drug_name": "alpha-lipoic acid",
+    "smiles": "OC(=O)CCCC[C@@H]1CCSS1",
+    "assays": {
+      "ames": {
+        "similarity": 1.0,
+        "value": 0.0,
+        "match_type": "exact"
+      },
+      "ld50_zhu": {
+        "similarity": 1.0,
+        "value": 2.261,
+        "match_type": "exact"
+      },
+      "cyp2d6_veith": {
+        "similarity": 1.0,
+        "value": 0.0,
+        "match_type": "exact"
+      },
+      "cyp3a4_veith": {
+        "similarity": 1.0,
+        "value": 0.0,
+        "match_type": "exact"
+      },
+      "solubility_aqsoldb": {
+        "similarity": 1.0,
+        "value": -2.3750473352,
+        "match_type": "exact"
+      }
+    },
+    "n_exact": 5,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 5
+  },
+  "Temozolomide": {
+    "drug_id": 1375,
+    "drug_name": "Temozolomide",
+    "smiles": "Cn1nnc2c(C(N)=O)ncn2c1=O",
+    "assays": {
+      "dili": {
+        "similarity": 1.0,
+        "value": 0.0,
+        "match_type": "exact"
+      },
+      "bioavailability_ma": {
+        "similarity": 1.0,
+        "value": 1.0,
+        "match_type": "exact"
+      },
+      "vdss_lombardo": {
+        "similarity": 1.0,
+        "value": 0.5,
+        "match_type": "exact"
+      },
+      "half_life_obach": {
+        "similarity": 1.0,
+        "value": 1.5,
+        "match_type": "exact"
+      },
+      "lipophilicity_astrazeneca": {
+        "similarity": 1.0,
+        "value": -1.08,
+        "match_type": "exact"
+      }
+    },
+    "n_exact": 5,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 5
+  },
+  "Dacarbazine": {
+    "drug_id": 1815,
+    "drug_name": "Dacarbazine",
+    "smiles": "CN(C)/N=N/c1[nH]cnc1C(N)=O",
+    "assays": {
+      "cyp2c9_substrate_carbonmangels": {
+        "similarity": 1.0,
+        "value": 0.0,
+        "match_type": "exact"
+      },
+      "cyp2d6_substrate_carbonmangels": {
+        "similarity": 1.0,
+        "value": 0.0,
+        "match_type": "exact"
+      },
+      "cyp3a4_substrate_carbonmangels": {
+        "similarity": 1.0,
+        "value": 0.0,
+        "match_type": "exact"
+      },
+      "half_life_obach": {
+        "similarity": 1.0,
+        "value": 6.2,
+        "match_type": "exact"
+      }
+    },
+    "n_exact": 4,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 4
+  },
+  "CZC24832": {
+    "drug_id": 1615,
+    "drug_name": "CZC24832",
+    "smiles": "CC(C)(C)NS(=O)(=O)C1=CN=CC(=C1)C2=CN3C(=NC(=N3)N)C(=C2)F",
+    "assays": {},
+    "n_exact": 0,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 0
+  },
+  "BEN": {
+    "drug_id": 1847,
+    "drug_name": "BEN",
+    "smiles": "C1=CC=C(C=C1)C(=N)N",
+    "assays": {
+      "ames": {
+        "similarity": 1.0,
+        "value": 0.0,
+        "match_type": "exact"
+      },
+      "cyp2c9_veith": {
+        "similarity": 1.0,
+        "value": 0.0,
+        "match_type": "exact"
+      },
+      "cyp3a4_veith": {
+        "similarity": 1.0,
+        "value": 0.0,
+        "match_type": "exact"
+      }
+    },
+    "n_exact": 3,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 3
+  },
+  "Oxaliplatin": {
+    "drug_id": 1089,
+    "drug_name": "Oxaliplatin",
+    "smiles": "[H][N]1([H])[C@@H]2CCCC[C@H]2[N]([H])([H])[Pt]11OC(=O)C(=O)O1",
+    "assays": {},
+    "n_exact": 0,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 0
+  },
+  "Fludarabine": {
+    "drug_id": 1813,
+    "drug_name": "Fludarabine",
+    "smiles": "Nc1nc(F)nc2c1ncn2[C@@H]1O[C@H](CO)[C@@H](O)[C@@H]1O",
+    "assays": {
+      "bioavailability_ma": {
+        "similarity": 1.0,
+        "value": 1.0,
+        "match_type": "exact"
+      },
+      "vdss_lombardo": {
+        "similarity": 1.0,
+        "value": 2.2,
+        "match_type": "exact"
+      },
+      "cyp2c9_veith": {
+        "similarity": 0.75,
+        "value": 0.0,
+        "match_type": "analog"
+      },
+      "cyp2d6_veith": {
+        "similarity": 0.75,
+        "value": 0.0,
+        "match_type": "analog"
+      },
+      "cyp3a4_veith": {
+        "similarity": 0.75,
+        "value": 0.0,
+        "match_type": "analog"
+      },
+      "half_life_obach": {
+        "similarity": 1.0,
+        "value": 11.0,
+        "match_type": "exact"
+      }
+    },
+    "n_exact": 3,
+    "n_close_analog": 0,
+    "n_analog": 3,
+    "n_total_matches": 6
+  },
+  "5-Fluorouracil": {
+    "drug_id": 1073,
+    "drug_name": "5-Fluorouracil",
+    "smiles": "FC1=CNC(=O)NC1=O",
+    "assays": {
+      "bioavailability_ma": {
+        "similarity": 1.0,
+        "value": 1.0,
+        "match_type": "exact"
+      },
+      "bbb_martins": {
+        "similarity": 1.0,
+        "value": 0.0,
+        "match_type": "exact"
+      },
+      "vdss_lombardo": {
+        "similarity": 1.0,
+        "value": 0.23,
+        "match_type": "exact"
+      },
+      "cyp2c9_substrate_carbonmangels": {
+        "similarity": 1.0,
+        "value": 0.0,
+        "match_type": "exact"
+      },
+      "cyp2d6_substrate_carbonmangels": {
+        "similarity": 1.0,
+        "value": 0.0,
+        "match_type": "exact"
+      },
+      "cyp3a4_substrate_carbonmangels": {
+        "similarity": 1.0,
+        "value": 0.0,
+        "match_type": "exact"
+      },
+      "half_life_obach": {
+        "similarity": 1.0,
+        "value": 0.12,
+        "match_type": "exact"
+      }
+    },
+    "n_exact": 7,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 7
+  },
+  "CCT007093": {
+    "drug_id": 1067,
+    "drug_name": "CCT007093",
+    "smiles": "C1CC(=CC2=CC=CS2)C(=O)C1=CC3=CC=CS3",
+    "assays": {},
+    "n_exact": 0,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 0
+  },
+  "A-366": {
+    "drug_id": 2157,
+    "drug_name": "A-366",
+    "smiles": "COC1=C(C=C2C(=C1)C3(CCC3)C(=N2)N)OCCCN4CCCC4",
+    "assays": {},
+    "n_exact": 0,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 0
+  },
+  "THR-101": {
+    "drug_id": 2360,
+    "drug_name": "THR-101",
+    "smiles": "CC1=CC=CC=C1N2C(=O)C3=C(S2)C=C(C=C3)F",
+    "assays": {},
+    "n_exact": 0,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 0
+  },
+  "GSK2830371": {
+    "drug_id": 2359,
+    "drug_name": "GSK2830371",
+    "smiles": "CC1=C(C=C(C=N1)Cl)NCC2=CC=C(S2)C(=O)NC(CC3CCCC3)C(=O)NC4CC4",
+    "assays": {},
+    "n_exact": 0,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 0
+  },
+  "Ruxolitinib": {
+    "drug_id": 1507,
+    "drug_name": "Ruxolitinib",
+    "smiles": "N#CC[C@H](C1CCCC1)n1cc(-c2ncnc3[nH]ccc23)cn1",
+    "assays": {
+      "ppbr_az": {
+        "similarity": 1.0,
+        "value": 83.37,
+        "match_type": "exact"
+      },
+      "lipophilicity_astrazeneca": {
+        "similarity": 1.0,
+        "value": 2.55,
+        "match_type": "exact"
+      }
+    },
+    "n_exact": 2,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 2
+  },
+  "SB216763": {
+    "drug_id": 1025,
+    "drug_name": "SB216763",
+    "smiles": "Cn1cc(C2=C(c3ccc(Cl)cc3Cl)C(=O)NC2=O)c2ccccc21",
+    "assays": {
+      "cyp2d6_veith": {
+        "similarity": 1.0,
+        "value": 0.0,
+        "match_type": "exact"
+      },
+      "cyp3a4_veith": {
+        "similarity": 1.0,
+        "value": 1.0,
+        "match_type": "exact"
+      }
+    },
+    "n_exact": 2,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 2
+  },
+  "Nelarabine": {
+    "drug_id": 1814,
+    "drug_name": "Nelarabine",
+    "smiles": "COc1nc(N)nc2c1ncn2[C@@H]1O[C@H](CO)[C@@H](O)[C@@H]1O",
+    "assays": {
+      "vdss_lombardo": {
+        "similarity": 1.0,
+        "value": 4.9,
+        "match_type": "exact"
+      },
+      "cyp2c9_veith": {
+        "similarity": 0.7115384615384616,
+        "value": 0.0,
+        "match_type": "analog"
+      },
+      "cyp2d6_veith": {
+        "similarity": 0.7115384615384616,
+        "value": 0.0,
+        "match_type": "analog"
+      },
+      "cyp3a4_veith": {
+        "similarity": 0.7115384615384616,
+        "value": 0.0,
+        "match_type": "analog"
+      },
+      "clearance_hepatocyte_az": {
+        "similarity": 1.0,
+        "value": 10.47,
+        "match_type": "exact"
+      },
+      "clearance_microsome_az": {
+        "similarity": 1.0,
+        "value": 42.66,
+        "match_type": "exact"
+      },
+      "half_life_obach": {
+        "similarity": 1.0,
+        "value": 0.5,
+        "match_type": "exact"
+      }
+    },
+    "n_exact": 4,
+    "n_close_analog": 0,
+    "n_analog": 3,
+    "n_total_matches": 7
+  },
+  "Veliparib": {
+    "drug_id": 1018,
+    "drug_name": "Veliparib",
+    "smiles": "C[C@]1(c2nc3c(C(N)=O)cccc3[nH]2)CCCN1",
+    "assays": {},
+    "n_exact": 0,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 0
+  },
+  "MIRA-1": {
+    "drug_id": 1931,
+    "drug_name": "MIRA-1",
+    "smiles": "CCC(=O)OCN1C(=O)C=CC1=O",
+    "assays": {},
+    "n_exact": 0,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 0
+  },
+  "PRIMA-1MET": {
+    "drug_id": 1131,
+    "drug_name": "PRIMA-1MET",
+    "smiles": "COCC1(CO)N2CCC(CC2)C1=O",
+    "assays": {},
+    "n_exact": 0,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 0
+  },
+  "Cyclophosphamide": {
+    "drug_id": 1512,
+    "drug_name": "Cyclophosphamide",
+    "smiles": "O.O=P1(N(CCCl)CCCl)NCCCO1",
+    "assays": {
+      "ames": {
+        "similarity": 0.9642857142857143,
+        "value": 1.0,
+        "match_type": "close_analog"
+      },
+      "bioavailability_ma": {
+        "similarity": 0.9642857142857143,
+        "value": 1.0,
+        "match_type": "close_analog"
+      },
+      "pgp_broccatelli": {
+        "similarity": 0.9642857142857143,
+        "value": 0.0,
+        "match_type": "close_analog"
+      },
+      "ppbr_az": {
+        "similarity": 0.9642857142857143,
+        "value": 14.23,
+        "match_type": "close_analog"
+      },
+      "cyp2c9_substrate_carbonmangels": {
+        "similarity": 0.9642857142857143,
+        "value": 1.0,
+        "match_type": "close_analog"
+      },
+      "cyp2d6_substrate_carbonmangels": {
+        "similarity": 0.9642857142857143,
+        "value": 1.0,
+        "match_type": "close_analog"
+      },
+      "cyp3a4_substrate_carbonmangels": {
+        "similarity": 0.9642857142857143,
+        "value": 1.0,
+        "match_type": "close_analog"
+      },
+      "half_life_obach": {
+        "similarity": 0.9642857142857143,
+        "value": 8.0,
+        "match_type": "close_analog"
+      }
+    },
+    "n_exact": 0,
+    "n_close_analog": 8,
+    "n_analog": 0,
+    "n_total_matches": 8
+  },
+  "Motesanib": {
+    "drug_id": 1029,
+    "drug_name": "Motesanib",
+    "smiles": "CC1(C)CNc2cc(NC(=O)c3cccnc3NCc3ccncc3)ccc21",
+    "assays": {},
+    "n_exact": 0,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 0
+  },
+  "PCI-34051": {
+    "drug_id": 1621,
+    "drug_name": "PCI-34051",
+    "smiles": "COC1=CC=C(C=C1)CN2C=CC3=C2C=C(C=C3)C(=O)NO",
+    "assays": {},
+    "n_exact": 0,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 0
+  },
+  "AZD1208": {
+    "drug_id": 1449,
+    "drug_name": "AZD1208",
+    "smiles": "NC1CCCN(c2c(/C=C3/SC(=O)NC3=O)cccc2-c2ccccc2)C1",
+    "assays": {
+      "ppbr_az": {
+        "similarity": 0.7368421052631579,
+        "value": 97.76,
+        "match_type": "analog"
+      },
+      "clearance_hepatocyte_az": {
+        "similarity": 0.8421052631578947,
+        "value": 8.91,
+        "match_type": "analog"
+      },
+      "clearance_microsome_az": {
+        "similarity": 0.8421052631578947,
+        "value": 8.51,
+        "match_type": "analog"
+      },
+      "lipophilicity_astrazeneca": {
+        "similarity": 0.8421052631578947,
+        "value": 1.56,
+        "match_type": "analog"
+      }
+    },
+    "n_exact": 0,
+    "n_close_analog": 0,
+    "n_analog": 4,
+    "n_total_matches": 4
+  },
+  "Lenalidomide": {
+    "drug_id": 1020,
+    "drug_name": "Lenalidomide",
+    "smiles": "Nc1cccc2c1CN(C1CCC(=O)NC1=O)C2=O",
+    "assays": {},
+    "n_exact": 0,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 0
+  },
+  "JNK Inhibitor VIII": {
+    "drug_id": 1043,
+    "drug_name": "JNK Inhibitor VIII",
+    "smiles": "CCOC1=C(C(=CC(=N1)NC(=O)CC2=C(C=CC(=C2)OC)OC)N)C#N",
+    "assays": {},
+    "n_exact": 0,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 0
+  },
+  "ML323": {
+    "drug_id": 1629,
+    "drug_name": "ML323",
+    "smiles": "CC1=CN=C(N=C1NCC2=CC=C(C=C2)N3C=CN=N3)C4=CC=CC=C4C(C)C",
+    "assays": {},
+    "n_exact": 0,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 0
+  },
+  "GSK2801": {
+    "drug_id": 1580,
+    "drug_name": "GSK2801",
+    "smiles": "CCCOC1=CC2=C(C=C(N2C=C1)C(=O)C)C3=CC=CC=C3S(=O)(=O)C",
+    "assays": {},
+    "n_exact": 0,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 0
+  },
+  "LY2109761": {
+    "drug_id": 1852,
+    "drug_name": "LY2109761",
+    "smiles": "C1CC2=C(C(=NN2C1)C3=CC=CC=N3)C4=C5C=CC(=CC5=NC=C4)OCCN6CCOCC6",
+    "assays": {},
+    "n_exact": 0,
+    "n_close_analog": 0,
+    "n_analog": 0,
+    "n_total_matches": 0
+  }
+}

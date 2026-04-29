@@ -1,0 +1,12 @@
+{
+  "input_top30_rows": 30,
+  "assay_dir": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest-1/20260415_preproject_choi_protocol_v1_bisotest/curated_data/admet/tdc_admet_group/admet_group",
+  "verdict_counts": {
+    "WARNING": 21,
+    "PASS": 6,
+    "FAIL": 3
+  },
+  "hard_fail_count": 2,
+  "final15_csv": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260428_new_BRCA_data/step7_admet_22assay/brca_final15_after_admet.csv",
+  "detailed_csv": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260428_new_BRCA_data/step7_admet_22assay/brca_admet_22assay_top30_detailed.csv"
+}

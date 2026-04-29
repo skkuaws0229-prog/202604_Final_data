@@ -1,0 +1,31 @@
+drug_id,drug_name,target,pathway,target_expressed,mean_expr,pct_patients_expressing,expr_rank_pct,brca_pathway_relevant,matched_genes
+2438,ascorbate (vitamin C),anti-oxidant proteins,Other,False,0.0,0.0,50.0,False,[]
+2499,N-acetyl cysteine,Metabolism,Metabolism,False,0.0,0.0,50.0,False,[]
+2439,glutathione,anti-oxidant proteins,Other,False,0.0,0.0,50.0,False,[]
+2498,alpha-lipoic acid,Metabolism,Metabolism,False,0.0,0.0,50.0,False,[]
+1375,Temozolomide,DNA alkylating agent,DNA replication,False,0.0,0.0,50.0,True,[]
+1815,Dacarbazine,CP11A,Other,False,0.0,0.0,50.0,False,[]
+1615,CZC24832,PI3Kgamma,PI3K/MTOR signaling,False,0.0,0.0,50.0,True,[]
+1847,BEN,<NA>,Unclassified,False,0.0,0.0,50.0,False,[]
+1089,Oxaliplatin,DNA alkylating agent,DNA replication,False,0.0,0.0,50.0,True,[]
+1813,Fludarabine,Antimetabolite,DNA replication,False,0.0,0.0,50.0,True,[]
+1073,5-Fluorouracil,Antimetabolite (DNA & RNA),Other,False,0.0,0.0,50.0,False,[]
+1067,CCT007093,PPM1D,Cell cycle,True,6.662792666182519,0.9338383838383838,60.8649225840897,True,['PPM1D']
+2157,A-366,"EHMT1, EHMT2",Chromatin histone methylation,True,6.159221120972565,0.525,50.914915303596565,False,"['EHMT1', 'EHMT2']"
+2360,THR-101,Mutant RAS,PI3K/MTOR signaling,False,0.0,0.0,50.0,True,[]
+2359,GSK2830371,WIP1,Other,False,0.0,0.0,50.0,False,[]
+1507,Ruxolitinib,"JAK1, JAK2",Other kinases,True,6.999005575343729,0.8598484848484849,66.39324370237344,False,"['JAK1', 'JAK2']"
+1025,SB216763,"GSK3A, GSK3B",WNT signaling,True,7.117271709805136,0.5510101010101011,68.36868417220792,False,"['GSK3A', 'GSK3B']"
+1814,Nelarabine,<NA>,DNA replication,False,0.0,0.0,50.0,True,[]
+1018,Veliparib,"PARP1, PARP2",Genome integrity,True,9.03993336833647,1.0,90.78774935688976,True,"['PARP2', 'PARP1']"
+1931,MIRA-1,TP53,P53 pathway,True,6.199541063240984,0.6267676767676768,51.6672329272436,False,['TP53']
+1131,PRIMA-1MET,TP53 activation,P53 pathway,False,0.0,0.0,50.0,False,[]
+1512,Cyclophosphamide,Alkylating agent,DNA replication,False,0.0,0.0,50.0,True,[]
+1029,Motesanib,"VEGFR, RET, KIT, PDGFR",RTK signaling,True,6.951059584651826,0.7547979797979798,65.67004805125467,False,"['KIT', 'RET']"
+1621,PCI-34051,"HDAC8, HDAC6, HDAC1",Chromatin histone acetylation,True,7.907664226965357,0.7217171717171718,79.39135077415911,True,"['HDAC6', 'HDAC1', 'HDAC8']"
+1449,AZD1208,"PIM1, PIM2, PIM3",Other kinases,True,7.202422351276792,0.9436026936026936,69.58695335630733,False,"['PIM3', 'PIM1', 'PIM2']"
+1020,Lenalidomide,CRBN,Protein stability and degradation,True,8.296643627280089,1.0,84.05086637868273,True,['CRBN']
+1043,JNK Inhibitor VIII,JNK,JNK and p38 signaling,False,0.0,0.0,50.0,False,[]
+1629,ML323,"USP1, UAF1",Protein stability and degradation,True,7.468825820225044,0.9984848484848485,73.53783429597631,True,['USP1']
+1580,GSK2801,<NA>,Chromatin other,False,0.0,0.0,50.0,False,[]
+1852,LY2109761,TGFB1,Other,False,5.322692159752414,0.0,6.741736640295103,False,['TGFB1']

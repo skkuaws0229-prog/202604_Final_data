@@ -1,0 +1,7 @@
+path	reason	source_of_truth
+raw_source_snapshot/Lung_raw/**	raw Step0 binaries too large for GitHub	s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/LUNG/raw_source_snapshot/Lung_raw/
+project_root/curated_data/**	processed datasets too large for GitHub	s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/LUNG/project_root/curated_data/
+project_root/data/**	model-ready numpy arrays too large for GitHub	s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/LUNG/project_root/data/
+project_root/fe_qc/**	feature-engineering parquet intermediates too large for GitHub	s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/LUNG/project_root/fe_qc/
+workspace_git_snapshot/reports/lung_directive_ensemble/lung_directive_ensemble_predictions_detailed.csv	single large detailed prediction file preserved on S3 only	s3://say2-4team/20260408_new_pre_project_biso/202604_Final_data/LUNG/workspace_reports/lung_directive_ensemble/lung_directive_ensemble_predictions_detailed.csv
+*.nextflow.log*	logs may expose local secret-store paths	not published

@@ -1,0 +1,33 @@
+Category,Metric,Status,Availability
+Prediction,Spearman Correlation,✅,GroupCV
+Prediction,Pearson Correlation,✅,GroupCV (JSON + OOF)
+Prediction,R² Score,✅,GroupCV (JSON + OOF)
+Prediction,Kendall's Tau,✅,GroupCV (JSON + OOF)
+Prediction,MAE,✅,GroupCV
+Prediction,RMSE,✅,GroupCV
+Prediction,MedianAE,✅,GroupCV (OOF)
+Prediction,P95 Error,✅,GroupCV (OOF)
+Overfitting,Train-Val Gap,✅,All CVs
+Overfitting,Train/Val Ratio,✅,All CVs
+Overfitting,Fold Std,✅,All CVs
+Overfitting,Train R²,✅,JSON
+Overfitting,Val R²,✅,JSON
+Ensemble,Ensemble Gain,✅,Phase 3 Complete
+Ensemble,Diversity Score,✅,Phase 3 Complete
+Ensemble,Error Overlap,✅,Phase 3 Complete
+Ensemble,Consensus Score,✅,Phase 3 Complete
+Ensemble,Weighted vs Simple,✅,Phase 3 Complete
+Ensemble,Best Combination,✅,Phase 3 Complete
+Drug Ranking,Top 10 Hit Rate,❌,Step 6: Drug prioritization
+Drug Ranking,Top 50 Hit Rate,❌,Step 6: Drug prioritization
+Drug Ranking,Top 100 Hit Rate,❌,Step 6: Drug prioritization
+Drug Ranking,Precision@10,❌,Step 6: Drug prioritization
+Drug Ranking,Precision@50,❌,Step 6: Drug prioritization
+Drug Ranking,Recall@100,❌,Step 6: Drug prioritization
+Drug Ranking,NDCG@10,❌,Step 6: Drug prioritization
+Drug Ranking,MRR (Mean Reciprocal Rank),❌,Step 6: Drug prioritization
+Drug Ranking,Coverage Rate,❌,Step 6: Drug prioritization
+Generalization,Scaffold Split Performance,❌,Requires scaffold-based split
+Generalization,Multi-seed Consistency (Mean),❌,Requires 3+ seeds
+Generalization,Multi-seed Consistency (Std),❌,Requires 3+ seeds
+Generalization,Cross-dataset Validation,❌,Requires external dataset

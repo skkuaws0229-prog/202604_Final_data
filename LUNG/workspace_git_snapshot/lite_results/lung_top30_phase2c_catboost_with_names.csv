@@ -1,0 +1,31 @@
+canonical_drug_id,DRUG_NAME,TARGET,TARGET_PATHWAY,SYNONYMS,rank,pred_ic50_mean
+1811,Dactinomycin,RNA polymerase,Other,,1,-4.053302546469662
+1819,Docetaxel,Microtubule stabiliser,Mitosis,,2,-3.760376550280419
+1080,Paclitaxel,Microtubule stabiliser,Mitosis,,3,-2.244387914383674
+1026,Tanespimycin,HSP90,Protein stability and degradation,,4,0.6622212487947816
+1809,Teniposide,,DNA replication,,5,1.0416438834877602
+1037,BX795,"TBK1, PDK1 (PDPK1), IKK, AURKB, AURKC","Other, kinases",,6,1.5264930213081376
+1058,Pictilisib,PI3K (class 1),PI3K/MTOR signaling,,7,1.7777926187242483
+1838,Sinularin,,Unclassified,,8,1.9384753471794125
+1086,BI-2536,"PLK1, PLK2, PLK3",Cell cycle,,9,2.1204303039619226
+1237,EPZ004777,DOT1L,Chromatin histone methylation,,10,2.1987563531691836
+1378,Bleomycin (50 uM),dsDNA break induction,DNA replication,,11,2.3972268321013837
+1593,Entinostat,"HDAC1, HDAC3",Chromatin histone acetylation,,12,2.4011891618920376
+1563,EPZ5676,DOT1L,Chromatin histone methylation,,13,2.499174640589128
+2159,UNC0379,SETD8,Chromatin histone methylation,,14,2.5674867586928007
+1582,SGC-CBP30,"EP300, CBP",Chromatin histone acetylation,,15,2.5934309503114656
+1059,AZD8055,"MTORC1, MTORC2",PI3K/MTOR signaling,,16,2.6518546898644866
+1873,Buparlisib,"PI3Kalpha, PI3Kdelta, PI3Kbeta, PI3Kgamma",PI3K/MTOR signaling,,17,2.660421708060861
+1031,Elesclomol,HSP90,Protein stability and degradation,,18,2.7993148862484505
+1909,Venetoclax,BCL2,Apoptosis regulation,,19,2.815333455830143
+1008,Methotrexate,Antimetabolite,DNA replication,,20,2.823883109278714
+1853,OF-1,"BRPF1B, BRPF2",Chromatin histone acetylation,,21,2.832421099076647
+2037,GSK343,EZH2,Chromatin histone methylation,,22,2.871465423491876
+1191,Bortezomib,Proteasome,Protein stability and degradation,,23,2.9094056047448276
+1936,Savolitinib,MET,RTK signaling,,24,2.9153192879404433
+1620,PFI3,"Polybromo 1, SMARCA4, SMARCA2",Chromatin other,,25,2.946352233095248
+2174,IOX2,EGLN1,Other,,26,2.962867128352769
+1932,NVP-ADW742,IGF1R,IGF1R signaling,,27,3.2943171677220846
+1030,KU-55933,ATM,Genome integrity,,28,3.2997712703123634
+1243,Piperlongumine,Induces reactive oxygen species,Other,,29,3.337476396867821
+1042,Doramapimod,"p38, JNK2",JNK and p38 signaling,,30,3.3905505218976786

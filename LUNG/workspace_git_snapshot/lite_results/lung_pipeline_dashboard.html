@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drug Repurposing Pipeline - Lung Cancer</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0a0e17;--card:#111827;--border:#1e293b;--accent:#3b82f6;--green:#10b981;
+  --amber:#f59e0b;--red:#ef4444;--text:#f1f5f9;--muted:#94a3b8;--dim:#64748b;
+  --purple:#a78bfa;--cyan:#22d3ee;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;min-height:100vh}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--border);margin-bottom:8px;flex-wrap:wrap;gap:8px}
+.nav-left{display:flex;align-items:center;gap:10px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+.nav-title{font-size:15px;font-weight:700}
+.nav-ver{font-size:11px;color:var(--dim)}
+.nav-btns{display:flex;gap:4px;flex-wrap:wrap}
+.nb{background:transparent;color:var(--muted);border:1px solid transparent;padding:8px 16px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:500;font-family:'Outfit',sans-serif;transition:all 0.2s}
+.nb:hover{color:var(--text);background:var(--border)}
+.nb.active{background:rgba(59,130,246,0.13);color:var(--cyan);border-color:rgba(59,130,246,0.27)}
+.page{display:none;padding-bottom:60px}
+.page.active{display:block}
+.sl{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;margin-top:28px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.g5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.mc{background:var(--card);border-radius:12px;padding:18px 20px;border:1px solid var(--border)}
+.mc.ac{border-color:var(--accent)}
+.ml2{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px}
+.mv{font-size:26px;font-weight:700;color:var(--text);font-family:'JetBrains Mono',monospace}
+.mc.ac .mv{color:var(--cyan)}
+.ms{font-size:11px;color:var(--muted);margin-top:4px}
+.mt{font-size:11px;margin-top:2px}
+.mt.up{color:var(--green)}.mt.down{color:var(--red)}
+.wc{background:var(--card);border-radius:12px;padding:20px;border:1px solid var(--border);cursor:pointer;transition:all 0.2s}
+.wc:hover{border-color:var(--accent)}
+.wc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.wc-icon{font-size:16px}
+.wc-title{font-size:14px;font-weight:600;margin-bottom:4px}
+.wc-detail{font-size:11px;color:var(--dim);line-height:1.5;white-space:pre-line}
+.st{font-size:10px;padding:3px 10px;border-radius:20px}
+.st-done{background:rgba(16,185,129,0.13);color:var(--green)}
+.st-prog{background:rgba(245,158,11,0.13);color:var(--amber)}
+.st-wait{background:rgba(100,116,139,0.13);color:var(--dim)}
+.card{background:var(--card);border-radius:12px;padding:20px;border:1px solid var(--border);margin-bottom:20px}
+.card-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:12px}
+table{width:100%;border-collapse:collapse;font-size:12px;font-family:'JetBrains Mono',monospace}
+th{padding:10px 12px;text-align:center;color:var(--dim);border-bottom:1px solid var(--border);font-size:10px;text-transform:uppercase;letter-spacing:1px}
+th:first-child{text-align:left}
+td{padding:10px 12px;text-align:center;color:var(--text);border-bottom:1px solid rgba(30,41,59,0.3)}
+td:first-child{text-align:left}
+tr:hover td{background:rgba(59,130,246,0.05)}
+.hl{background:rgba(59,130,246,0.08);font-weight:600}
+.code-block{background:var(--bg);border-radius:8px;padding:16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);line-height:2}
+.big-num{font-size:28px;font-weight:700;font-family:'JetBrains Mono',monospace;text-align:center;padding:16px}
+.footer{text-align:center;padding:20px 0;font-size:11px;color:var(--dim);border-top:1px solid var(--border)}
+@media(max-width:768px){.g4,.g5{grid-template-columns:repeat(2,1fr)}.g3,.g2{grid-template-columns:1fr}.nav{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- NAV -->
+<div class="nav">
+  <div class="nav-left"><div class="dot"></div><span class="nav-title">Drug Repurposing Pipeline</span><span class="nav-ver">&nbsp;v1.2 · 2026-04-19</span></div>
+  <div class="nav-btns" id="navbtns">
+    <button class="nb active" onclick="sp('overview',this)">◈ 개요</button>
+    <button class="nb" onclick="sp('data',this)">◇ 데이터</button>
+    <button class="nb" onclick="sp('training',this)">△ 학습 결과</button>
+    <button class="nb" onclick="sp('ensemble',this)">◎ 앙상블</button>
+    <button class="nb" onclick="sp('validation',this)">✦ 외부검증</button>
+    <button class="nb" onclick="sp('admet',this)">⊕ ADMET</button>
+    <button class="nb" onclick="sp('neo4j',this)">⬡ Neo4j</button>
+    <button class="nb" onclick="sp('llm',this)">◉ LLM</button>
+    <button class="nb" onclick="sp('future',this)">→ 향후 계획</button>
+  </div>
+</div>
+
+<!-- ===== OVERVIEW ===== -->
+<div id="pg-overview" class="page active">
+  <div class="sl" style="margin-top:16px">Lung Cancer Drug Repurposing Pipeline</div>
+  <h2 style="font-size:22px;font-weight:700;margin-bottom:6px">폐암 약물 재창출 결과 개요</h2>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:24px">BRCA v3.1 파이프라인 적용 · 578 cell lines · 295 drugs · 125,427 pairs</p>
+
+  <div class="g4" style="margin-bottom:16px">
+    <div class="mc ac"><div class="ml2">최고 GroupCV</div><div class="mv">0.5030</div><div class="ms">CatBoost · Phase 2C</div></div>
+    <div class="mc"><div class="ml2">최고 앙상블</div><div class="mv">0.4797</div><div class="ms">Mixed Weighted · Phase 2A</div></div>
+    <div class="mc"><div class="ml2">모델 수</div><div class="mv">14</div><div class="ms">ML 6 + DL 7 + Graph 1</div></div>
+    <div class="mc"><div class="ml2">앙상블 양수 Gain</div><div class="mv">4/24</div><div class="ms">17% 성공률</div></div>
+  </div>
+  <div class="g4" style="margin-bottom:28px">
+    <div class="mc"><div class="ml2">LINCS 세포주</div><div class="mv">11개</div><div class="ms">폐암 세포주 추출</div></div>
+    <div class="mc"><div class="ml2">약물 매칭</div><div class="mv">31.2%</div><div class="ms">92/295 drugs</div></div>
+    <div class="mc"><div class="ml2">SMILES 커버리지</div><div class="mv">82.4%</div><div class="ms">243/295 drugs</div></div>
+    <div class="mc"><div class="ml2">Feature Selection</div><div class="mv">5,764</div><div class="ms">20,512 → 71.9% 감축</div></div>
+  </div>
+
+  <div class="sl">BRCA vs Lung 최종 비교</div>
+  <div class="card">
+    <table>
+      <thead><tr><th>항목</th><th>BRCA</th><th>Lung</th><th>비교</th></tr></thead>
+      <tbody>
+        <tr><td>최고 앙상블</td><td>0.5521 (Mixed 2A)</td><td>0.4797 (Mixed 2A)</td><td>동일 조합</td></tr>
+        <tr><td>최고 단일</td><td>0.5493 (ResidualMLP 2C)</td><td>0.5030 (CatBoost 2C)</td><td>모델 다름</td></tr>
+        <tr><td>최종 채택</td><td>앙상블 (+0.003)</td><td>단일 (+0.023)</td><td>패턴 다름</td></tr>
+        <tr><td>모델 선호</td><td>DL (ResidualMLP)</td><td>ML (CatBoost)</td><td>질병별 다름</td></tr>
+        <tr><td>앙상블 최고 Phase</td><td>2A</td><td>2A</td><td style="color:var(--green)">동일</td></tr>
+        <tr><td>단일 최고 Phase</td><td>2C</td><td>2C</td><td style="color:var(--green)">동일</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sl">워크플로우</div>
+  <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:10px">
+    <div class="wc" onclick="sp('data',document.querySelectorAll('#navbtns .nb')[1])">
+      <div class="wc-top"><span class="wc-icon" style="color:var(--green)">◆</span><span class="st st-done">완료</span></div>
+      <div class="wc-title">Phase 1: 데이터</div><div class="wc-detail">125,427 pairs
+578 samples × 295 drugs</div>
+    </div>
+    <div class="wc" onclick="sp('training',document.querySelectorAll('#navbtns .nb')[2])">
+      <div class="wc-top"><span class="wc-icon" style="color:var(--green)">◆</span><span class="st st-done">완료</span></div>
+      <div class="wc-title">Phase 2: 학습</div><div class="wc-detail">14모델 × 3Phase
+GroupCV 평가 완료</div>
+    </div>
+    <div class="wc" onclick="sp('ensemble',document.querySelectorAll('#navbtns .nb')[3])">
+      <div class="wc-top"><span class="wc-icon" style="color:var(--green)">◆</span><span class="st st-done">완료</span></div>
+      <div class="wc-title">Phase 3: 앙상블</div><div class="wc-detail">24실험 완료
+양수 Gain 4개</div>
+    </div>
+    <div class="wc" onclick="sp('validation',document.querySelectorAll('#navbtns .nb')[4])">
+      <div class="wc-top"><span class="wc-icon" style="color:var(--green)">◆</span><span class="st st-done">완료</span></div>
+      <div class="wc-title">Step 6: 외부검증</div><div class="wc-detail">4개 소스 검증 완료
+7개 약물 100% 신뢰도</div>
+    </div>
+    <div class="wc" onclick="sp('admet',document.querySelectorAll('#navbtns .nb')[5])">
+      <div class="wc-top"><span class="wc-icon" style="color:var(--green)">◆</span><span class="st st-done">완료</span></div>
+      <div class="wc-title">Step 7: ADMET</div><div class="wc-detail">40/41 PASS (97.6%)
+Top 15 선정 완료</div>
+    </div>
+    <div class="wc" onclick="sp('neo4j',document.querySelectorAll('#navbtns .nb')[6])">
+      <div class="wc-top"><span class="wc-icon" style="color:var(--green)">◆</span><span class="st st-done">완료</span></div>
+      <div class="wc-title">Step 8: Neo4j</div><div class="wc-detail">30,563 노드
+BRCA+Lung 공통 6개</div>
+    </div>
+    <div class="wc" onclick="sp('llm',document.querySelectorAll('#navbtns .nb')[7])">
+      <div class="wc-top"><span class="wc-icon" style="color:var(--green)">◆</span><span class="st st-done">완료</span></div>
+      <div class="wc-title">Step 9: LLM</div><div class="wc-detail">Ollama llama3.1
+7가지 질의 테스트 통과</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DATA ===== -->
+<div id="pg-data" class="page">
+  <div class="sl" style="margin-top:16px">Phase 1: 데이터 전처리</div>
+  <h2 style="font-size:20px;font-weight:700;margin-bottom:20px">BRCA vs Lung 데이터 비교</h2>
+
+  <div class="g4" style="margin-bottom:28px">
+    <div class="mc"><div class="ml2">Cell Lines</div><div class="mv">578</div><div class="ms">BRCA: 52 (11배)</div></div>
+    <div class="mc"><div class="ml2">Drug-Cell Pairs</div><div class="mv">125,427</div><div class="ms">BRCA: 6,366 (20배)</div></div>
+    <div class="mc"><div class="ml2">Features (FE)</div><div class="mv">18,439</div><div class="ms">BRCA: 18,316</div></div>
+    <div class="mc"><div class="ml2">Features (Slim)</div><div class="mv">5,764</div><div class="ms">BRCA: 5,534</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">전처리 결과 비교</div>
+    <table>
+      <thead><tr><th>항목</th><th>BRCA</th><th>Lung</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>전체 Cell Line</td><td>52</td><td>969</td><td>GDSC2 기준</td></tr>
+        <tr><td>매칭 Cell Line</td><td>52 (100%)</td><td>578 (59.8%)</td><td>Name 정규화</td></tr>
+        <tr><td>약물 수</td><td>295</td><td>295</td><td>동일</td></tr>
+        <tr><td>SMILES 커버리지</td><td>243 (82.4%)</td><td>243 (82.4%)</td><td>동일</td></tr>
+        <tr><td>IC50 결측</td><td>0</td><td>0</td><td></td></tr>
+        <tr><td>클래스 불균형</td><td>70.8:29.2</td><td>70.9:29.1</td><td>거의 동일</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">LINCS 시그니처 비교</div>
+      <table>
+        <thead><tr><th>항목</th><th>BRCA (MCF7)</th><th>Lung (11 cells)</th></tr></thead>
+        <tbody>
+          <tr><td>세포주</td><td>MCF7 단일</td><td>11개 폐암</td></tr>
+          <tr><td>trt_cp 시그니처</td><td>29,312</td><td>25,265</td></tr>
+          <tr><td>약물 매칭</td><td>101 (34.2%)</td><td>92 (31.2%)</td></tr>
+          <tr><td>유전자 수</td><td>12,328</td><td>12,328</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">Feature Selection</div>
+      <table>
+        <thead><tr><th>구분</th><th>BRCA 원본→Slim</th><th>Lung 원본→Slim</th></tr></thead>
+        <tbody>
+          <tr><td>Gene (CRISPR)</td><td>18,310 → 4,415</td><td>18,435 → 4,703</td></tr>
+          <tr><td>Morgan FP</td><td>2,048 → 1,094</td><td>2,048 → 1,032</td></tr>
+          <tr><td>기타 (LINCS 등)</td><td>25 → 25</td><td>29 → 29</td></tr>
+          <tr><td>합계</td><td>20,383 → 5,534</td><td>20,512 → 5,764</td></tr>
+          <tr><td>제거율</td><td>72.8%</td><td>71.9%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TRAINING ===== -->
+<div id="pg-training" class="page">
+  <div class="sl" style="margin-top:16px">Phase 2: 모델 학습 결과</div>
+  <h2 style="font-size:20px;font-weight:700;margin-bottom:20px">14개 모델 × 3 Phase — GroupCV 기준</h2>
+
+  <div class="g3" style="margin-bottom:28px">
+    <div class="mc ac"><div class="ml2">Phase 2A 최고</div><div class="mv">0.4765</div><div class="ms">CatBoost (numeric)</div></div>
+    <div class="mc"><div class="ml2">Phase 2B 최고</div><div class="mv">0.4823</div><div class="ms">CatBoost (+SMILES)</div></div>
+    <div class="mc ac"><div class="ml2">Phase 2C 최고</div><div class="mv">0.5030</div><div class="ms">CatBoost (+Context)</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">GroupCV Spearman 전체 비교 (Phase 2A / 2B / 2C)</div>
+    <table>
+      <thead><tr><th>순위</th><th>모델</th><th>유형</th><th>Phase 2A</th><th>Phase 2B</th><th>Phase 2C</th><th>최고 Phase</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td>1</td><td>CatBoost</td><td>ML</td><td>0.4765</td><td>0.4823</td><td style="color:var(--cyan)">0.5030 ★</td><td>2C</td></tr>
+        <tr><td>2</td><td>ResidualMLP</td><td>DL</td><td>0.4531</td><td>0.4489</td><td>0.4277</td><td>2A</td></tr>
+        <tr><td>3</td><td>TabTransformer</td><td>DL</td><td>0.4498</td><td>0.4150</td><td>0.4186</td><td>2A</td></tr>
+        <tr><td>4</td><td>LightGBM</td><td>ML</td><td>0.4490</td><td>0.4461</td><td>0.4062</td><td>2A</td></tr>
+        <tr><td>5</td><td>XGBoost</td><td>ML</td><td>0.4361</td><td>0.4561</td><td>0.4235</td><td>2B</td></tr>
+        <tr><td>6</td><td>LightGBM DART</td><td>ML</td><td>0.4373</td><td>0.4393</td><td>0.4142</td><td>2B</td></tr>
+        <tr><td>7</td><td>TabNet</td><td>DL</td><td>0.4369</td><td>0.4062</td><td>0.4063</td><td>2A</td></tr>
+        <tr><td>8</td><td>RandomForest</td><td>ML</td><td>0.4303</td><td>0.4007</td><td>0.2822</td><td>2A</td></tr>
+        <tr><td>9</td><td>FlatMLP</td><td>DL</td><td>0.4241</td><td>0.4368</td><td>0.4122</td><td>2B</td></tr>
+        <tr><td>10</td><td>FTTransformer</td><td>DL</td><td>0.4239</td><td>0.4082</td><td>0.4018</td><td>2A</td></tr>
+        <tr><td>11</td><td>CrossAttention</td><td>DL</td><td>0.4067</td><td>0.3999</td><td>0.3841</td><td>2A</td></tr>
+        <tr><td>12</td><td>GAT</td><td>Graph</td><td>0.3796</td><td>-</td><td>-</td><td>2A</td></tr>
+        <tr><td>13</td><td>WideDeep</td><td>DL</td><td>0.3747</td><td>0.3675</td><td>0.3149</td><td>2A</td></tr>
+        <tr><td>14</td><td>ExtraTrees</td><td>ML</td><td>0.4070</td><td>0.3963</td><td>H/O only</td><td>2A</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">입력셋 효과 (GroupCV 평균 변화)</div>
+      <table>
+        <thead><tr><th>효과</th><th>ML 평균</th><th>DL 평균</th><th>판정</th></tr></thead>
+        <tbody>
+          <tr><td>SMILES (A→B)</td><td>-0.005</td><td>-0.017</td><td style="color:var(--red)">무효과~역효과</td></tr>
+          <tr><td>Context (B→C)</td><td>-0.035</td><td>-0.015</td><td style="color:var(--red)">역효과</td></tr>
+          <tr><td>예외</td><td style="color:var(--green)">CatBoost +0.021</td><td>-</td><td style="color:var(--green)">CatBoost만 양수</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">ML vs DL 비교 (GroupCV)</div>
+      <table>
+        <thead><tr><th>Phase</th><th>ML 최고</th><th>DL 최고</th><th>승자</th></tr></thead>
+        <tbody>
+          <tr><td>2A</td><td>CatBoost 0.4765</td><td>ResidualMLP 0.4531</td><td style="color:var(--cyan)">ML</td></tr>
+          <tr><td>2B</td><td>CatBoost 0.4823</td><td>ResidualMLP 0.4489</td><td style="color:var(--cyan)">ML</td></tr>
+          <tr><td>2C</td><td>CatBoost 0.5030</td><td>ResidualMLP 0.4277</td><td style="color:var(--cyan)">ML</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ENSEMBLE ===== -->
+<div id="pg-ensemble" class="page">
+  <div class="sl" style="margin-top:16px">Phase 3: 앙상블 분석</div>
+  <h2 style="font-size:20px;font-weight:700;margin-bottom:20px">24개 실험 (4조합 × 2방식 × 3Phase)</h2>
+
+  <div class="g4" style="margin-bottom:28px">
+    <div class="mc ac"><div class="ml2">양수 Gain</div><div class="mv">4/24</div><div class="ms">17% 성공률</div></div>
+    <div class="mc"><div class="ml2">최대 Gain</div><div class="mv">+0.0033</div><div class="ms">Mixed Weighted 2A</div></div>
+    <div class="mc"><div class="ml2">최고 앙상블</div><div class="mv">0.4797</div><div class="ms">Mixed Weighted 2A</div></div>
+    <div class="mc"><div class="ml2">최고 단일</div><div class="mv">0.5030</div><div class="ms">CatBoost 2C (더 높음)</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">양수 Gain 조합 (4개)</div>
+    <table>
+      <thead><tr><th>순위</th><th>조합</th><th>Phase</th><th>방식</th><th>Spearman</th><th>Gain</th><th>Diversity</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td>1</td><td>CatBoost+ResidualMLP+TabNet</td><td>2A</td><td>Weighted</td><td style="color:var(--cyan)">0.4797</td><td style="color:var(--green)">+0.0033</td><td>0.83</td></tr>
+        <tr><td>2</td><td>CatBoost+ResidualMLP+TabNet</td><td>2A</td><td>Simple</td><td>0.4790</td><td style="color:var(--green)">+0.0025</td><td>0.83</td></tr>
+        <tr><td>3</td><td>ResidualMLP+TabTransformer+TabNet</td><td>2C</td><td>Weighted</td><td>0.4290</td><td style="color:var(--green)">+0.0013</td><td>0.79</td></tr>
+        <tr><td>4</td><td>ResidualMLP+TabTransformer+TabNet</td><td>2C</td><td>Simple</td><td>0.4290</td><td style="color:var(--green)">+0.0012</td><td>0.79</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">BRCA vs Lung 앙상블 비교</div>
+    <table>
+      <thead><tr><th>항목</th><th>BRCA</th><th>Lung</th></tr></thead>
+      <tbody>
+        <tr><td>양수 Gain 수</td><td>6/24 (25%)</td><td>4/24 (17%)</td></tr>
+        <tr><td>최고 앙상블</td><td>Mixed Weighted 2A (0.5521)</td><td>Mixed Weighted 2A (0.4797)</td></tr>
+        <tr><td>최고 단일</td><td>ResidualMLP 2C (0.5493)</td><td>CatBoost 2C (0.5030)</td></tr>
+        <tr><td>앙상블 vs 단일</td><td style="color:var(--green)">앙상블 승 (+0.003)</td><td style="color:var(--cyan)">단일 승 (+0.023)</td></tr>
+        <tr><td>최종 채택</td><td>앙상블</td><td>단일</td></tr>
+        <tr><td>프로토콜(FRC) Gain</td><td style="color:var(--red)">전부 음수</td><td style="color:var(--red)">전부 음수</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">앙상블이 제한적인 이유</div>
+    <div class="g3">
+      <div style="text-align:center;padding:16px">
+        <div class="big-num" style="color:var(--amber)">0.76~0.91</div>
+        <div style="font-size:11px;color:var(--dim)">Diversity (높은 상관)</div>
+      </div>
+      <div style="text-align:center;padding:16px">
+        <div class="big-num" style="color:var(--red)">0.6~0.8</div>
+        <div style="font-size:11px;color:var(--dim)">Error Overlap (유사 오류)</div>
+      </div>
+      <div style="text-align:center;padding:16px">
+        <div class="big-num" style="color:var(--green)">CatBoost</div>
+        <div style="font-size:11px;color:var(--dim)">압도적 단일 모델</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== VALIDATION ===== -->
+<div id="pg-validation" class="page">
+  <div class="sl" style="margin-top:16px">Step 6: 외부 검증</div>
+  <h2 style="font-size:20px;font-weight:700;margin-bottom:20px">4개 소스 다층 검증 · 43개 약물</h2>
+
+  <div class="g4" style="margin-bottom:28px">
+    <div class="mc ac"><div class="ml2">100% 신뢰도</div><div class="mv">7개</div><div class="ms">4개 소스 모두 검증</div></div>
+    <div class="mc"><div class="ml2">PRISM 매칭</div><div class="mv">67.4%</div><div class="ms">29/43 drugs</div></div>
+    <div class="mc"><div class="ml2">임상시험</div><div class="mv">1,561</div><div class="ms">21개 약물 관련</div></div>
+    <div class="mc"><div class="ml2">COSMIC</div><div class="mv">2,104</div><div class="ms">Actionability records</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">검증 소스별 커버리지</div>
+    <table>
+      <thead><tr><th>소스</th><th>매칭 약물</th><th>커버리지</th><th>주요 지표</th></tr></thead>
+      <tbody>
+        <tr><td>PRISM</td><td>29/43</td><td style="color:var(--green)">67.4%</td><td>Hit Rate@10 = 100%</td></tr>
+        <tr><td>ClinicalTrials</td><td>21/43</td><td>48.8%</td><td>1,561개 임상시험</td></tr>
+        <tr><td>COSMIC</td><td>22/43</td><td>51.2%</td><td>2,104개 actionability</td></tr>
+        <tr><td>CPTAC</td><td>22/43</td><td>51.2%</td><td>31/57 타겟 유전자 확인</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Top 10 약물 (Multi-objective Score)</div>
+    <table>
+      <thead><tr><th>순위</th><th>약물명</th><th>Score</th><th>신뢰도</th><th>PRISM</th><th>Clinical</th><th>COSMIC</th><th>CPTAC</th><th>임상시험 수</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td>1</td><td>Paclitaxel</td><td>0.675</td><td>75%</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--red)">❌</td><td>489</td></tr>
+        <tr><td>2</td><td>Topotecan</td><td>0.539</td><td style="color:var(--cyan)">100%</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td>63</td></tr>
+        <tr><td>3</td><td>Docetaxel</td><td>0.498</td><td>75%</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--red)">❌</td><td>423</td></tr>
+        <tr><td>4</td><td>Dactinomycin</td><td>0.450</td><td>50%</td><td style="color:var(--green)">✅</td><td style="color:var(--red)">❌</td><td style="color:var(--green)">✅</td><td style="color:var(--red)">❌</td><td>0</td></tr>
+        <tr><td>5</td><td>Vinorelbine</td><td>0.376</td><td>75%</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--red)">❌</td><td>65</td></tr>
+        <tr><td>6</td><td>Palbociclib</td><td>0.371</td><td style="color:var(--cyan)">100%</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td>17</td></tr>
+        <tr><td>7</td><td>Temsirolimus</td><td>0.366</td><td style="color:var(--cyan)">100%</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td>12</td></tr>
+        <tr><td>8</td><td>Entinostat</td><td>0.349</td><td style="color:var(--cyan)">100%</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td>13</td></tr>
+        <tr><td>9</td><td>SL0101</td><td>0.342</td><td>25%</td><td style="color:var(--red)">❌</td><td style="color:var(--red)">❌</td><td style="color:var(--red)">❌</td><td style="color:var(--green)">✅</td><td>0</td></tr>
+        <tr><td>10</td><td>Alisertib</td><td>0.339</td><td style="color:var(--cyan)">100%</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td>7</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Phase 2B vs 2C 비교</div>
+      <table>
+        <thead><tr><th>지표</th><th>Phase 2B</th><th>Phase 2C</th></tr></thead>
+        <tbody>
+          <tr><td>Top 30 Overlap</td><td colspan="2" style="text-align:center">17/30 (56.7%)</td></tr>
+          <tr><td>Precision@50</td><td>46.7%</td><td style="color:var(--green)">53.3%</td></tr>
+          <tr><td>Coverage Rate</td><td>65.5%</td><td style="color:var(--green)">79.3%</td></tr>
+          <tr><td>판정</td><td>-</td><td style="color:var(--cyan)">2C 우수</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">신뢰도 분포</div>
+      <table>
+        <thead><tr><th>신뢰도</th><th>약물 수</th><th>의미</th></tr></thead>
+        <tbody>
+          <tr><td style="color:var(--green)">100%</td><td>7개</td><td>4개 소스 모두 검증</td></tr>
+          <tr><td style="color:var(--cyan)">75%</td><td>14개</td><td>3개 소스 검증</td></tr>
+          <tr><td style="color:var(--amber)">50%</td><td>8개</td><td>2개 소스 검증</td></tr>
+          <tr><td style="color:var(--red)">25% 이하</td><td>14개</td><td>1개 소스 이하</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ADMET ===== -->
+<div id="pg-admet" class="page">
+  <div class="sl" style="margin-top:16px">Step 7: ADMET Gate</div>
+  <h2 style="font-size:20px;font-weight:700;margin-bottom:20px">안전성 필터링 · 최종 Top 15 선정</h2>
+
+  <div class="g4" style="margin-bottom:28px">
+    <div class="mc ac"><div class="ml2">ADMET PASS</div><div class="mv">97.6%</div><div class="ms">40/41 약물 통과</div></div>
+    <div class="mc"><div class="ml2">FAIL</div><div class="mv">1</div><div class="ms">Epirubicin (Lipinski)</div></div>
+    <div class="mc"><div class="ml2">FDA 승인</div><div class="mv">4개</div><div class="ms">폐암 표준 치료제</div></div>
+    <div class="mc"><div class="ml2">재창출 후보</div><div class="mv">2개</div><div class="ms">Dactinomycin, SL0101</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">최종 Top 15 약물</div>
+    <table>
+      <thead><tr><th>순위</th><th>약물명</th><th>카테고리</th><th>Score</th><th>신뢰도</th><th>임상시험</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td>1</td><td>Paclitaxel</td><td><span class="st st-done">FDA 승인</span></td><td>0.675</td><td>75%</td><td>489</td></tr>
+        <tr class="hl"><td>2</td><td>Topotecan</td><td><span class="st st-done">FDA 승인</span></td><td>0.539</td><td style="color:var(--cyan)">100%</td><td>63</td></tr>
+        <tr class="hl"><td>3</td><td>Docetaxel</td><td><span class="st st-done">FDA 승인</span></td><td>0.498</td><td>75%</td><td>423</td></tr>
+        <tr class="hl"><td>4</td><td>Vinorelbine</td><td><span class="st st-done">FDA 승인</span></td><td>0.376</td><td>75%</td><td>65</td></tr>
+        <tr><td>5</td><td>Palbociclib</td><td><span class="st st-prog">연구 단계</span></td><td>0.371</td><td style="color:var(--cyan)">100%</td><td>17</td></tr>
+        <tr><td>6</td><td>Temsirolimus</td><td><span class="st st-prog">연구 단계</span></td><td>0.366</td><td style="color:var(--cyan)">100%</td><td>12</td></tr>
+        <tr><td>7</td><td>Entinostat</td><td><span class="st st-prog">연구 단계</span></td><td>0.349</td><td style="color:var(--cyan)">100%</td><td>13</td></tr>
+        <tr><td>8</td><td>Alisertib</td><td><span class="st st-prog">연구 단계</span></td><td>0.339</td><td style="color:var(--cyan)">100%</td><td>7</td></tr>
+        <tr><td>9</td><td>Romidepsin</td><td><span class="st st-prog">연구 단계</span></td><td>0.336</td><td style="color:var(--cyan)">100%</td><td>3</td></tr>
+        <tr><td>10</td><td>Cediranib</td><td><span class="st st-prog">연구 단계</span></td><td>0.326</td><td style="color:var(--cyan)">100%</td><td>3</td></tr>
+        <tr><td>11</td><td>OTX015</td><td><span class="st st-prog">연구 단계</span></td><td>0.298</td><td>75%</td><td>2</td></tr>
+        <tr><td>12</td><td>Rapamycin</td><td><span class="st st-prog">연구 단계</span></td><td>0.269</td><td>75%</td><td>13</td></tr>
+        <tr><td>13</td><td>LGK974</td><td><span class="st st-prog">임상시험</span></td><td>0.310</td><td>75%</td><td>1</td></tr>
+        <tr><td>14</td><td>Dactinomycin</td><td style="color:var(--purple)"><span class="st" style="background:rgba(167,139,250,0.13);color:var(--purple)">재창출</span></td><td>0.450</td><td>50%</td><td>0</td></tr>
+        <tr><td>15</td><td>SL0101</td><td style="color:var(--purple)"><span class="st" style="background:rgba(167,139,250,0.13);color:var(--purple)">재창출</span></td><td>0.342</td><td>25%</td><td>0</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">카테고리별 분류</div>
+      <table>
+        <thead><tr><th>카테고리</th><th>수</th><th>약물</th></tr></thead>
+        <tbody>
+          <tr><td><span class="st st-done">FDA 승인</span></td><td>4</td><td>Paclitaxel, Topotecan, Docetaxel, Vinorelbine</td></tr>
+          <tr><td><span class="st st-prog">연구 단계</span></td><td>8</td><td>Palbociclib, Temsirolimus, Entinostat, Alisertib, Romidepsin, Cediranib, OTX015, Rapamycin</td></tr>
+          <tr><td><span class="st st-prog">임상시험</span></td><td>1</td><td>LGK974</td></tr>
+          <tr><td><span class="st" style="background:rgba(167,139,250,0.13);color:var(--purple)">재창출</span></td><td>2</td><td>Dactinomycin, SL0101</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">BRCA vs Lung ADMET 비교</div>
+      <table>
+        <thead><tr><th>항목</th><th>BRCA</th><th>Lung</th></tr></thead>
+        <tbody>
+          <tr><td>대상 약물</td><td>30</td><td>41</td></tr>
+          <tr><td>ADMET PASS</td><td>7</td><td style="color:var(--green)">40 (97.6%)</td></tr>
+          <tr><td>FDA 치료제</td><td>5</td><td>4</td></tr>
+          <tr><td>연구 단계</td><td>6</td><td>8</td></tr>
+          <tr><td>재창출 후보</td><td>4</td><td>2</td></tr>
+          <tr><td>1위 재창출</td><td>Ibrutinib</td><td>Dactinomycin</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NEO4J ===== -->
+<div id="pg-neo4j" class="page">
+  <div class="sl" style="margin-top:16px">Step 8: Neo4j Knowledge Graph</div>
+  <h2 style="font-size:20px;font-weight:700;margin-bottom:20px">약물-질병 관계 그래프 · 2개 암종 적재 완료</h2>
+
+  <div class="g4" style="margin-bottom:28px">
+    <div class="mc ac"><div class="ml2">총 노드</div><div class="mv">30,563</div><div class="ms">Drug, Target, CellLine 등</div></div>
+    <div class="mc"><div class="ml2">총 관계</div><div class="mv">113,542</div><div class="ms">TREATS, TARGETS 등</div></div>
+    <div class="mc"><div class="ml2">질병 수</div><div class="mv">2</div><div class="ms">BRCA + Lung</div></div>
+    <div class="mc"><div class="ml2">공통 약물</div><div class="mv">6개</div><div class="ms">두 암종 교차 검증</div></div>
+  </div>
+
+  <!-- 그래프 시각화 -->
+  <div class="card" style="padding:0;overflow:hidden">
+    <div class="card-title" style="padding:20px 20px 0">Drug-Disease 관계 그래프</div>
+    <canvas id="graphCanvas" width="1140" height="500" style="width:100%;display:block"></canvas>
+  </div>
+
+  <div class="g2" style="margin-top:20px">
+    <div class="card">
+      <div class="card-title">BRCA-Lung 공통 약물 (6개)</div>
+      <table>
+        <thead><tr><th>약물명</th><th>BRCA 순위</th><th>Lung 순위</th><th>BRCA 상태</th><th>Lung 카테고리</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>Paclitaxel</td><td>10위</td><td style="color:var(--cyan)">1위</td><td>현재 사용</td><td><span class="st st-done">FDA 승인</span></td></tr>
+          <tr class="hl"><td>Docetaxel</td><td>5위</td><td>3위</td><td>현재 사용</td><td><span class="st st-done">FDA 승인</span></td></tr>
+          <tr class="hl"><td>Vinorelbine</td><td>7위</td><td>4위</td><td>현재 사용</td><td><span class="st st-done">FDA 승인</span></td></tr>
+          <tr><td>Dactinomycin</td><td>12위</td><td>14위</td><td style="color:var(--amber)">미사용</td><td><span class="st" style="background:rgba(167,139,250,0.13);color:var(--purple)">재창출</span></td></tr>
+          <tr><td>Romidepsin</td><td>N/A</td><td>9위</td><td>확장 연구</td><td><span class="st st-prog">연구 단계</span></td></tr>
+          <tr><td>Rapamycin</td><td>11위</td><td>12위</td><td>확장 연구</td><td><span class="st st-prog">연구 단계</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">Neo4j 노드/엣지 통계</div>
+      <table>
+        <thead><tr><th>노드 유형</th><th>수량</th><th>엣지 유형</th><th>수량</th></tr></thead>
+        <tbody>
+          <tr><td>Drug</td><td>19,844</td><td>TESTED_IN</td><td>89,470</td></tr>
+          <tr><td>Target</td><td>8,880</td><td>INTERACTS_WITH</td><td>46,882</td></tr>
+          <tr><td>CellLine</td><td>969</td><td>IN_PATHWAY</td><td>729</td></tr>
+          <tr><td>Pathway</td><td>686</td><td>HAS_SIDE_EFFECT</td><td>109</td></tr>
+          <tr><td>Hospital</td><td>97</td><td>TARGETS</td><td>41</td></tr>
+          <tr><td>SideEffect</td><td>46</td><td>TREATS</td><td>29</td></tr>
+          <tr><td>Trial</td><td>35</td><td>IN_TRIAL</td><td>39</td></tr>
+          <tr><td>Disease</td><td style="color:var(--cyan)">2</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:20px">
+    <div class="card-title">약물별 적재 현황</div>
+    <table>
+      <thead><tr><th>약물</th><th>Score</th><th>신뢰도</th><th>카테고리</th><th>PRISM</th><th>Clinical</th><th>COSMIC</th><th>CPTAC</th><th>BRCA 공통</th></tr></thead>
+      <tbody>
+        <tr><td>Paclitaxel</td><td>0.675</td><td>75%</td><td>FDA</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--red)">❌</td><td style="color:var(--cyan)">✅</td></tr>
+        <tr><td>Topotecan</td><td>0.539</td><td style="color:var(--cyan)">100%</td><td>FDA</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td>❌</td></tr>
+        <tr><td>Docetaxel</td><td>0.498</td><td>75%</td><td>FDA</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--red)">❌</td><td style="color:var(--cyan)">✅</td></tr>
+        <tr><td>Vinorelbine</td><td>0.376</td><td>75%</td><td>FDA</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--red)">❌</td><td style="color:var(--cyan)">✅</td></tr>
+        <tr><td>Palbociclib</td><td>0.371</td><td style="color:var(--cyan)">100%</td><td>연구</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td>❌</td></tr>
+        <tr><td>Temsirolimus</td><td>0.366</td><td style="color:var(--cyan)">100%</td><td>연구</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td>❌</td></tr>
+        <tr><td>Entinostat</td><td>0.349</td><td style="color:var(--cyan)">100%</td><td>연구</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td>❌</td></tr>
+        <tr><td>Alisertib</td><td>0.339</td><td style="color:var(--cyan)">100%</td><td>연구</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td>❌</td></tr>
+        <tr><td>Romidepsin</td><td>0.336</td><td style="color:var(--cyan)">100%</td><td>연구</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--cyan)">✅</td></tr>
+        <tr><td>Cediranib</td><td>0.326</td><td style="color:var(--cyan)">100%</td><td>연구</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td>❌</td></tr>
+        <tr><td>LGK974</td><td>0.310</td><td>75%</td><td>임상</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--red)">❌</td><td>❌</td></tr>
+        <tr><td>OTX015</td><td>0.298</td><td>75%</td><td>연구</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--red)">❌</td><td>❌</td></tr>
+        <tr><td>Dactinomycin</td><td>0.450</td><td>50%</td><td>재창출</td><td style="color:var(--green)">✅</td><td style="color:var(--red)">❌</td><td style="color:var(--green)">✅</td><td style="color:var(--red)">❌</td><td style="color:var(--cyan)">✅</td></tr>
+        <tr><td>Rapamycin</td><td>0.269</td><td>75%</td><td>연구</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--green)">✅</td><td style="color:var(--red)">❌</td><td style="color:var(--cyan)">✅</td></tr>
+        <tr><td>SL0101</td><td>0.342</td><td>25%</td><td>재창출</td><td style="color:var(--red)">❌</td><td style="color:var(--red)">❌</td><td style="color:var(--red)">❌</td><td style="color:var(--green)">✅</td><td>❌</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ===== LLM ===== -->
+<div id="pg-llm" class="page">
+  <div class="sl" style="margin-top:16px">Step 9: LLM 연동</div>
+  <h2 style="font-size:20px;font-weight:700;margin-bottom:20px">Ollama (llama3.1) · Neo4j 기반 자연어 질의</h2>
+
+  <div class="g4" style="margin-bottom:28px">
+    <div class="mc ac"><div class="ml2">LLM 엔진</div><div class="mv">Ollama</div><div class="ms">llama3.1 8B · 로컬 무료</div></div>
+    <div class="mc"><div class="ml2">질의 유형</div><div class="mv">7가지</div><div class="ms">테스트 전부 통과</div></div>
+    <div class="mc"><div class="ml2">API 엔드포인트</div><div class="mv">/api/chat</div><div class="ms">FastAPI 연동</div></div>
+    <div class="mc"><div class="ml2">향후 전환</div><div class="mv">Bedrock</div><div class="ms">다수 질병 완성 후</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">아키텍처</div>
+    <div class="code-block">
+      <div>사용자 질문</div>
+      <div style="color:var(--dim)">&nbsp;&nbsp;↓</div>
+      <div>FastAPI <span style="color:var(--cyan)">/api/chat</span></div>
+      <div style="color:var(--dim)">&nbsp;&nbsp;↓</div>
+      <div>질문 분석 → <span style="color:var(--green)">Neo4j Cypher 쿼리</span> 생성</div>
+      <div style="color:var(--dim)">&nbsp;&nbsp;↓</div>
+      <div>Neo4j 조회 (약물/질병/타겟/임상시험/부작용)</div>
+      <div style="color:var(--dim)">&nbsp;&nbsp;↓</div>
+      <div>조회 결과 + 질문 → <span style="color:var(--amber)">LLM (Ollama llama3.1)</span></div>
+      <div style="color:var(--dim)">&nbsp;&nbsp;↓</div>
+      <div style="color:var(--cyan)">근거 기반 답변 반환</div>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-top:20px">
+    <div class="card">
+      <div class="card-title">지원 질의 유형 (7가지)</div>
+      <table>
+        <thead><tr><th>유형</th><th>예시 질문</th><th>Neo4j 쿼리</th></tr></thead>
+        <tbody>
+          <tr><td style="color:var(--cyan)">약물 추천</td><td>"폐암에 효과적인 약물 추천해줘"</td><td>Drug-TREATS-Disease</td></tr>
+          <tr><td style="color:var(--purple)">크로스 질병</td><td>"유방암이랑 폐암 둘 다 쓰는 약물?"</td><td>공통 TREATS 조회</td></tr>
+          <tr><td style="color:var(--green)">임상시험</td><td>"Entinostat 임상시험 있어?"</td><td>Drug-IN_TRIAL</td></tr>
+          <tr><td>약물 상세</td><td>"Palbociclib 타겟이 뭐야?"</td><td>Drug-TARGETS-Target</td></tr>
+          <tr><td style="color:var(--red)">부작용</td><td>"Paclitaxel 부작용 알려줘"</td><td>Drug-HAS_SIDE_EFFECT</td></tr>
+          <tr><td style="color:var(--amber)">재창출</td><td>"다른 암에서 재창출 가능한 약물?"</td><td>category 필터</td></tr>
+          <tr><td>검증 근거</td><td>"Topotecan 근거가 뭐야?"</td><td>신뢰도 + 4개 소스</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">LLM 단계별 전환 전략</div>
+      <table>
+        <thead><tr><th>단계</th><th>LLM</th><th>비용</th><th>시점</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td style="color:var(--green)">현재</td><td>Ollama (llama3.1)</td><td style="color:var(--green)">무료</td><td>지금</td></tr>
+          <tr><td>향후</td><td>AWS Bedrock</td><td>유료</td><td>3+ 질병 완성 후</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:16px;padding:12px;background:var(--bg);border-radius:8px;font-size:11px;color:var(--muted);line-height:1.8">
+        <div><span style="color:var(--green)">전환 용이성:</span> 프롬프트 템플릿 동일 유지</div>
+        <div><span style="color:var(--green)">ollama_client.py</span> → <span style="color:var(--cyan)">bedrock_client.py</span> 교체만 필요</div>
+        <div>Neo4j → Neptune 마이그레이션과 동시 진행 가능</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:20px">
+    <div class="card-title">구현 파일 구조</div>
+    <div class="code-block">
+      <div>20260409_scaleup_biso/</div>
+      <div>&nbsp;&nbsp;├── chat/api_server.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--amber)">← /api/chat Ollama 연동 (수정)</span></div>
+      <div>&nbsp;&nbsp;├── llm/ollama_client.py&nbsp;&nbsp;&nbsp;<span style="color:var(--green)">← Ollama API 호출 (신규)</span></div>
+      <div>&nbsp;&nbsp;├── llm/neo4j_to_prompt.py&nbsp;<span style="color:var(--green)">← 질문→Cypher→프롬프트 (신규)</span></div>
+      <div>&nbsp;&nbsp;├── static/index.html&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--green)">← 채팅 UI (신규)</span></div>
+      <div>&nbsp;&nbsp;└── 기존 12개 엔드포인트&nbsp;&nbsp;&nbsp;<span style="color:var(--dim)">← 수정 없음</span></div>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-top:20px">
+    <div class="card" style="border-color:rgba(34,211,238,0.3)">
+      <div class="card-title" style="color:var(--cyan)">채팅 UI 접속 방법</div>
+      <div class="code-block">
+        <div><span style="color:var(--cyan)">채팅 UI:</span> http://localhost:8000/</div>
+        <div><span style="color:var(--dim)">Swagger:</span> http://localhost:8000/docs</div>
+        <div style="margin-top:12px"><span style="color:var(--amber)">서버 실행:</span></div>
+        <div>&nbsp;&nbsp;conda activate drug4-kg</div>
+        <div>&nbsp;&nbsp;ollama serve&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--dim)">← 터미널 1</span></div>
+        <div>&nbsp;&nbsp;python3 chat/api_server.py&nbsp;<span style="color:var(--dim)">← 터미널 2</span></div>
+        <div style="margin-top:12px"><span style="color:var(--purple)">외부 접속:</span></div>
+        <div>&nbsp;&nbsp;ngrok http 8000</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">채팅 UI 기능</div>
+      <table>
+        <thead><tr><th>기능</th><th>설명</th></tr></thead>
+        <tbody>
+          <tr><td>예시 질문 버튼</td><td>4개 (클릭 시 자동 입력)</td></tr>
+          <tr><td>자유 입력</td><td>Enter 또는 전송 버튼</td></tr>
+          <tr><td>메타데이터</td><td>Intent, Source 표시</td></tr>
+          <tr><td>로딩 표시</td><td>점 3개 애니메이션</td></tr>
+          <tr><td>반응형</td><td>모바일/데스크톱 지원</td></tr>
+          <tr><td>한국어</td><td>질문·답변 완벽 지원</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:20px">
+    <div class="card-title">질의 테스트 결과 (7/7 통과)</div>
+    <table>
+      <thead><tr><th>#</th><th>질문</th><th>Intent</th><th>결과</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>폐암에 효과적인 약물 추천해줘</td><td>drug_recommendation</td><td style="color:var(--green)">✅ Top 3 추천</td></tr>
+        <tr><td>2</td><td>유방암+폐암 공통 약물은?</td><td>drug_comparison</td><td style="color:var(--green)">✅ 6개 공통 약물</td></tr>
+        <tr><td>3</td><td>Entinostat 임상시험 있어?</td><td>trial_info</td><td style="color:var(--green)">✅ 13건 확인</td></tr>
+        <tr><td>4</td><td>Palbociclib 타겟이 뭐야?</td><td>target_info</td><td style="color:var(--green)">✅ 정확 응답</td></tr>
+        <tr><td>5</td><td>Paclitaxel 부작용 알려줘</td><td>side_effect</td><td style="color:var(--green)">✅ 부작용 설명</td></tr>
+        <tr><td>6</td><td>재창출 가능한 약물 알려줘</td><td>general</td><td style="color:var(--green)">✅ 통계 제공</td></tr>
+        <tr><td>7</td><td>Topotecan 검증 근거가 뭐야?</td><td>drug_info</td><td style="color:var(--green)">✅ Score/신뢰도</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ===== FUTURE ===== -->
+<div id="pg-future" class="page">
+  <div class="sl" style="margin-top:16px">향후 계획</div>
+  <h2 style="font-size:20px;font-weight:700;margin-bottom:20px">범용 전략 검증 + 멀티모달 확장</h2>
+
+  <div class="card" style="border-color:rgba(59,130,246,0.2)">
+    <div class="card-title" style="color:var(--cyan)">범용 모델 선택 전략 (검증 중)</div>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:16px">2개 질병(BRCA, Lung)에서 확인된 패턴. 추가 질병에서 검증 후 확정.</p>
+    <div class="code-block">
+      <div>새 질병 투입</div>
+      <div style="color:var(--dim)">&nbsp;&nbsp;↓</div>
+      <div>Phase 2A (필수) + Phase 2C (필수)</div>
+      <div style="color:var(--dim)">&nbsp;&nbsp;↓</div>
+      <div><span style="color:var(--cyan)">메인:</span> Mixed Weighted 앙상블 (2A) — CatBoost + ResidualMLP + TabNet</div>
+      <div><span style="color:var(--amber)">서브:</span> 단일 모델 최고 (2C) — CatBoost 또는 ResidualMLP</div>
+      <div style="color:var(--dim)">&nbsp;&nbsp;↓</div>
+      <div>GroupCV 비교 → 높은 쪽 채택</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">전략 검증 현황</div>
+    <table>
+      <thead><tr><th>질병</th><th>유형</th><th>메인 (앙상블 2A)</th><th>서브 (단일 2C)</th><th>채택</th><th>상태</th></tr></thead>
+      <tbody>
+        <tr><td>유방암 (BRCA)</td><td>암종</td><td>0.5521</td><td>0.5493</td><td>앙상블</td><td><span class="st st-done">완료</span></td></tr>
+        <tr><td>폐암 (Lung)</td><td>암종</td><td>0.4797</td><td>0.5030</td><td>단일</td><td><span class="st st-done">완료</span></td></tr>
+        <tr><td>대장암</td><td>암종</td><td>-</td><td>-</td><td>-</td><td><span class="st st-wait">예정</span></td></tr>
+        <tr><td>IPF</td><td>비암종</td><td>-</td><td>-</td><td>-</td><td><span class="st st-wait">예정</span></td></tr>
+        <tr><td>RA</td><td>비암종</td><td>-</td><td>-</td><td>-</td><td><span class="st st-wait">예정</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">멀티모달 브랜치 전략 (예정)</div>
+    <div class="code-block" style="margin-bottom:16px">
+      <div><span style="color:var(--green)">Branch A (현재):</span> numeric → ML/DL → 앙상블 A</div>
+      <div><span style="color:var(--purple)">Branch B (예정):</span> 이미지 → CNN/ViT → 앙상블 B</div>
+      <div><span style="color:var(--cyan)">Branch C (예정):</span> 분자 그래프 → GNN → 앙상블 C</div>
+      <div style="color:var(--dim);margin-top:8px">&nbsp;&nbsp;→ 멀티모달 앙상블 (A + B + C) → 약물 랭킹</div>
+    </div>
+    <table>
+      <thead><tr><th>질병</th><th>Branch A</th><th>Branch B (이미지)</th><th>Branch C (그래프)</th></tr></thead>
+      <tbody>
+        <tr><td>BRCA</td><td><span class="st st-done">완료</span></td><td style="color:var(--red)">이미지 없음</td><td><span class="st st-wait">예정</span></td></tr>
+        <tr><td>Lung</td><td><span class="st st-done">완료</span></td><td>CT/H&E 가능</td><td><span class="st st-wait">예정</span></td></tr>
+        <tr><td>대장암</td><td><span class="st st-wait">예정</span></td><td>병리 가능</td><td><span class="st st-wait">예정</span></td></tr>
+        <tr><td>IPF</td><td><span class="st st-wait">예정</span></td><td>CT 가능</td><td><span class="st st-wait">예정</span></td></tr>
+        <tr><td>RA</td><td><span class="st st-wait">예정</span></td><td>X-ray/MRI 가능</td><td><span class="st st-wait">예정</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="footer">Drug Repurposing Pipeline · Lung Cancer · skkuaws0215 · 2026-04-19</div>
+</div>
+
+<script>
+function sp(id, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('#navbtns .nb').forEach(b => b.classList.remove('active'));
+  document.getElementById('pg-' + id).classList.add('active');
+  if (btn) btn.classList.add('active');
+  else {
+    const map = {overview:0, data:1, training:2, ensemble:3, validation:4, admet:5, neo4j:6, llm:7, future:8};
+    document.querySelectorAll('#navbtns .nb')[map[id]]?.classList.add('active');
+  }
+  window.scrollTo(0, 0);
+  if (id === 'neo4j') drawGraph();
+}
+
+function drawGraph() {
+  const c = document.getElementById('graphCanvas');
+  if (!c) return;
+  const ctx = c.getContext('2d');
+  const W = 1140, H = 500;
+  c.width = W * 2; c.height = H * 2; ctx.scale(2, 2);
+
+  ctx.fillStyle = '#0d1117'; ctx.fillRect(0, 0, W, H);
+
+  const diseases = [
+    { x: 300, y: 250, label: 'Breast Cancer', color: '#f472b6', drugs: 13 },
+    { x: 840, y: 250, label: 'Lung Cancer', color: '#38bdf8', drugs: 15 }
+  ];
+
+  const brcaOnly = [
+    { label: 'Ibrutinib', y: 80 }, { label: 'Olaparib', y: 140 },
+    { label: 'Palbociclib\n(BRCA)', y: 200 }, { label: 'Topotecan\n(BRCA)', y: 300 },
+    { label: 'Entinostat\n(BRCA)', y: 360 }, { label: 'Bortezomib', y: 420 }
+  ];
+
+  const lungOnly = [
+    { label: 'Topotecan', y: 80 }, { label: 'Palbociclib', y: 130 },
+    { label: 'Temsirolimus', y: 180 }, { label: 'Entinostat', y: 230 },
+    { label: 'Alisertib', y: 280 }, { label: 'Cediranib', y: 330 },
+    { label: 'OTX015', y: 380 }, { label: 'LGK974', y: 420 }, { label: 'SL0101', y: 460 }
+  ];
+
+  const shared = [
+    { label: 'Paclitaxel', y: 110 }, { label: 'Docetaxel', y: 190 },
+    { label: 'Vinorelbine', y: 270 }, { label: 'Dactinomycin', y: 330 },
+    { label: 'Romidepsin', y: 390 }, { label: 'Rapamycin', y: 440 }
+  ];
+
+  // Draw edges
+  ctx.lineWidth = 1.2; ctx.globalAlpha = 0.35;
+  brcaOnly.forEach(d => { ctx.strokeStyle = '#f472b6'; ctx.beginPath(); ctx.moveTo(120, d.y); ctx.lineTo(300, 250); ctx.stroke(); });
+  lungOnly.forEach(d => { ctx.strokeStyle = '#38bdf8'; ctx.beginPath(); ctx.moveTo(1020, d.y); ctx.lineTo(840, 250); ctx.stroke(); });
+  shared.forEach(d => {
+    ctx.strokeStyle = '#a78bfa'; ctx.beginPath(); ctx.moveTo(570, d.y); ctx.lineTo(300, 250); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(570, d.y); ctx.lineTo(840, 250); ctx.stroke();
+  });
+  ctx.globalAlpha = 1;
+
+  // Disease nodes
+  diseases.forEach(d => {
+    ctx.beginPath(); ctx.arc(d.x, d.y, 40, 0, Math.PI * 2);
+    ctx.fillStyle = d.color + '33'; ctx.fill();
+    ctx.strokeStyle = d.color; ctx.lineWidth = 2; ctx.stroke();
+    ctx.fillStyle = '#f1f5f9'; ctx.font = 'bold 11px Outfit'; ctx.textAlign = 'center';
+    ctx.fillText(d.label, d.x, d.y + 4);
+    ctx.fillStyle = '#94a3b8'; ctx.font = '9px JetBrains Mono';
+    ctx.fillText(d.drugs + ' drugs', d.x, d.y + 18);
+  });
+
+  // BRCA only drugs
+  brcaOnly.forEach(d => {
+    ctx.beginPath(); ctx.arc(120, d.y, 8, 0, Math.PI * 2);
+    ctx.fillStyle = '#f472b622'; ctx.fill(); ctx.strokeStyle = '#f472b6'; ctx.lineWidth = 1; ctx.stroke();
+    ctx.fillStyle = '#f472b6'; ctx.font = '9px Outfit'; ctx.textAlign = 'right';
+    ctx.fillText(d.label.split('\n')[0], 105, d.y + 3);
+  });
+
+  // Lung only drugs
+  lungOnly.forEach(d => {
+    ctx.beginPath(); ctx.arc(1020, d.y, 8, 0, Math.PI * 2);
+    ctx.fillStyle = '#38bdf822'; ctx.fill(); ctx.strokeStyle = '#38bdf8'; ctx.lineWidth = 1; ctx.stroke();
+    ctx.fillStyle = '#38bdf8'; ctx.font = '9px Outfit'; ctx.textAlign = 'left';
+    ctx.fillText(d.label, 1035, d.y + 3);
+  });
+
+  // Shared drugs
+  shared.forEach(d => {
+    ctx.beginPath(); ctx.arc(570, d.y, 10, 0, Math.PI * 2);
+    ctx.fillStyle = '#a78bfa33'; ctx.fill(); ctx.strokeStyle = '#a78bfa'; ctx.lineWidth = 1.5; ctx.stroke();
+    ctx.fillStyle = '#a78bfa'; ctx.font = 'bold 10px Outfit'; ctx.textAlign = 'center';
+    ctx.fillText(d.label, 570, d.y - 15);
+  });
+
+  // Legend
+  ctx.font = '10px Outfit'; ctx.textAlign = 'left';
+  [['#f472b6', 'BRCA only', 60], ['#a78bfa', '공통 약물 (6개)', 170], ['#38bdf8', 'Lung only', 310]].forEach(([c, t, x]) => {
+    ctx.fillStyle = c; ctx.beginPath(); ctx.arc(x, 485, 5, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#94a3b8'; ctx.fillText(t, x + 10, 488);
+  });
+}
+</script>
+</body>
+</html>

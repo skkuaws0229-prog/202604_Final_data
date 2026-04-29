@@ -1,0 +1,12 @@
+{
+  "total_drugs": 30,
+  "pass": 28,
+  "warning": 0,
+  "fail": 2,
+  "unknown": 0,
+  "tier1_hard_fails": {
+    "herg": 0,
+    "pains": 0,
+    "lipinski": 2
+  }
+}

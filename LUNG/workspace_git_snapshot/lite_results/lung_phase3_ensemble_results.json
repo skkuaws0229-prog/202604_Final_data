@@ -1,0 +1,104 @@
+{
+  "cancer_type": "Lung",
+  "date": "2026-04-19",
+  "total_experiments": 24,
+  "positive_gains": 4,
+  "negative_gains": 20,
+  "ensembles": [
+    {
+      "rank": 1,
+      "phase": "2A",
+      "name": "Mixed",
+      "method": "Weighted",
+      "models": [
+        "CatBoost",
+        "ResidualMLP",
+        "TabNet"
+      ],
+      "spearman": 0.4797,
+      "best_single": 0.4765,
+      "gain": 0.0033,
+      "diversity": 0.7559,
+      "error_overlap": 0.6553,
+      "consensus": 0.5403
+    },
+    {
+      "rank": 2,
+      "phase": "2A",
+      "name": "Mixed",
+      "method": "Simple",
+      "models": [
+        "CatBoost",
+        "ResidualMLP",
+        "TabNet"
+      ],
+      "spearman": 0.479,
+      "best_single": 0.4765,
+      "gain": 0.0025,
+      "diversity": 0.7559,
+      "error_overlap": 0.6553,
+      "consensus": 0.5403
+    },
+    {
+      "rank": 3,
+      "phase": "2C",
+      "name": "DL_Top3",
+      "method": "Weighted",
+      "models": [
+        "ResidualMLP",
+        "TabTransformer",
+        "TabNet"
+      ],
+      "spearman": 0.429,
+      "best_single": 0.4277,
+      "gain": 0.0013,
+      "diversity": 0.8569,
+      "error_overlap": 0.7046,
+      "consensus": 0.4629
+    },
+    {
+      "rank": 4,
+      "phase": "2C",
+      "name": "DL_Top3",
+      "method": "Simple",
+      "models": [
+        "ResidualMLP",
+        "TabTransformer",
+        "TabNet"
+      ],
+      "spearman": 0.429,
+      "best_single": 0.4277,
+      "gain": 0.0012,
+      "diversity": 0.8569,
+      "error_overlap": 0.7046,
+      "consensus": 0.4629
+    }
+  ],
+  "recommendations": {
+    "primary": {
+      "model": "CatBoost",
+      "phase": "2C",
+      "spearman": 0.503,
+      "reason": "Best single model, outperforms most ensembles"
+    },
+    "ensemble_alternative": {
+      "name": "Mixed Weighted",
+      "phase": "2A",
+      "models": [
+        "CatBoost",
+        "ResidualMLP",
+        "TabNet"
+      ],
+      "spearman": 0.4797,
+      "gain": 0.0033,
+      "reason": "Only ensemble with meaningful positive gain"
+    }
+  },
+  "key_findings": {
+    "ensemble_effectiveness": "Limited - only 4/24 achieved positive gain",
+    "best_model_dominance": "CatBoost dominates across all phases",
+    "diversity_correlation": -0.2562,
+    "average_error_overlap": 0.7,
+    "conclusion": "Single CatBoost model recommended over ensembles"
+  }
+}

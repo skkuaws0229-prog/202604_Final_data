@@ -1,0 +1,47 @@
+[
+  {
+    "split_id": "scaffoldcv_fold1",
+    "train_rows": 5153,
+    "test_rows": 2577,
+    "train_unique_drugs": 197,
+    "test_unique_drugs": 98,
+    "train_unique_scaffolds": 173,
+    "test_unique_scaffolds": 47,
+    "train_test_drug_overlap_count": 0,
+    "train_test_drug_overlap_rate": 0.0,
+    "train_test_scaffold_overlap_count": 0,
+    "train_test_scaffold_overlap_rate": 0.0,
+    "drug_overlap_rule_ok": true,
+    "scaffold_overlap_rule_ok": true
+  },
+  {
+    "split_id": "scaffoldcv_fold2",
+    "train_rows": 5153,
+    "test_rows": 2577,
+    "train_unique_drugs": 196,
+    "test_unique_drugs": 99,
+    "train_unique_scaffolds": 133,
+    "test_unique_scaffolds": 87,
+    "train_test_drug_overlap_count": 0,
+    "train_test_drug_overlap_rate": 0.0,
+    "train_test_scaffold_overlap_count": 0,
+    "train_test_scaffold_overlap_rate": 0.0,
+    "drug_overlap_rule_ok": true,
+    "scaffold_overlap_rule_ok": true
+  },
+  {
+    "split_id": "scaffoldcv_fold3",
+    "train_rows": 5154,
+    "test_rows": 2576,
+    "train_unique_drugs": 197,
+    "test_unique_drugs": 98,
+    "train_unique_scaffolds": 134,
+    "test_unique_scaffolds": 86,
+    "train_test_drug_overlap_count": 0,
+    "train_test_drug_overlap_rate": 0.0,
+    "train_test_scaffold_overlap_count": 0,
+    "train_test_scaffold_overlap_rate": 0.0,
+    "drug_overlap_rule_ok": true,
+    "scaffold_overlap_rule_ok": true
+  }
+]

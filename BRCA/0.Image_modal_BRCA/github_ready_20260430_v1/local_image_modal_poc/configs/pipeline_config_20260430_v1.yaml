@@ -1,0 +1,120 @@
+# Pipeline Configuration — BRCA Image Modal 20260430_v1
+# 모든 스크립트가 이 config를 참조함
+
+pipeline:
+  name: brca_image_modal
+  date: "20260430"
+  version: v1
+  phase: pilot  # pilot (50장) | full (전체)
+  cancer_type: BRCA
+
+# ============================================================
+# 경로 설정 — 로컬 M4 Mac 기준
+# ============================================================
+paths:
+  # 기존 파이프라인 결과 (읽기 전용)
+  existing_pipeline_root: "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260430_multimodal_BRCA_v1"
+  existing_predictions: "${paths.existing_pipeline_root}/20260428_new_BRCA_data"
+  
+  # 이미지 모달 작업 디렉토리
+  work_root: "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260430_multimodal_BRCA_v1/image_modal_20260430_v1"
+  wsi_raw: "${paths.work_root}/data/wsi_raw"
+  wsi_tiles: "${paths.work_root}/data/wsi_tiles"
+  wsi_embeddings: "${paths.work_root}/data/wsi_embeddings"
+  slide_embeddings: "${paths.work_root}/data/slide_embeddings"
+  results: "${paths.work_root}/results"
+  logs: "${paths.work_root}/logs"
+
+# ============================================================
+# Step 1: TCGA WSI 다운로드
+# ============================================================
+step1_download:
+  n_slides: 50  # pilot 50장
+  project: TCGA-BRCA
+  data_type: "Slide Image"
+  experimental_strategy: "Diagnostic Slide"
+  data_format: SVS
+  gdc_api_url: "https://api.gdc.cancer.gov"
+  manifest_file: "gdc_manifest_brca_wsi_20260430_v1.txt"
+
+# ============================================================
+# Step 2: WSI 전처리 (CLAM)
+# ============================================================
+step2_preprocessing:
+  patch_size: 256
+  magnification: 20  # 20x
+  tissue_threshold: 0.5  # 조직 비율 임계값
+  max_patches_per_slide: 10000
+  clam_preset: "bwh_biopsy.csv"  # CLAM preset
+
+# ============================================================
+# Step 3: UNI2 임베딩 추출
+# ============================================================
+step3_embedding:
+  model_name: "uni2"  # UNI2 (ViT-Large)
+  model_source: "MahmoodLab/UNI2"  # HuggingFace
+  embedding_dim: 1024
+  batch_size: 32  # M4 Mac MPS 기준
+  device: "mps"  # mps (Mac) | cuda | cpu
+  pooling: "mean"  # mean | abmil
+  precision: "float16"  # float16 | float32
+
+# ============================================================
+# Step 4: Re-ranking 모델
+# ============================================================
+step4_reranking:
+  # 기존 파이프라인 파일 (입력)
+  ensemble_predictions: "brca_directive_ensemble_B_holdout_predictions.csv"
+  top30_candidates: "brca_directive_top30_tiered_candidates.csv"
+  
+  # Re-ranking 모델 설정
+  model_type: "lightgbm"  # lightgbm | mlp
+  features:
+    - drug_level_score      # 기존 앙상블 score
+    - prediction_std_mean   # 불확실성
+    - slide_embedding       # 1024d WSI 임베딩
+    - rna_summary           # 200d RNA PCA
+  
+  # 학습 설정
+  cv_folds: 5
+  random_seed: 42
+
+# ============================================================
+# Step 5: Ablation 실험
+# ============================================================
+step5_ablation:
+  experiments:
+    - name: "baseline_no_image"
+      use_image: false
+      description: "기존 파이프라인 (이미지 없음)"
+    - name: "with_image_mean_pool"
+      use_image: true
+      pooling: "mean"
+      description: "Mean pooling slide embedding 추가"
+    - name: "with_image_abmil"
+      use_image: true
+      pooling: "abmil"
+      description: "ABMIL slide embedding 추가"
+    - name: "image_only"
+      use_image: true
+      use_omic: false
+      description: "이미지만으로 예측"
+  
+  metrics:
+    - spearman_rho
+    - rmse
+    - mae
+    - r_squared
+  
+  external_validation:
+    - METABRIC
+    - PRISM
+
+# ============================================================
+# AWS SageMaker (Phase 2 — 전체 확장 시)
+# ============================================================
+aws:
+  s3_bucket: "say2-4team"
+  s3_prefix: "20260408_new_pre_project_biso/202604_Final_data/BRCA/image_modal_20260430_v1"
+  sagemaker_instance: "ml.g5.xlarge"
+  sagemaker_role: ""  # 추후 설정

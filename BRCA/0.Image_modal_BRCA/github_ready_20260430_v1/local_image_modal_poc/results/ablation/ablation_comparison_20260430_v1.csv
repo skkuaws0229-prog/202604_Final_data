@@ -1,0 +1,5 @@
+experiment,spearman_rho,spearman_p,rmse,mae,r_squared,n_samples,n_features
+baseline_no_image,0.7498,3.2192268866686555e-279,1.458,1.0903,0.6896,1546,2
+with_image_mean_pool,0.7498,3.2192268866686555e-279,1.458,1.0903,0.6896,1546,1026
+with_image_abmil_placeholder,0.7498,3.2192268866686555e-279,1.458,1.0903,0.6896,1546,1026
+image_only,-0.0208,0.4137658232853027,2.6174,1.989,-0.0003,1546,1024

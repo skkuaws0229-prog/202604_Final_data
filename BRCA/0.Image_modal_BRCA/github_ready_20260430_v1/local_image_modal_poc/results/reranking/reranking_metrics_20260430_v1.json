@@ -1,0 +1,11 @@
+{
+  "spearman_rho": 0.7498,
+  "spearman_p": 3.2192268866686555e-279,
+  "rmse": 1.458,
+  "mae": 1.0903,
+  "r_squared": 0.6896,
+  "cv_folds": 5,
+  "n_samples": 1546,
+  "n_features": 1026,
+  "model_type": "lightgbm"
+}

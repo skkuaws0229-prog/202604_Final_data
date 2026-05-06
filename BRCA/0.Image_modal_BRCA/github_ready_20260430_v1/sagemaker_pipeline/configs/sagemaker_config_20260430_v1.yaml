@@ -1,0 +1,51 @@
+pipeline_tag: "20260430_v1"
+project: "pre-say2"
+team: "4team"
+
+aws:
+  region: "ap-northeast-2"
+  bucket: "say2-4team"
+  role_env: "SAGEMAKER_ROLE"
+
+s3:
+  base_uri: "s3://say2-4team/brca_image_modal_20260430_v1"
+  input_uri: "s3://say2-4team/brca_image_modal_20260430_v1/input/"
+  output_uri: "s3://say2-4team/brca_image_modal_20260430_v1/output/"
+  wsi_uri: "s3://say2-4team/brca_image_modal_20260430_v1/wsi_raw/"
+
+sagemaker:
+  instance_type: "ml.g5.xlarge"
+  instance_count: 1
+  volume_size_gb: 500
+  max_runtime_seconds: 432000
+
+model:
+  uni2_model_name: "hf-hub:MahmoodLab/UNI2-h"
+  fallback_model_name: "vit_large_patch16_224"
+  embedding_dim: 1024
+  device: "cuda"
+  batch_size: 256
+  hf_token_env: "HUGGING_FACE_HUB_TOKEN"
+
+paths:
+  processing_input: "/opt/ml/processing/input"
+  processing_output: "/opt/ml/processing/output"
+  wsi_raw_input: "/opt/ml/processing/input/wsi_raw"
+  wsi_raw_output: "/opt/ml/processing/output/wsi_raw"
+  wsi_tiles_output: "/opt/ml/processing/output/wsi_tiles"
+  embeddings_output: "/opt/ml/processing/output/embeddings"
+  results_output: "/opt/ml/processing/output/results"
+
+cancers:
+  BRCA:
+    tcga_projects: ["TCGA-BRCA"]
+    existing_result_hint: "20260428_new_BRCA_data"
+  LUAD:
+    tcga_projects: ["TCGA-LUAD"]
+    existing_result_hint: ""
+  CRC:
+    tcga_projects: ["TCGA-COAD", "TCGA-READ"]
+    existing_result_hint: ""
+  STAD:
+    tcga_projects: ["TCGA-STAD"]
+    existing_result_hint: ""

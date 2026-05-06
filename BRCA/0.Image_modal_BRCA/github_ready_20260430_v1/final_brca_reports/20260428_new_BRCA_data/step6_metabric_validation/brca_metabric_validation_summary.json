@@ -1,0 +1,49 @@
+{
+  "input_top30_csv": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260428_new_BRCA_data/brca_directive_top30_unique_candidates.csv",
+  "input_expr_path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_protocol_choi/data/metabric/metabric_expression_basic_clean_20260406.parquet",
+  "input_clin_path": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_protocol_choi/data/metabric/metabric_clinical_patient_basic_clean_20260406.parquet",
+  "top30_rows": 30,
+  "method_a": {
+    "n_targets_expressed": 11,
+    "n_brca_pathway": 12,
+    "n_total": 30
+  },
+  "method_b": {
+    "n_significant": 2,
+    "n_total": 30
+  },
+  "method_c": {
+    "P@5": {
+      "precision": 0.0,
+      "hits": 0,
+      "total": 5
+    },
+    "P@10": {
+      "precision": 0.2,
+      "hits": 2,
+      "total": 10
+    },
+    "P@15": {
+      "precision": 0.2,
+      "hits": 3,
+      "total": 15
+    },
+    "P@20": {
+      "precision": 0.15,
+      "hits": 3,
+      "total": 20
+    },
+    "P@25": {
+      "precision": 0.16,
+      "hits": 4,
+      "total": 25
+    },
+    "P@30": {
+      "precision": 0.13333333333333333,
+      "hits": 4,
+      "total": 30
+    }
+  },
+  "top15_csv": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260428_new_BRCA_data/step6_metabric_validation/brca_top15_metabric_validated.csv",
+  "all30_csv": "/Users/skku_aws2_14/20260415_preproject_choi_protocol_v1_bisotest/20260415_preproject_choi_protocol_v1_bisotest/20260428_new_BRCA_data/step6_metabric_validation/brca_top30_metabric_scored.csv"
+}
